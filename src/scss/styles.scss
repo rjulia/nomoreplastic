@@ -1,0 +1,15 @@
+@import './variables.scss';
+
+:export {
+  primary: $primary;
+  error: $error;
+  secondary: $secondary;
+  hover: $hover;
+  text: $text;
+  white: $white;
+  black: $black;
+}
+
+.root {
+  color: $primary
+}
