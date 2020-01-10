@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Menu />
-      <MapContainer />
+      {/* <MapContainer /> */}
 
       <Aside />
       <div className="img-background">

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 import Icon from '../../assets/icons/pin.png'
 // ...
 
@@ -10,7 +10,6 @@ export class MapContainer extends React.Component {
   }
   render() {
     const {
-      map,
       google
     } = this.props;
     return (
