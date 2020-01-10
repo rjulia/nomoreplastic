@@ -1,0 +1,12 @@
+@import '../../scss/variables.scss';
+
+
+.map {
+  display: flex;
+  position: absolute;
+  left: 110px;
+  top: 10px;
+  width: calc(100% - 720px);
+  height: calc(100vh - 20px);
+  background-color: black
+}

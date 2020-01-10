@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.scss';
-import { Map, Menu, Aside } from "./Containers";
+import { MapContainer, Menu, Aside } from "./Containers";
 import HongKong from "./assets/images/hk.jpg"
 
 function App() {
   return (
     <div className="App">
       <Menu />
-      <Map />
+      <MapContainer />
 
       <Aside />
       <div className="img-background">

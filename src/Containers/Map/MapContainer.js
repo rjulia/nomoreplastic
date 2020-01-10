@@ -1,10 +1,10 @@
 import React from 'react';
-import './Map.scss';
-
+import './MapContianer.scss';
+import { MapGoogleApi } from "../../components";
 const Map = () => {
   return (
     <div className="map">
-
+      <MapGoogleApi />
     </div>
   )
 }
