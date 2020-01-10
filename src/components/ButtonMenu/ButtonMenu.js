@@ -28,7 +28,7 @@ const StyledButton = styled.div`
 
 // StyledButton can now be used like any other component
 const Button = ({ children, onClick, text }) => {
-  console.log(styles.primary)
+
   return (
     <StyledButton
       onClick={onClick}

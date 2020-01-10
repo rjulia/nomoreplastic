@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import LanguageReducer from './language.reducer.js';
+import SettingsReducer from './settings.reducer';
 
 
 
 export default combineReducers({
 
-  settings: LanguageReducer,
+  settings: SettingsReducer,
 
 });

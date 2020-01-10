@@ -7,7 +7,7 @@ const Aside = () => {
     <div className="aside">
       <div className="aside__img">
         <h2>Yuen Long Community Green Station</h2>
-        <img src={Img} alt="" srcset="" />
+        <img src={Img} alt="Title" />
       </div>
 
     </div>

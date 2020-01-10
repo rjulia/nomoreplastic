@@ -1,31 +1,28 @@
-import React from 'react'
+import React from 'react';
+import { connect } from "react-redux";
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 import Icon from '../../assets/icons/pin.png'
 // ...
 
 export class MapContainer extends React.Component {
-
   onMarkerClick = () => {
     alert('hello')
   }
   render() {
+    console.log(this.props)
     const {
-      google
+      google,
+      settings
     } = this.props;
     return (
       <Map
-
         google={this.props.google}
-
         initialCenter={{
-          lat: 22.3693236,
-          lng: 114.0405858
+          lat: settings.coords.lat,
+          lng: settings.coords.lng
         }}
-        zoom={12}
+        zoom={14}
       >
-
-        {/* <Marker onClick={this.onMarkerClick}
-          name={'Current location'} /> */}
         <Marker
           name={'Your position'}
           position={{ lat: 22.4564467, lng: 114.0043653 }}
@@ -39,7 +36,10 @@ export class MapContainer extends React.Component {
   }
 
 }
+const mapStateToProps = state => ({ settings: state.settings })
 
-export default GoogleApiWrapper({
+
+
+export default connect(mapStateToProps)(GoogleApiWrapper({
   apiKey: process.env.REACT_APP_API_KEY_MAPS
-})(MapContainer)
+})(MapContainer))
