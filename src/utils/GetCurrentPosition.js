@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { connect } from "react-redux";
 import { getPosition } from "../services/redux/actions/settings.actions";
 import { geolocated } from "react-geolocated";
