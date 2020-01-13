@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -32,18 +32,16 @@ function App() {
       <GetCurrentPosition />
       <Menu />
       <Wrapper>
-        <Suspense fallback={<Spinner />}>
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={() => <Redirect to="/map" />}
-            />
-            <Route exact path="/map" component={MapRecycle} />
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/add" component={Add} />
-          </Switch>
-        </Suspense>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => <Redirect to="/map" />}
+          />
+          <Route exact path="/map" component={MapRecycle} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/add" component={Add} />
+        </Switch>
       </Wrapper>
     </Router>
   );

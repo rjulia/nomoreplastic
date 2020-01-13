@@ -1,6 +1,8 @@
-import React from 'react';
+export { default as Add } from './addPage';
+export { default as Contact } from './contactPage';
+export { default as MapRecycle } from './mapPage';
 
-export const MapRecycle = React.lazy(() => import('./mapPage'));
-export const Contact = React.lazy(() => import('./contactPage'));
-export const Add = React.lazy(() => import('./addPage'));
+
+
+
 
