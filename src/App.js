@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from 'react-router-dom';
+import { MapRecycle, Contact, Add } from "./pages";
 import { useQuery } from '@apollo/react-hooks';
 import { LOCATIONS_QUERY } from "./services/apollo/queries";
 import './App.scss';
-import { MapContainer, Menu, Aside } from "./Containers";
+import { Menu } from "./Layout";
 import GetCurrentPosition from "./utils/GetCurrentPosition";
 import { Spinner } from './components';
-import HongKong from "./assets/images/hk.jpg";
+import styled from 'styled-components';
+
+const Wrapper = styled('div')`
+
+  margin-left: 100px;
+
+`
+
 
 function App() {
 
@@ -14,17 +28,24 @@ function App() {
   if (error) return <p>ERROR</p>;
   console.log(data)
   return (
-    <div className="App">
+    <Router>
       <GetCurrentPosition />
       <Menu />
-      <MapContainer />
-
-      <Aside />
-      <div className="img-background">
-
-        <img src={HongKong} alt="hk" />
-      </div>
-    </div>
+      <Wrapper>
+        <Suspense fallback={<Spinner />}>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => <Redirect to="/map" />}
+            />
+            <Route exact path="/map" component={MapRecycle} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/add" component={Add} />
+          </Switch>
+        </Suspense>
+      </Wrapper>
+    </Router>
   );
 }
 

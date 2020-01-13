@@ -1,0 +1,15 @@
+@import '../../scss/variables.scss';
+
+.aside {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 462px;
+  background-color: $white;
+
+  .aside__filter {
+    margin-top: 65px;
+
+  }
+}

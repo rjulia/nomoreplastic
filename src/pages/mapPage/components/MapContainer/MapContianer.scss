@@ -1,0 +1,14 @@
+@import '../../scss/variables.scss';
+
+
+.map {
+  display: flex;
+  position: absolute;
+  border-radius: 30px;
+  overflow: hidden;
+  left: 120px;
+  top: 20px;
+  width: calc(100% - 602px);
+  height: calc(100vh - 40px);
+  background-color: black
+}

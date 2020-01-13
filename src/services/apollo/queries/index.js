@@ -23,7 +23,6 @@ export const LOCATION_QUERY = gql`
       webUrl
       lat
       lng
-      label
       tel
       opening
       facebook
