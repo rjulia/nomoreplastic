@@ -14,7 +14,7 @@ import * as serviceWorker from './serviceWorker';
 let linkApi;
 
 if (process.env.NODE_ENV === 'production') {
-  linkApi = "https://cmsnoplastic.herokuapp.com//graphql";
+  linkApi = "https://cmsnoplastic.herokuapp.com/graphql";
 } else {
   linkApi = "http://localhost:5000/graphql";
 }
