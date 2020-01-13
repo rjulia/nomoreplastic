@@ -10,7 +10,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { LOCATIONS_QUERY } from "./services/apollo/queries";
 import './App.scss';
 import { Menu } from "./Layout";
-import GetCurrentPosition from "./utils/GetCurrentPosition";
+
 import { Spinner } from './components';
 import styled from 'styled-components';
 
@@ -29,7 +29,6 @@ function App() {
   console.log(data)
   return (
     <Router>
-      <GetCurrentPosition />
       <Menu />
       <Wrapper>
         <Switch>
