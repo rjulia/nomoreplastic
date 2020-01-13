@@ -4,7 +4,7 @@ import { HongKongIcon, HomeIcon, EmailIcon, AddIcon } from "../../assets/icons";
 import { ButtonMenu } from "../../components";
 import styled from 'styled-components';
 import styles from "../../scss/styles.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const WrapperMenu = styled('div')`
   position: fixed;
@@ -16,9 +16,10 @@ const WrapperMenu = styled('div')`
 `
 
 const WrapperLogo = styled('div')`
-  margin: 0 14px;
+  margin: 0 14px 47px;
+  padding-top: 25px;
   width: 72px;
-  height: 100px;
+  height: 92px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,26 +31,26 @@ const WrapperLogo = styled('div')`
 const Menu = () => {
   return (
     <WrapperMenu>
-      <Link to="/">
+      <NavLink to="/">
         <WrapperLogo>
           <HongKongIcon />
         </WrapperLogo>
-      </Link>
-      <Link to="/map">
+      </NavLink>
+      <NavLink to="/map">
         <ButtonMenu text="home">
           <HomeIcon width="40px" />
         </ButtonMenu>
-      </Link>
-      <Link to="contact">
+      </NavLink>
+      <NavLink to="contact">
         <ButtonMenu text="contact">
           <EmailIcon width="40px" />
         </ButtonMenu>
-      </Link>
-      <Link to="add">
+      </NavLink>
+      <NavLink to="add">
         <ButtonMenu text="add">
           <AddIcon width="40px" />
         </ButtonMenu>
-      </Link>
+      </NavLink>
     </WrapperMenu>
   )
 }
