@@ -14,7 +14,7 @@ import App from './App';
 let linkApi;
 
 if (process.env.NODE_ENV === 'production') {
-  linkApi = "https://cmsnoplastic.herokuapp.com/graphql";
+  linkApi = process.env.LINK_API;
 } else {
   linkApi = "http://localhost:5000/graphql";
 }
