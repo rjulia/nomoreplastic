@@ -1,13 +1,12 @@
 import React from 'react';
 import './MapAside.scss';
-
+import Search from "../Search/Search";
+import SelectCollectionPoints from '../SelectCollectionPoints/SelectCollectionPoints'
 const Aside = () => {
   return (
     <div className="aside">
-      <div className="aside__filter">
-
-      </div>
-
+      <Search />
+      <SelectCollectionPoints />
     </div>
   )
 }
