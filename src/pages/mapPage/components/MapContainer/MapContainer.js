@@ -1,12 +1,13 @@
 import React from 'react';
 import './MapContianer.scss';
 import { MapGoogleApi } from "../../../../components";
-const Map = () => {
+
+const MapContainer = () => {
   return (
     <div className="map">
-      <MapGoogleApi />
+      {/* <MapGoogleApi /> */}
     </div>
   )
 }
 
-export default Map
+export default MapContainer

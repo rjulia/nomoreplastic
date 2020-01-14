@@ -11,6 +11,7 @@ export function getLanguage() {
 }
 
 export function setLanguage(language) {
+  console.log(language)
   return {
     payload: {
       language

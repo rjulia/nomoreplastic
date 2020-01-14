@@ -1,9 +1,9 @@
 import React from 'react'
-
+import localization from "../../localization"
 const Add = () => {
   return (
     <div>
-      Add
+      {localization.home.add}
     </div>
   )
 }

@@ -1,6 +1,10 @@
 const en = {
   home: {
-    title: "Hello"
+    title: "Hello",
+    lang: "EN",
+    home: "Home",
+    contact: "Contact",
+    add: "Add"
   }
 }
 

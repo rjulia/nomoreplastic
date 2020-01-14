@@ -4,24 +4,40 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-top: 25px;
   align-items: center;
   width: calc(100% - 14px);
-  height: 100px;
+  height: 65px;
   cursor: pointer;
   margin: 25px 0 25px 14px;
 
-  svg {
+
+
+  .icon__contianer {
+    width: 72px;
+    margin-left: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  svg:first-child {
     fill: $white;
   }
 
+  svg:nth-child(2) {
+    display: none;
+  }
+
   p {
+
     font-size: 10px;
     text-transform: uppercase;
     font-weight: 300;
     font-family: $general;
     color: $white;
-    margin: 5px 0 0;
+    margin: 5px 0 0 -18px;
     text-decoration: none;
   }
 
@@ -58,12 +74,11 @@
     background-color: $white;
 
     svg {
+      display: inline-block;
       fill: $primary;
     }
 
-    p {
-      color: $primary
-    }
+
 
   }
 

@@ -1,13 +1,17 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 import './Menu.scss';
 import { HongKongIcon, HomeIcon, EmailIcon, AddIcon } from "../../assets/icons";
-import { ButtonMenu } from "../../components";
+import { ButtonMenu, ButtonLanguage } from "../../components";
 import styled from 'styled-components';
 import styles from "../../scss/styles.scss";
-import { NavLink } from "react-router-dom";
+import localization from "../../localization";
 
 const WrapperMenu = styled('div')`
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100px;
   top: 0;
   left: 0;
@@ -31,26 +35,29 @@ const WrapperLogo = styled('div')`
 const Menu = () => {
   return (
     <WrapperMenu>
-      <NavLink to="/">
-        <WrapperLogo>
-          <HongKongIcon />
-        </WrapperLogo>
-      </NavLink>
-      <NavLink to="/map">
-        <ButtonMenu text="home">
-          <HomeIcon width="40px" />
-        </ButtonMenu>
-      </NavLink>
-      <NavLink to="contact">
-        <ButtonMenu text="contact">
-          <EmailIcon width="40px" />
-        </ButtonMenu>
-      </NavLink>
-      <NavLink to="add">
-        <ButtonMenu text="add">
-          <AddIcon width="40px" />
-        </ButtonMenu>
-      </NavLink>
+      <div>
+        <NavLink to="/">
+          <WrapperLogo>
+            <HongKongIcon />
+          </WrapperLogo>
+        </NavLink>
+        <NavLink to="/map">
+          <ButtonMenu text={localization.home.home}>
+            <HomeIcon width="40px" />
+          </ButtonMenu>
+        </NavLink>
+        <NavLink to="contact">
+          <ButtonMenu text={localization.home.contact}>
+            <EmailIcon width="40px" />
+          </ButtonMenu>
+        </NavLink>
+        <NavLink to="add">
+          <ButtonMenu text={localization.home.add}>
+            <AddIcon width="40px" />
+          </ButtonMenu>
+        </NavLink>
+      </div>
+      <ButtonLanguage />
     </WrapperMenu>
   )
 }

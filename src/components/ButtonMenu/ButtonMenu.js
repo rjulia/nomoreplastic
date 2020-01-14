@@ -1,5 +1,8 @@
 import React from 'react';
 import './ButtonMenu.scss'
+import { FaAngleRight } from "react-icons/fa";
+
+
 
 const Button = ({ children, onClick, text }) => {
 
@@ -7,7 +10,10 @@ const Button = ({ children, onClick, text }) => {
     <div
       className="ButtonMenu"
       onClick={onClick}>
-      {children}
+      <div className="icon__contianer">
+        {children} <FaAngleRight />
+
+      </div>
       <p> {text} </p>
     </div>
   )
