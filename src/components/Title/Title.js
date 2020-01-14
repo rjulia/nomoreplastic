@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Title = ({ h, text }) => {
+const Title = ({ tag, text, classN }) => {
 
-  const TagName = h || 'h1'
+  const TagName = tag || 'h1'
   return (
-    <TagName>
+    <TagName className={classN}>
       {text}
     </TagName>
   )
