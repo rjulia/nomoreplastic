@@ -11,16 +11,16 @@ import './index.scss';
 import App from './App';
 
 
-let linkApi;
+// let linkApi;
 
-if (process.env.NODE_ENV === 'production') {
-  linkApi = process.env.LINK_API;
-} else {
-  linkApi = "http://localhost:5000/graphql";
-}
+// if (process.env.NODE_ENV === 'production') {
+//   linkApi = process.env.LINK_API;
+// } else {
+//   linkApi = process.env.LINK_API;
+// }
 console.log(process.env.NODE_ENV)
 const link = new HttpLink(
-  { uri: linkApi }
+  { uri: 'http://localhost:5000/graphql' || process.env.LINK_API }
 );
 
 export const client = new ApolloClient({
