@@ -1,15 +1,13 @@
 import React from 'react'
-import MapContainer from './components/MapContainer/MapContainer';
-import MapAside from './components/MapAside/MapAside';
-
+import { MapContainer, AsideContainer } from './Containers';
 
 
 const MapRecycle = () => {
   return (
-    <div>
+    <>
       <MapContainer />
-      <MapAside />
-    </div>
+      <AsideContainer />
+    </>
   )
 }
 
