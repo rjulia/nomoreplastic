@@ -20,7 +20,7 @@ import App from './App';
 // }
 console.log(process.env.NODE_ENV)
 const link = new HttpLink(
-  { uri: 'http://localhost:5000/graphql' || process.env.LINK_API }
+  { uri: process.env.REACT_APP_LINK_API || 'http://localhost:5000/graphql' }
 );
 
 export const client = new ApolloClient({
