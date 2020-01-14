@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   linkApi = "http://localhost:5000/graphql";
 }
-
+console.log(process.env.NODE_ENV)
 const link = new HttpLink(
   { uri: linkApi }
 );
