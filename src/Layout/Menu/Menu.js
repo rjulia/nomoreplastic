@@ -53,7 +53,7 @@ const Menu = () => {
         </NavLink>
         <NavLink to="add">
           <ButtonMenu text={localization.home.add}>
-            <AddIcon width="40px" />
+            <AddIcon width="60px" padding="5px" />
           </ButtonMenu>
         </NavLink>
       </div>

@@ -5,9 +5,14 @@ import { SelectCollectionPoints, NewsAside, Search } from '../../components';
 const AsideContainer = () => {
   return (
     <div className="aside">
-      <Search />
-      <SelectCollectionPoints />
-      <NewsAside />
+      <div className="aside__container">
+
+        <Search />
+        <SelectCollectionPoints />
+        <NewsAside />
+      </div>
+
+      <div className="aside__mask"></div>
     </div>
   )
 }
