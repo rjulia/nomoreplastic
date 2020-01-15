@@ -21,6 +21,10 @@
     align-items: center;
     justify-content: space-between;
   }
+  svg .stroke-1 {
+    //fill: $white;
+    stroke: $white;
+  }
 
   svg:first-child {
     fill: $white;
@@ -31,7 +35,7 @@
   }
 
   p {
-
+    display: block;
     font-size: 10px;
     text-transform: uppercase;
     font-weight: 300;
@@ -46,7 +50,9 @@
   .active & {
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
-
+    p {
+      display: none;
+    }
     &::before {
       content: "";
       position: absolute;
@@ -76,10 +82,12 @@
     svg {
       display: inline-block;
       fill: $primary;
+      
     }
-
-
-
+    svg .stroke-1 {
+      //fill: $white;
+      stroke: $primary
+    }
   }
 
 }

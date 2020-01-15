@@ -2,25 +2,21 @@ import React from 'react';
 
 const HomeIcon = ({ ...restProps }) => (
   <span {...restProps}>
-    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-      viewBox="0 0 512 512" width={restProps.width} xmlSpace="preserve">
-    <g>
-      <g>
-        <path  d="M506.555,208.064L263.859,30.367c-4.68-3.426-11.038-3.426-15.716,0L5.445,208.064
-          c-5.928,4.341-7.216,12.665-2.875,18.593s12.666,7.214,18.593,2.875L256,57.588l234.837,171.943c2.368,1.735,5.12,2.57,7.848,2.57
-          c4.096,0,8.138-1.885,10.744-5.445C513.771,220.729,512.483,212.405,506.555,208.064z"/>
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="2px" y="2px"
+      viewBox="0 0 50 40" width={restProps.width} xmlSpace="preserve">
+      <g id="Atoms/Menu/ic_map" stroke="none" strokeWidth="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(2,2)" >
+          <path class="stroke-1" d="M33,15.4 L33,3.3 L22.2873479,0.0862043657 C22.0999092,0.029972746 21.9000908,0.029972746 21.7126521,0.0862043657 L11.2873479,3.21379563 C11.0999092,3.27002725 10.9000908,3.27002725 10.7126521,3.21379563 L0,0 L0,0 L0,28.6 L10.7126521,31.8137956 C10.9000908,31.8700273 11.0999092,31.8700273 11.2873479,31.8137956 L19.8081934,29.257542 L19.8081934,29.257542"  strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
+          <circle class="stroke-1" strokeWidth="1.1" cx="11" cy="9.9" r="2.2"></circle>
+          <circle class="stroke-1"  strokeWidth="1.1" cx="22" cy="6.6" r="2.2"></circle>
+          <circle class="stroke-1" strokeWidth="1.1" cx="11" cy="16.5" r="2.2"></circle>
+          <circle class="stroke-1"  strokeWidth="1.1" cx="22" cy="13.2" r="2.2"></circle>
+          <circle class="stroke-1"  strokeWidth="1.1" cx="11" cy="23.1" r="2.2"></circle>
+          <circle class="stroke-1"  strokeWidth="1.1" cx="22" cy="19.8" r="2.2"></circle>
+          <circle class="stroke-1" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" cx="30.8" cy="26.4" r="4.4"></circle>
+          <path class="stroke-1" d="M34.1,29.7 L39.6,35.2"  strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
+        </g>
       </g>
-    </g>
-    <g>
-      <g>
-        <path  d="M442.246,232.543c-7.346,0-13.303,5.956-13.303,13.303v211.749H322.521V342.009c0-36.68-29.842-66.52-66.52-66.52
-          s-66.52,29.842-66.52,66.52v115.587H83.058V245.847c0-7.347-5.957-13.303-13.303-13.303s-13.303,5.956-13.303,13.303v225.053
-          c0,7.347,5.957,13.303,13.303,13.303h133.029c6.996,0,12.721-5.405,13.251-12.267c0.032-0.311,0.052-0.651,0.052-1.036v-128.89
-          c0-22.009,17.905-39.914,39.914-39.914s39.914,17.906,39.914,39.914v128.89c0,0.383,0.02,0.717,0.052,1.024
-          c0.524,6.867,6.251,12.279,13.251,12.279h133.029c7.347,0,13.303-5.956,13.303-13.303V245.847
-          C455.549,238.499,449.593,232.543,442.246,232.543z"/>
-      </g>
-    </g>
     </svg>
   </span>
 );
