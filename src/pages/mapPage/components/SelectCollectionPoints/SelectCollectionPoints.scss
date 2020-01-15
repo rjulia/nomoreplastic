@@ -38,10 +38,34 @@
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
+      margin-left: 0;
+      animation: slide_reverse 1s;
 
       &.slided {
+        animation: slide 1s;
         margin-left: -170px;
+
       }
     }
+  }
+}
+
+@keyframes slide {
+  0% {
+    margin-left: 0;
+  }
+
+  100% {
+    margin-left: -170px;
+  }
+}
+
+@keyframes slide_reverse {
+  0% {
+    margin-left: -170px;
+  }
+
+  100% {
+    margin-left: 0;
   }
 }

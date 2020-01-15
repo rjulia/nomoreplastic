@@ -1,12 +1,13 @@
 import React from 'react';
 import './AsideContainer.js.scss';
-import Search from "../../components/Search/Search";
-import SelectCollectionPoints from '../../components/SelectCollectionPoints/SelectCollectionPoints';
+import { SelectCollectionPoints, NewsAside, Search } from '../../components';
+
 const AsideContainer = () => {
   return (
     <div className="aside">
       <Search />
       <SelectCollectionPoints />
+      <NewsAside />
     </div>
   )
 }
