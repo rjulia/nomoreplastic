@@ -1,45 +1,47 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
-import Icon from '../../assets/icons/pin.png'
-// ...
+import { GoogleMap, useLoadScript } from '@react-google-maps/api'
+import { Spinner } from "../index";
 
-export class MapContainer extends React.Component {
-  onMarkerClick = () => {
-    alert('hello')
-  }
-  render() {
-    console.log(this.props)
-    const {
-      google,
-      settings
-    } = this.props;
-    return (
-      <Map
-        google={this.props.google}
-        initialCenter={{
-          lat: settings.coords.lat,
-          lng: settings.coords.lng
-        }}
-        zoom={14}
-      >
-        <Marker
-          name={'Your position'}
-          position={{ lat: 22.4564467, lng: 114.0043653 }}
-          onClick={this.onMarkerClick}
-          icon={{
-            url: Icon,
-            scaledSize: new google.maps.Size(32, 32)
-          }} />
-      </Map>
-    );
+
+const MapContainer = ({ data }) => {
+
+  const center = { lat: -28.024, lng: 140.887 };
+  const options = {
+    imagePath: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m"
+  };
+  const { isLoaded, loadError } = useLoadScript({
+    googleMapsApiKey: process.env.REACT_APP_API_KEY_MAPS,
+    language: 'en'
+  })
+
+  const renderMap = () => {
+    const onLoad = undefined
+
+    return <GoogleMap
+      id="main-map"
+      options={null}
+      onLoad={onLoad}
+      mapContainerStyle={{
+        height: "auto",
+        width: "100%"
+      }}
+      zoom={7}
+      center={{
+        lat: -3.745,
+        lng: -38
+      }}>
+      {
+        // ...Your map components
+      }
+    </GoogleMap>
   }
 
+  if (loadError) {
+    return <div>Map cannot be loaded right now, sorry.</div>
+  }
+
+  return isLoaded ? renderMap() : <Spinner />
 }
-const mapStateToProps = state => ({ settings: state.settings })
 
-
-
-export default connect(mapStateToProps)(GoogleApiWrapper({
-  apiKey: process.env.REACT_APP_API_KEY_MAPS
-})(MapContainer))
+export default connect()(MapContainer)

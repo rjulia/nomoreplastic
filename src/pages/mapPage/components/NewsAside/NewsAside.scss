@@ -1,0 +1,28 @@
+@import '../../../../scss/variables.scss';
+
+.news--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  h2 {
+    letter-spacing: 0.8px;
+  }
+
+  .news--filter {
+    span {
+      font-size: 12px;
+      line-height: 12px;
+      letter-spacing: 0.6px;
+      color: $text_filter;
+      margin-left: 16px;
+      font-weight: 500;
+      cursor: pointer;
+
+      &.active {
+        color: $primary;
+        font-weight: 500;
+      }
+    }
+  }
+}

@@ -9,6 +9,10 @@
     justify-content: space-between;
     align-items: center;
 
+    h2 {
+      letter-spacing: 0.8px;
+    }
+
     .collection-points--points {
       margin-right: $right-margin;
 
@@ -36,6 +40,7 @@
 
     .collection-points--card {
       display: flex;
+      width: 100%;
       flex-direction: row;
       flex-wrap: nowrap;
       margin-left: 0;
@@ -43,7 +48,7 @@
 
       &.slided {
         animation: slide 1s;
-        margin-left: -170px;
+        margin-left: -140px;
 
       }
     }
@@ -56,13 +61,13 @@
   }
 
   100% {
-    margin-left: -170px;
+    margin-left: -140px;
   }
 }
 
 @keyframes slide_reverse {
   0% {
-    margin-left: -170px;
+    margin-left: -140px;
   }
 
   100% {

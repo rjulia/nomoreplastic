@@ -10,7 +10,7 @@ const NewsCard = ({ item }) => {
     <div className="newscard">
       <div className="news-card__image">
         <div className="news-card__frame">
-          <img src={img ? img : Waste} alt="picture" />
+          <img src={img ? img : Waste} alt={title} />
         </div>
       </div>
       <div className="news-card__content">

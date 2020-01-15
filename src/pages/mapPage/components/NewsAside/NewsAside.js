@@ -1,7 +1,7 @@
 import React from 'react'
 import { Title } from "../../../../components";
 import NewsCard from '../NewsCard/NewsCard';
-
+import './NewsAside.scss'
 const item = {
   title: 'Hong Kong beach cleanup',
   text: 'Plastic Free Seas and DB Green welcome individuals to join us for this family -friendly cleanup.',

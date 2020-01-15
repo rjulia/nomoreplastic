@@ -2,7 +2,7 @@ import React from 'react';
 
 const PointerMap = ({ ...restProps }) => (
   <span {...restProps}>
-    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 433.525 433.525" style="enable-background:new 0 0 433.525 433.525;" xmlSpace="preserve">
+    <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 433.525 433.525"  xmlSpace="preserve">
       <g>
         <path d="M216.763,0C123.607,0,47.819,75.787,47.819,168.942c0,54.017,46.724,127.597,74.574,166.648
           c18.22,25.547,38.022,49.893,55.762,68.553c27.933,29.382,35.967,29.382,38.607,29.382c2.527,0,10.217,0,38.049-29.389

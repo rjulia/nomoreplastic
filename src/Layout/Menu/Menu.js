@@ -43,7 +43,7 @@ const Menu = () => {
         </NavLink>
         <NavLink to="/map">
           <ButtonMenu text={localization.home.home}>
-            <HomeIcon width="60px" padding="5px" />
+            <HomeIcon width="60px" />
           </ButtonMenu>
         </NavLink>
         <NavLink to="contact">
