@@ -34,7 +34,7 @@ const WrapperLogo = styled('div')`
 
 const Menu = () => {
   return (
-    <WrapperMenu>
+    <WrapperMenu className="menu">
       <div>
         <NavLink to="/">
           <WrapperLogo>

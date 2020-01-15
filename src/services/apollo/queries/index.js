@@ -5,10 +5,9 @@ export const LOCATIONS_QUERY = gql`
   query getLocations{
     getLocations{
       id
-      name
       lat
       lng
-      webUrl
+      category
     }
   }
 `;

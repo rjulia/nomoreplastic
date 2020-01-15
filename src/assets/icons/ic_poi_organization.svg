@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Atoms/ic_poi_organization</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-64.5%" y="-47.6%" width="229.0%" height="195.2%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Atoms/ic_poi_organization" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Poi-private" filter="url(#filter-1)" transform="translate(10.000000, 4.000000)">
+            <g id="map" fill="#FFFFFF" fill-rule="nonzero">
+                <path d="M15.4791,0 C7.14882,0 0.37086,6.77796 0.37086,15.10908 C0.37086,17.28216 0.81564,19.35696 1.69218,21.27636 C5.46966,29.54238 12.71214,38.26956 14.84238,40.74714 C15.00198,40.93236 15.23466,41.03904 15.47952,41.03904 C15.72438,41.03904 15.95706,40.93236 16.11666,40.74714 C18.24606,38.26998 25.48854,29.54322 29.26728,21.27636 C30.14424,19.35696 30.5886,17.28216 30.5886,15.10908 C30.58776,6.77796 23.8098,0 15.4791,0 Z M15.4791,22.95678 C11.15184,22.95678 7.63098,19.43592 7.63098,15.10866 C7.63098,10.78098 11.15184,7.26012 15.4791,7.26012 C19.80636,7.26012 23.32722,10.78098 23.32722,15.10866 C23.32764,19.43592 19.80678,22.95678 15.4791,22.95678 Z" id="Shape"></path>
+            </g>
+            <path d="M15.4791,22.95678 C11.15184,22.95678 7.63098,19.43592 7.63098,15.10866 C7.63098,10.78098 11.15184,7.26012 15.4791,7.26012 C19.80636,7.26012 23.32722,10.78098 23.32722,15.10866 C23.32764,19.43592 19.80678,22.95678 15.4791,22.95678 Z" id="Path" fill="#108339"></path>
+        </g>
+    </g>
+</svg>

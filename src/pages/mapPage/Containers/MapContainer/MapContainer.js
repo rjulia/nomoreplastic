@@ -11,7 +11,7 @@ const MapContainer = () => {
   console.log(data)
   return (
     <div className="map">
-      {/* <MapGoogleApi data={data} /> */}
+      <MapGoogleApi data={data} />
     </div>
   )
 }

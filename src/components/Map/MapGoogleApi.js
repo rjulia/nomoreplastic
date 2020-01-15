@@ -1,17 +1,22 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { GoogleMap, useLoadScript } from '@react-google-maps/api'
+import { GoogleMap, useLoadScript, LoadScript, MarkerClusterer, Marker } from '@react-google-maps/api'
 import { Spinner } from "../index";
+import PointCollectors from '../../assets/icons/ic_poi_organization.svg';
+import PointClothes from '../../assets/icons/ic_poi_clothes.svg';
 
 
-const MapContainer = ({ data }) => {
+const MapContainer = ({ data, settings }) => {
 
-  const center = { lat: -28.024, lng: 140.887 };
-  const options = {
-    imagePath: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m"
-  };
+  const { getLocations } = data
+  const { coords } = settings
+  const center = { lat: coords.lat, lng: coords.lng };
+  //const apikey = process.env.REACT_APP_API_KEY_MAPS;
+  const apikey = undefined;
+
+
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_API_KEY_MAPS,
+    googleMapsApiKey: apikey,
     language: 'en'
   })
 
@@ -26,14 +31,62 @@ const MapContainer = ({ data }) => {
         height: "auto",
         width: "100%"
       }}
-      zoom={7}
-      center={{
-        lat: -3.745,
-        lng: -38
-      }}>
-      {
-        // ...Your map components
-      }
+      zoom={12}
+      center={center}>
+      <MarkerClusterer
+        options={undefined}
+        styles={[
+          {
+            url: "/images/black_dot.png",
+            height: 26,
+            width: 26,
+            fontFamily: "Rubik",
+            textColor: "#FFF",
+          },
+          {
+            url: "/images/black_dot.png",
+            height: 35,
+            width: 35,
+            fontFamily: "Rubik",
+            textColor: "#FFF",
+          },
+          {
+            url: "/images/black_dot.png",
+            height: 34,
+            width: 34,
+            fontFamily: "Rubik",
+            textColor: "#FFF",
+          },
+          {
+            url: "/images/black_dot.png",
+            height: 40,
+            width: 40,
+            fontFamily: "Rubik",
+            textColor: "#FFF",
+          },
+          {
+            url: "/images/black_dot.png",
+            height: 46,
+            width: 46,
+            fontFamily: "Rubik",
+            textColor: "#FFF",
+          }
+        ]}
+      >
+        {
+          (clusterer) => getLocations.map((location, i) => {
+            console.log(location)
+            const icon = location.category === "COLLECTOR" ? PointCollectors : PointClothes;
+
+            return <Marker
+              key={i}
+              icon={icon}
+              position={location}
+              clusterer={clusterer}
+            />
+          })
+        }
+      </MarkerClusterer>
     </GoogleMap>
   }
 
@@ -44,4 +97,11 @@ const MapContainer = ({ data }) => {
   return isLoaded ? renderMap() : <Spinner />
 }
 
-export default connect()(MapContainer)
+
+const mapStateToProps = state => ({
+  settings: state.settings
+})
+
+
+
+export default connect(mapStateToProps)(MapContainer)
