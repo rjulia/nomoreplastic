@@ -1,23 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { connect } from "react-redux";
 import { Title } from '../../../../components';
 import Card from "../Card/Card";
 import { Collection, Waste, Private, Clothes, Community } from "../../../../assets/icons";
+import { loadLocationFiltered } from "../../../../services/redux/actions/search.actions";
 import "./SelectCollectionPoints.scss"
 
-
-const SelectCollectionPoints = () => {
+const SelectCollectionPoints = ({ onLoadLocationFiltered }) => {
 
   const [slided, setSlided] = useState(false)
-
   const handleSlide = (state) => {
     setSlided(state)
   }
 
+  const handleSearchLocation = (params) => {
+    onLoadLocationFiltered({ category: params })
+  }
+
+
   return (
     <div className="collection-points">
-
       <div className="collection-points--header">
-
         <Title tag="h2" text="Recycling Points" />
         <div className="collection-points--points">
           <span className={slided ? '' : 'active'}
@@ -28,19 +31,19 @@ const SelectCollectionPoints = () => {
       </div>
       <div className="collection-points--body">
         <div className={slided ? 'collection-points--card slided' : 'collection-points--card '} >
-          <Card text="Community Green Stations">
+          <Card onClick={() => handleSearchLocation('COMMUNITY')} text="Community Green Stations">
             <Community width="85" />
           </Card>
-          <Card text="Organisations and Collection Points">
+          <Card onClick={() => handleSearchLocation('COLLECTOR')} text="Organisations and Collection Points">
             <Collection width="85" />
           </Card>
-          <Card text="Clothes Recycling Bank">
+          <Card onClick={() => handleSearchLocation('CLOTHES')} text="Clothes Recycling Bank">
             <Clothes width="85" />
           </Card>
-          <Card text="Waste Separation Bin">
+          <Card onClick={() => handleSearchLocation('WASTE_SEPARATION')} text="Waste Separation Bin">
             <Waste width="85" />
           </Card>
-          <Card text="Private Collector and Recycler">
+          <Card onClick={() => handleSearchLocation('ORGANIZATIONS')} text="Private Collector and Recycler">
             <Private width="85" />
           </Card>
         </div>
@@ -49,4 +52,8 @@ const SelectCollectionPoints = () => {
   )
 }
 
-export default SelectCollectionPoints
+const mapDispatchToProps = dispatch => ({
+  onLoadLocationFiltered: params => dispatch(loadLocationFiltered(params))
+})
+
+export default connect(null, mapDispatchToProps)(SelectCollectionPoints) 
