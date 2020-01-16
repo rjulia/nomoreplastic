@@ -2,8 +2,8 @@ import { gql } from 'apollo-boost';
 
 // Locations
 export const LOCATIONS_QUERY = gql`
-  query getLocations{
-    getLocations{
+  query getLocations($recycleBy: [TypeRecycling],$category: TypeLocationCategory, $district: TypeDistrict){
+    getLocations(recycleBy: $recycleBy , category: $category, district: $district){
       id
       lat
       lng

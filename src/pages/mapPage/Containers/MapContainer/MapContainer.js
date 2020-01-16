@@ -5,7 +5,8 @@ import './MapContianer.scss';
 import { MapGoogleApi, Spinner } from "../../../../components";
 
 const MapContainer = () => {
-  const { data, loading, error } = useQuery(LOCATIONS_QUERY);
+  const { data, loading, error } = useQuery(LOCATIONS_QUERY, 
+    {variables: { category: 'CLOTHES'} });
   if (loading) return <Spinner />;
   if (error) return <p>ERROR</p>;
   console.log(data)
