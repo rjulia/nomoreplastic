@@ -7,6 +7,8 @@ export { default as Collection } from './Collection';
 export { default as Waste } from './Waste';
 export { default as Clothes } from './Clothes';
 export { default as Private } from './Private';
+export { default as Community } from './Community';
+
 
 
 

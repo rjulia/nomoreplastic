@@ -35,6 +35,7 @@ export const DistrictHK = [
 ]
 
 export const TypeOfCollection = [
+  'COMMUNITY',
   'COLLECTOR',
   'ORGANIZATIONS',
   'CLOTHES',

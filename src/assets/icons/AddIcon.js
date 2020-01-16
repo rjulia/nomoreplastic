@@ -2,13 +2,14 @@ import React from 'react';
 
 const AddIcon = ({ ...restProps }) => (
   <span {...restProps}>
-    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-      viewBox="10 10 50 40" width={restProps.width} xmlSpace="preserve">
+    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0" y="0"
+      viewBox="0 0 60 60" width={restProps.width} xmlSpace="preserve">
     
-    <g  stroke="none" strokeWidth="1" fill="none" fillRule="evenodd" strokeLinecap="round" strokeLinejoin="round">
-        <circle id="Oval" className="stroke-1" strokeWidth="3" cx="30" cy="30" r="16"></circle>
-        <path d="M35,30 L25,30" id="Path-14" className="stroke-1" strokeWidth="3"></path>
-        <path d="M30,25 L30,35" id="Path-14" className="stroke-1" strokeWidth="3"></path>
+    <g >
+        <g id="Icon">
+            <path d="M30,12.5 C39.6649831,12.5 47.5,20.3350169 47.5,30 C47.5,39.6649831 39.6649831,47.5 30,47.5 C20.3350169,47.5 12.5,39.6649831 12.5,30 C12.5,20.3350169 20.3350169,12.5 30,12.5 Z M30,15.5 C21.9918711,15.5 15.5,21.9918711 15.5,30 C15.5,38.0081289 21.9918711,44.5 30,44.5 C38.0081289,44.5 44.5,38.0081289 44.5,30 C44.5,21.9918711 38.0081289,15.5 30,15.5 Z M30,23.5 C30.8284271,23.5 31.5,24.1715729 31.5,25 L31.5,25 L31.5,28.5 L35,28.5 C35.8284271,28.5 36.5,29.1715729 36.5,30 C36.5,30.7796961 35.9051119,31.4204487 35.14446,31.4931334 L35,31.5 L31.5,31.5 L31.5,35 C31.5,35.7796961 30.9051119,36.4204487 30.14446,36.4931334 L30,36.5 C29.1715729,36.5 28.5,35.8284271 28.5,35 L28.5,35 L28.5,31.5 L25,31.5 C24.1715729,31.5 23.5,30.8284271 23.5,30 C23.5,29.2203039 24.0948881,28.5795513 24.85554,28.5068666 L25,28.5 L28.5,28.5 L28.5,25 C28.5,24.2203039 29.0948881,23.5795513 29.85554,23.5068666 Z" ></path>
+            <rect id="Rectangle" x="0" y="0" width="60" height="60" fill="none"></rect>
+        </g>
     </g>
     
     </svg>

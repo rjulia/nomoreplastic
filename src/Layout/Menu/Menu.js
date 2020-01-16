@@ -48,12 +48,12 @@ const Menu = () => {
         </NavLink>
         <NavLink to="contact">
           <ButtonMenu text={localization.home.contact}>
-            <EmailIcon width="60px" padding="5px" />
+            <EmailIcon width="60px" />
           </ButtonMenu>
         </NavLink>
         <NavLink to="add">
           <ButtonMenu text={localization.home.add}>
-            <AddIcon width="60px" padding="5px" />
+            <AddIcon width="60px" />
           </ButtonMenu>
         </NavLink>
       </div>

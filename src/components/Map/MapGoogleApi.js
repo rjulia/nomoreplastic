@@ -2,8 +2,14 @@ import React from 'react';
 import { connect } from "react-redux";
 import { GoogleMap, useLoadScript, LoadScript, MarkerClusterer, Marker } from '@react-google-maps/api'
 import { Spinner } from "../index";
-import PointCollectors from '../../assets/icons/ic_poi_organization.svg';
+import PointCollectors from '../../assets/icons/ic_poi_association.svg';
 import PointClothes from '../../assets/icons/ic_poi_clothes.svg';
+import PointWaste from '../../assets/icons/ic_poi_bin.svg';
+import PointCommunity from '../../assets/icons/ic_poi_green_point.svg';
+import PointOrganizations from '../../assets/icons/ic_poi_private.svg';
+
+
+
 
 
 const MapContainer = ({ data, settings }) => {
@@ -14,6 +20,21 @@ const MapContainer = ({ data, settings }) => {
   //const apikey = process.env.REACT_APP_API_KEY_MAPS;
   const apikey = undefined;
 
+  const PointImg = (category) => {
+    console.log(category)
+    switch (category) {
+      case 'COMMUNITY':
+        return PointCommunity
+      case "COLLECTOR":
+        return PointCollectors
+      case 'ORGANIZATIONS':
+        return PointOrganizations
+      case 'CLOTHES':
+        return PointClothes
+      default:
+        return PointWaste
+    }
+  }
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: apikey,
@@ -37,37 +58,37 @@ const MapContainer = ({ data, settings }) => {
         options={undefined}
         styles={[
           {
-            url: "/images/black_dot.png",
-            height: 26,
-            width: 26,
+            url: "/images/ic_cluster_01.svg",
+            height: 32,
+            width: 32,
+            fontFamily: "Rubik",
+            textColor: "#FFF",
+          },
+          {
+            url: "/images/ic_cluster_02.svg",
+            height: 38,
+            width: 38,
+            fontFamily: "Rubik",
+            textColor: "#FFF",
+          },
+          {
+            url: "/images/ic_cluster_03.svg",
+            height: 44,
+            width: 44,
+            fontFamily: "Rubik",
+            textColor: "#FFF",
+          },
+          {
+            url: "/images/ic_cluster_04.svg",
+            height: 50,
+            width: 50,
             fontFamily: "Rubik",
             textColor: "#FFF",
           },
           {
             url: "/images/black_dot.png",
-            height: 35,
-            width: 35,
-            fontFamily: "Rubik",
-            textColor: "#FFF",
-          },
-          {
-            url: "/images/black_dot.png",
-            height: 34,
-            width: 34,
-            fontFamily: "Rubik",
-            textColor: "#FFF",
-          },
-          {
-            url: "/images/black_dot.png",
-            height: 40,
-            width: 40,
-            fontFamily: "Rubik",
-            textColor: "#FFF",
-          },
-          {
-            url: "/images/black_dot.png",
-            height: 46,
-            width: 46,
+            height: 50,
+            width: 50,
             fontFamily: "Rubik",
             textColor: "#FFF",
           }
@@ -75,12 +96,10 @@ const MapContainer = ({ data, settings }) => {
       >
         {
           (clusterer) => getLocations.map((location, i) => {
-            console.log(location)
-            const icon = location.category === "COLLECTOR" ? PointCollectors : PointClothes;
 
             return <Marker
               key={i}
-              icon={icon}
+              icon={PointImg(location.category)}
               position={location}
               clusterer={clusterer}
             />

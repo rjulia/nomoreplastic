@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Title } from '../../../../components';
 import Card from "../Card/Card";
-import { Collection, Waste, Private, Clothes } from "../../../../assets/icons";
+import { Collection, Waste, Private, Clothes, Community } from "../../../../assets/icons";
 import "./SelectCollectionPoints.scss"
 
 
@@ -28,6 +28,9 @@ const SelectCollectionPoints = () => {
       </div>
       <div className="collection-points--body">
         <div className={slided ? 'collection-points--card slided' : 'collection-points--card '} >
+          <Card text="Community Green Stations">
+            <Community width="85" />
+          </Card>
           <Card text="Organisations and Collection Points">
             <Collection width="85" />
           </Card>

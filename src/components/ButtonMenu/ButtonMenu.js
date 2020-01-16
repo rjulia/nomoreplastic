@@ -14,7 +14,7 @@ const Button = ({ children, onClick, text }) => {
         {children} <FaAngleRight />
 
       </div>
-      <p> {text} </p>
+      <p className="icon__text"> {text} </p>
     </div>
   )
 }
