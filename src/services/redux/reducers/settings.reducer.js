@@ -28,7 +28,6 @@ export default function LanguageReducer(state = InitialSettingsState, action) {
     }
 
     case SETTINGS_SET_LANGUAGE: {
-      console.log(action.payload.language)
       localization.setLanguage(action.payload.language);
       localStorage.setItem('language', action.payload.language);
       return {

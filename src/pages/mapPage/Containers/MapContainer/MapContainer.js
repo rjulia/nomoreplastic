@@ -6,7 +6,6 @@ import { LOCATIONS_QUERY } from "../../../../services/apollo/queries";
 import './MapContianer.scss';
 
 const MapContainer = ({ search }) => {
-  console.log(search)
   const { data, loading, error } = useQuery(LOCATIONS_QUERY, { variables: search });
   if (loading) return <Spinner />;
   if (error) return <p>ERROR</p>;
