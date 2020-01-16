@@ -1,20 +1,34 @@
-import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
-import { LOCATIONS_QUERY } from "../../../../services/apollo/queries";
+import React, { useEffect } from 'react';
+import { connect } from "react-redux";
+import { searchAllLocations } from "../../../../services/redux/actions/search.actions";
 import './MapContianer.scss';
 import { MapGoogleApi, Spinner } from "../../../../components";
 
-const MapContainer = () => {
-  const { data, loading, error } = useQuery(LOCATIONS_QUERY, 
-    {variables: { category: 'CLOTHES'} });
-  if (loading) return <Spinner />;
-  if (error) return <p>ERROR</p>;
-  console.log(data)
+const MapContainer = ({ onSearchLocations, locations, locationsLoading }) => {
+
+  onSearchLocations()
   return (
     <div className="map">
-      <MapGoogleApi data={data} />
+      {locationsLoading && <Spinner />}
+      {locations && <MapGoogleApi data={locations} />}
     </div>
   )
 }
 
-export default MapContainer
+const mapStateToProps = state => {
+
+  return {
+    locations: state.locations.locations,
+    locationsLoading: state.locations.locationsLoading,
+  }
+};
+
+const mapDispatchToProps = dispatch => ({
+  onSearchLocations: params => dispatch(searchAllLocations())
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MapContainer);
+

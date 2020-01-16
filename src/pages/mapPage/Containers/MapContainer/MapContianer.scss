@@ -10,5 +10,11 @@
   top: 20px;
   width: calc(100% - 632px);
   height: calc(100vh - 40px);
-  background-color: #ddd
+  background-color: #ddd;
+
+  .spinner__container {
+
+    width: calc(100% - 632px);
+
+  }
 }

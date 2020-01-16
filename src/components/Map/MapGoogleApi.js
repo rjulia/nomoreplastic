@@ -10,18 +10,13 @@ import PointOrganizations from '../../assets/icons/ic_poi_private.svg';
 
 
 
-
-
 const MapContainer = ({ data, settings }) => {
 
-  const { getLocations } = data
   const { coords } = settings
   const center = { lat: coords.lat, lng: coords.lng };
-  //const apikey = process.env.REACT_APP_API_KEY_MAPS;
   const apikey = undefined;
 
   const PointImg = (category) => {
-    console.log(category)
     switch (category) {
       case 'COMMUNITY':
         return PointCommunity
@@ -95,7 +90,7 @@ const MapContainer = ({ data, settings }) => {
         ]}
       >
         {
-          (clusterer) => getLocations.map((location, i) => {
+          (clusterer) => data.map((location, i) => {
 
             return <Marker
               key={i}
