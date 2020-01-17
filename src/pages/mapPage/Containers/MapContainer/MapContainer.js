@@ -18,7 +18,7 @@ const MapContainer = ({ search }) => {
 
 const mapStateToProps = state => {
   return {
-    search: state.locations.search,
+    search: state.searchs.search,
   }
 };
 

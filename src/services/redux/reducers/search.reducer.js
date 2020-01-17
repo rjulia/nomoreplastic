@@ -1,5 +1,6 @@
 import {
-  SEARCH_LOCATIONS
+  SEARCH_LOCATIONS,
+  CLEAN_LOCATIONS
 } from '../actions/types';
 
 
@@ -13,7 +14,12 @@ const InitialSettingsState = {
 
 export default function SearchReducers(state = InitialSettingsState, action) {
   switch (action.type) {
-
+    case CLEAN_LOCATIONS:
+      return {
+        ...state,
+        isOnSearching: false,
+        search: {}
+      }
     case SEARCH_LOCATIONS:
 
       return {

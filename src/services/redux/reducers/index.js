@@ -7,6 +7,6 @@ import SearchReducers from "./search.reducer";
 export default combineReducers({
 
   settings: SettingsReducer,
-  locations: SearchReducers
+  searchs: SearchReducers
 
 });
