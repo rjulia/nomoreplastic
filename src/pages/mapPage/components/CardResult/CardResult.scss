@@ -1,0 +1,45 @@
+@import '../../../../scss/variables.scss';
+
+.card-result {
+  display: block;
+  margin-bottom: 30px;
+
+  .card-result__text {
+
+    height: 24px;
+    width: 361px;
+    color: $black;
+    font-family: $general;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    line-height: 24px;
+
+  }
+
+  .card-result__parf {
+    height: 40px;
+    width: 400px;
+    opacity: 0.8;
+    color: $text_gray;
+    font-family: $general;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+    margin: 0;
+  }
+
+  .card-result__distance {
+    height: 12px;
+    width: 36px;
+    color: $primary;
+    font-family: $general;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.42px;
+    line-height: 12px;
+    margin-bottom: 22px;
+  }
+
+}

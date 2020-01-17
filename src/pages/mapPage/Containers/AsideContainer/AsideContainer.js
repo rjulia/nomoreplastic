@@ -5,7 +5,6 @@ import { SelectCollectionPoints, NewsAside, Search } from '../../components';
 import ResultConatiner from "../ResultConatiner/ResultContainer";
 
 const AsideContainer = ({ isOnSearching }) => {
-  console.log(isOnSearching)
   return (
     <div className="aside">
       <div className="aside__container">

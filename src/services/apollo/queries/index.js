@@ -5,9 +5,11 @@ export const LOCATIONS_QUERY = gql`
   query getLocations($recycleBy: [TypeRecycling],$category: TypeLocationCategory, $district: TypeDistrict){
     getLocations(recycleBy: $recycleBy , category: $category, district: $district){
       id
+      name
       lat
       lng
       category
+      address
     }
   }
 `;
@@ -17,7 +19,9 @@ export const LOCATION_QUERY = gql`
     getLocation (id: $id) {
       id
       name
-      content
+      content__en
+      content__zh
+      address
       imageUrl
       webUrl
       lat
