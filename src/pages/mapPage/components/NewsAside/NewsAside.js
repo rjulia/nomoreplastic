@@ -1,16 +1,23 @@
 import React from 'react'
-import { Title } from "../../../../components";
+import { Title, Spinner } from "../../../../components";
 import NewsCard from '../NewsCard/NewsCard';
-import './NewsAside.scss'
-const item = {
-  title: 'Hong Kong beach cleanup',
-  text: 'Plastic Free Seas and DB Green welcome individuals to join us for this family -friendly cleanup.',
-  date: '13 June 2020'
-}
+import './NewsAside.scss';
+import { graphql } from 'react-apollo';
+import { flowRight as compose } from 'lodash';
+import { EVENTS_QUERY, NEWS_QUERY } from "../../../../services/apollo/queries";
 
-const myArray = [0, 1, 2, 3]
 
-const NewsAside = () => {
+let results = []
+
+const NewsAside = ({ getEvents, getNewsInfo }) => {
+
+  if (getEvents.getEvents && getNewsInfo.getNewsInfo) {
+    results = getEvents.getEvents.concat(getNewsInfo.getNewsInfo)
+  }
+
+  const showNews = (results.length == 0) ? <Spinner /> : results.map((news, id) => (
+    <NewsCard key={id} item={news} />
+  ))
   return (
     <div className="news">
       <div className="news--header">
@@ -20,12 +27,18 @@ const NewsAside = () => {
         </div>
       </div>
       <div className="news--body">
-        {myArray.map(id => (
-          <NewsCard key={id} item={item} />
-        ))}
+        {showNews}
       </div>
     </div>
   )
 }
 
-export default NewsAside
+export default compose(
+  graphql(EVENTS_QUERY, {
+    name: "getEvents"
+  }),
+  graphql(NEWS_QUERY, {
+    name: "getNewsInfo"
+  }),
+)(NewsAside);
+

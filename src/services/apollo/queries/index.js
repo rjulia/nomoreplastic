@@ -28,3 +28,55 @@ export const LOCATION_QUERY = gql`
       recycleBy
     }
 }`
+
+
+export const NEWS_QUERY = gql`
+  query getNewsInfo {
+    getNewsInfo {
+    author
+    title
+    description
+    publishedAt
+    urlToImage
+    url
+    source {
+        name
+      }
+    }
+  }
+`;
+
+export const EVENTS_QUERY = gql`
+  query getEvents{
+    getEvents{
+      id
+      title
+      date
+      imageUrl
+      category
+      content__zh
+      content__en
+    }
+  }
+`;
+
+export const EVENT_QUERY = gql`
+  query getEvent($id: ID) {
+    getEvent(id: $id) {
+      id
+      title
+      place
+      content__zh
+      content__en
+      date
+      imageUrl
+      webUrl
+      lat
+      lng
+      date
+      email
+      category
+      facebook
+      recomendations
+    }
+}`
