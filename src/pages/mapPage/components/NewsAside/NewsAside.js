@@ -17,6 +17,7 @@ const NewsAside = ({ getEvents, getNewsInfo }) => {
   let results = []
   let filterResults = []
   const [state, setState] = useState([]);
+  const [asFilter, setAsFilter] = useState('')
   if (getEvents.getEvents && getNewsInfo.getNewsInfo) {
     filterResults = results = getEvents.getEvents.concat(getNewsInfo.getNewsInfo);
   }
@@ -29,12 +30,15 @@ const NewsAside = ({ getEvents, getNewsInfo }) => {
 
     if (filter === 'EVENTS') {
       filterResults = results.filter(item => item.__typename === "Event")
-      setState(filterResults)
+      setState(filterResults);
+      setAsFilter('EVENTS');
     } else if (filter === 'NEWS') {
       filterResults = results.filter(item => item.__typename === "News")
-      setState(filterResults)
+      setState(filterResults);
+      setAsFilter('NEWS');
     } else {
-      setState(results)
+      setState(results);
+      setAsFilter('');
     }
   }
 
@@ -45,9 +49,9 @@ const NewsAside = ({ getEvents, getNewsInfo }) => {
       <div className="news__header">
         <Title tag="h2" text="News & Eventes" />
         <div className="news__filter">
-          <span onClick={() => handleFilterNews()} className="active">ALL</span>
-          <span onClick={() => handleFilterNews("NEWS")}>NEWS</span>
-          <span onClick={() => handleFilterNews("EVENTS")}>EVENTS</span>
+          <span className={asFilter == "" ? "active" : ''} onClick={() => handleFilterNews()}>ALL</span>
+          <span className={asFilter == "NEWS" ? "active" : ''} onClick={() => handleFilterNews("NEWS")}>NEWS</span>
+          <span className={asFilter == "EVENTS" ? "active" : ''} onClick={() => handleFilterNews("EVENTS")}>EVENTS</span>
         </div>
       </div>
       <div className="news__body">
