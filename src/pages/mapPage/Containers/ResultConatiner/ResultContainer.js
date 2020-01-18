@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { cleanLocationFiltered } from "../../../../services/redux/actions/search.actions";
+import { cleanFilter } from "../../../../services/redux/actions/search.actions";
 import { SearchResults } from "../../components";
 import { ButtonBack } from "../../../../components";
 
@@ -23,7 +23,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  onCleanLocationFiltered: params => dispatch(cleanLocationFiltered(params))
+  onCleanLocationFiltered: params => dispatch(cleanFilter(params))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ResultContainer)

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Title } from '../../../../components';
 import Card from "../Card/Card";
 import { Collection, Waste, Private, Clothes, Community } from "../../../../assets/icons";
-import { loadLocationFiltered } from "../../../../services/redux/actions/search.actions";
+import { cleanAndGetLocationFiltered } from "../../../../services/redux/actions/search.actions";
 import "./SelectCollectionPoints.scss"
 
 const SelectCollectionPoints = ({ onLoadLocationFiltered }) => {
@@ -53,7 +53,7 @@ const SelectCollectionPoints = ({ onLoadLocationFiltered }) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  onLoadLocationFiltered: params => dispatch(loadLocationFiltered(params))
+  onLoadLocationFiltered: params => dispatch(cleanAndGetLocationFiltered(params))
 })
 
 export default connect(null, mapDispatchToProps)(SelectCollectionPoints) 

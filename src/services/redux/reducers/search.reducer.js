@@ -1,7 +1,8 @@
 import {
   SEARCH_LOCATIONS,
-  GET_LOCATIONS,
-  CLEAN_LOCATIONS
+  SEARCH_GET_LOCATIONS,
+  SEARCH_CLEAN_FILTER,
+  SEARCH_CLEAN_LOCATIONS
 } from '../actions/types';
 
 
@@ -17,22 +18,26 @@ const InitialSettingsState = {
 export default function SearchReducers(state = InitialSettingsState, action) {
   switch (action.type) {
     case SEARCH_LOCATIONS:
-
       return {
         ...state,
         isOnSearching: true,
         search: action.payload.filter
       };
-    case GET_LOCATIONS:
+    case SEARCH_GET_LOCATIONS:
       return {
         ...state,
         locations: action.payload.locations
       }
-    case CLEAN_LOCATIONS:
+    case SEARCH_CLEAN_FILTER:
       return {
         ...state,
         isOnSearching: false,
         search: {}
+      }
+    case SEARCH_CLEAN_LOCATIONS:
+      return {
+        ...state,
+        locations: [],
       }
     default:
       return state;
