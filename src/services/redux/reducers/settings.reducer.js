@@ -11,8 +11,8 @@ import localization from '../../../localization';
 const InitialSettingsState = {
   language: localization.getLanguage(),
   coords: {
-    lat: 22.3693236,
-    lng: 114.0405858
+    lat: 0,
+    lng: 0
 
   }
 };

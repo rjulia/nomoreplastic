@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { GoogleMap, useLoadScript, LoadScript, MarkerClusterer, Marker } from '@react-google-maps/api'
+import { GoogleMap, useLoadScript, MarkerClusterer, Marker } from '@react-google-maps/api'
 import { Spinner } from "../index";
 import PointCollectors from '../../assets/icons/ic_poi_association.svg';
 import PointClothes from '../../assets/icons/ic_poi_clothes.svg';
@@ -14,8 +14,8 @@ const MapContainer = ({ data, settings }) => {
 
   const { coords } = settings
   const center = { lat: coords.lat, lng: coords.lng };
-  //const apikey = process.env.REACT_APP_API_KEY_MAPS;
-  const apikey = null;
+  const apikey = process.env.REACT_APP_API_KEY_MAPS;
+  //const apikey = null;
 
 
   const PointImg = (category) => {
@@ -49,7 +49,7 @@ const MapContainer = ({ data, settings }) => {
         height: "auto",
         width: "100%"
       }}
-      zoom={12}
+      zoom={15}
       center={center}>
       <MarkerClusterer
         options={undefined}
@@ -109,8 +109,8 @@ const MapContainer = ({ data, settings }) => {
   if (loadError) {
     return <div>Map cannot be loaded right now, sorry.</div>
   }
-
   return isLoaded ? renderMap() : <Spinner />
+
 }
 
 

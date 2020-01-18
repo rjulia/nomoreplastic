@@ -2,6 +2,17 @@ import React from 'react';
 import { connect } from "react-redux";
 import { getPosition } from "../services/redux/actions/settings.actions";
 import { geolocated } from "react-geolocated";
+import styled from 'styled-components';
+
+const Wrapper = styled('div')`
+  width:60vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+
 
 const GetCurrentPosition = (props) => {
 
@@ -13,7 +24,7 @@ const GetCurrentPosition = (props) => {
   return !props.isGeolocationAvailable ? (<div>Your browser does not support Geolocation</div>) :
     !props.isGeolocationEnabled ? (<div>Geolocation is not enabled</div>) :
       props.coords ? (<div></div>) : (
-        <div>Getting the location data&hellip; </div>
+        <Wrapper><p>Getting the location data&hellip;</p></Wrapper>
       );
 }
 

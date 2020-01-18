@@ -45,6 +45,7 @@
       flex-wrap: nowrap;
       margin-left: 0;
       animation: slide_reverse 1s;
+      cursor: pointer;
 
       &.slided {
         animation: slide 1s;

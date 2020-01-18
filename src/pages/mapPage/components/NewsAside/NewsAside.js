@@ -49,9 +49,9 @@ const NewsAside = ({ getEvents, getNewsInfo }) => {
       <div className="news__header">
         <Title tag="h2" text="News & Eventes" />
         <div className="news__filter">
-          <span className={asFilter == "" ? "active" : ''} onClick={() => handleFilterNews()}>ALL</span>
-          <span className={asFilter == "NEWS" ? "active" : ''} onClick={() => handleFilterNews("NEWS")}>NEWS</span>
-          <span className={asFilter == "EVENTS" ? "active" : ''} onClick={() => handleFilterNews("EVENTS")}>EVENTS</span>
+          <span className={asFilter === "" ? "active" : ''} onClick={() => handleFilterNews()}>ALL</span>
+          <span className={asFilter === "NEWS" ? "active" : ''} onClick={() => handleFilterNews("NEWS")}>NEWS</span>
+          <span className={asFilter === "EVENTS" ? "active" : ''} onClick={() => handleFilterNews("EVENTS")}>EVENTS</span>
         </div>
       </div>
       <div className="news__body">

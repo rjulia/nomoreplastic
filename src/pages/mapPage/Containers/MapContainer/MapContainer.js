@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from "react-redux";
 import { useQuery } from '@apollo/react-hooks';
 import { MapGoogleApi, Spinner } from "../../../../components";
