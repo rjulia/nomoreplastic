@@ -1,23 +1,35 @@
 import React from 'react';
+import { connect } from "react-redux";
 import { Title } from "../../../../components";
 import { CardResult, DropdownSearchResults } from "../index";
 import { DistrictHK, TypeOfCollection } from "../../../../utils/constants";
+import { cleanAndGetLocationFiltered } from "../../../../services/redux/actions/search.actions";
 import './SearchResults.scss'
 
 
 
 
 
-const SearchResults = ({ locations }) => {
-  console.log(locations)
+const SearchResults = ({ locations, onLoadLocationFiltered }) => {
 
-  function toggleSelected(item) {
-    // let temp = this.state[key]
-    // temp[id].selected = !temp[id].selected
-    // this.setState({
-    //   [key]: temp
-    // })
+
+  const handleSearchLocationByCategory = (params) => {
+    if (params === "ALL") {
+      onLoadLocationFiltered()
+    } else {
+      onLoadLocationFiltered({ category: params })
+    }
   }
+
+  const handleSearchLocationByDistric = (params) => {
+    if (params === "ALL") {
+      onLoadLocationFiltered()
+    } else {
+      onLoadLocationFiltered({ district: params })
+    }
+  }
+
+
 
   return (
     <div className="search-results">
@@ -27,11 +39,12 @@ const SearchResults = ({ locations }) => {
         <DropdownSearchResults
           title="TYPE"
           list={TypeOfCollection}
-          toggleItem={(item) => toggleSelected(item)}
+          toggleItem={(item) => handleSearchLocationByCategory(item)}
         />
         <DropdownSearchResults
           title="Distric"
-          list={DistrictHK} />
+          list={DistrictHK}
+          toggleItem={(item) => handleSearchLocationByDistric(item)} />
       </div>
       <div className="search-result__results">
         {locations && locations.map(item => (
@@ -43,4 +56,8 @@ const SearchResults = ({ locations }) => {
   )
 }
 
-export default SearchResults
+const mapDispatchToProps = dispatch => ({
+  onLoadLocationFiltered: params => dispatch(cleanAndGetLocationFiltered(params))
+})
+
+export default connect(null, mapDispatchToProps)(SearchResults) 

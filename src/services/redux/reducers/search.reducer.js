@@ -21,7 +21,10 @@ export default function SearchReducers(state = InitialSettingsState, action) {
       return {
         ...state,
         isOnSearching: true,
-        search: action.payload.filter
+        search: {
+          ...state.search,
+          ...action.payload.filter
+        }
       };
     case SEARCH_GET_LOCATIONS:
       return {
