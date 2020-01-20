@@ -1,5 +1,4 @@
 import React from 'react'
-import localization from "../../localization"
 import styled from 'styled-components';
 import AddPicture from "../../assets/images/add.jpg";
 

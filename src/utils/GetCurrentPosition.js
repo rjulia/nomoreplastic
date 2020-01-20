@@ -12,8 +12,6 @@ const Wrapper = styled('div')`
   align-items: center;
 `
 
-
-
 const GetCurrentPosition = (props) => {
 
   const { onGetLocation } = props
