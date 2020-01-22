@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import { Title, Paragraph } from '../../../../components'
 import Waste from '../../../../assets/images/beach-plastic.webp';
 import './NewsCard.scss';

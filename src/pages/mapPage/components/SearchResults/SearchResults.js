@@ -7,15 +7,12 @@ import { cleanAndGetLocationFiltered } from "../../../../services/redux/actions/
 import './SearchResults.scss'
 
 
-
-
-
-const SearchResults = ({ locations, onLoadLocationFiltered }) => {
+const SearchResults = ({ locations, onLoadLocationFiltered, searchs }) => {
 
 
   const handleSearchLocationByCategory = (params) => {
     if (params === "ALL") {
-      onLoadLocationFiltered()
+      onLoadLocationFiltered({ category: null })
     } else {
       onLoadLocationFiltered({ category: params })
     }
@@ -38,11 +35,13 @@ const SearchResults = ({ locations, onLoadLocationFiltered }) => {
       <div className="search-results__filter--box">
         <DropdownSearchResults
           title="TYPE"
+          selectTitle={searchs.search.category}
           list={TypeOfCollection}
           toggleItem={(item) => handleSearchLocationByCategory(item)}
         />
         <DropdownSearchResults
-          title="Distric"
+          title="District"
+          selectTitle={searchs.search.district}
           list={DistrictHK}
           toggleItem={(item) => handleSearchLocationByDistric(item)} />
       </div>
@@ -55,9 +54,14 @@ const SearchResults = ({ locations, onLoadLocationFiltered }) => {
     </div>
   )
 }
+const mapStateToProps = state => {
+  return {
+    searchs: state.searchs,
+  }
+};
 
 const mapDispatchToProps = dispatch => ({
   onLoadLocationFiltered: params => dispatch(cleanAndGetLocationFiltered(params))
 })
 
-export default connect(null, mapDispatchToProps)(SearchResults) 
+export default connect(mapStateToProps, mapDispatchToProps)(SearchResults) 

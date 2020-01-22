@@ -24,7 +24,7 @@ const Search = () => {
 
   return (
     <FormControl className="search" >
-      <InputLabel id="kindOfRecycle">What do you want to reclycle</InputLabel>
+      {/* <InputLabel id="kindOfRecycle">What do you want to reclycle</InputLabel>
       <Select
         labelId="kindOfRecycle"
         id="demo-mutiple-checkbox"
@@ -41,7 +41,7 @@ const Search = () => {
             <ListItemText primary={type} />
           </MenuItem>
         ))}
-      </Select>
+      </Select> */}
     </FormControl>
   )
 }

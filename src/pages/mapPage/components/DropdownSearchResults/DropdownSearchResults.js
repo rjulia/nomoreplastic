@@ -7,29 +7,34 @@ class DropdownSearchResults extends React.Component {
     super(props)
     this.state = {
       listOpen: false,
-      headerTitle: this.props.title
+      headerTitle: this.props.title,
+
     }
   }
 
   toggleList() {
     this.setState(prevState => ({
-      listOpen: !prevState.listOpen
+      listOpen: !prevState.listOpen,
     }))
   }
   render() {
-    const { list, toggleItem } = this.props
+    const { list, toggleItem, selectTitle } = this.props
     const { listOpen, headerTitle } = this.state
     return (
       <div className="dd-wrapper">
         <span className="dd-label">{headerTitle}</span>
         <div className="dd-header" onClick={() => this.toggleList()}>
-          <div className="dd-header-title">{headerTitle}</div>
+          <div className="dd-header-title">{selectTitle || "ALL"}</div>
           {listOpen
             ? <FaAngleUp size="10" />
             : <FaAngleDown size="10" />
           }
         </div>
         {listOpen && <ul className="dd-list">
+          <li className="dd-list-item" onClick={() => {
+            toggleItem("ALL")
+            this.toggleList()
+          }}>ALL</li>
           {list.map((item, id) => (
             <li
               className="dd-list-item"
