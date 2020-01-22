@@ -38,7 +38,6 @@ export default function LanguageReducer(state = InitialSettingsState, action) {
     }
 
     case SETTINGS_GET_POSITION: {
-      console.log(action.payload)
       return {
         ...state,
         coords: {

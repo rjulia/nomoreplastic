@@ -18,7 +18,7 @@ const NoAllowCurretPosition = (onGetLocation) => {
 }
 
 const GetCurrentPosition = (props) => {
-  console.log(props)
+
   const { onGetLocation } = props
   if (props.coords) {
     onGetLocation({

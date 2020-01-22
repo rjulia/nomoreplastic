@@ -10,8 +10,6 @@ import store from './services/redux/store'
 import './index.scss';
 import App from './App';
 
-
-console.log(process.env.NODE_ENV)
 const link = new HttpLink(
   { uri: process.env.REACT_APP_LINK_API || 'http://localhost:5000/graphql' }
 );
