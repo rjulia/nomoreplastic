@@ -7,6 +7,8 @@ import PointClothes from '../../assets/icons/ic_poi_clothes.svg';
 import PointWaste from '../../assets/icons/ic_poi_bin.svg';
 import PointCommunity from '../../assets/icons/ic_poi_green_point.svg';
 import PointOrganizations from '../../assets/icons/ic_poi_private.svg';
+import Pin from '../../assets/icons/pin.png';
+
 
 
 
@@ -51,6 +53,10 @@ const MapContainer = ({ data, settings }) => {
       }}
       zoom={center.zoom}
       center={center}>
+      <Marker
+        position={center}
+        icon={Pin}
+      />
       <MarkerClusterer
         options={undefined}
         styles={[

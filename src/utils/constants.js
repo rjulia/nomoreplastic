@@ -17,9 +17,9 @@ export const DistrictHK = [
   {
     name: 'CENTRAL_WESTERN',
     coords: {
-      lat: 22.2446232,
-      lng: 114.1538202,
-      zoom: 13
+      lat: 22.272457,
+      lng: 114.1350874,
+      zoom: 14
 
     }
   },
