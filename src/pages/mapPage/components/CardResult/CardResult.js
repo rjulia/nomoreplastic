@@ -9,9 +9,9 @@ const CardResult = ({ item, coords }) => {
 
   const { address, name } = item;
   const [distance, setDistance] = useState('')
-  getDistance(coords, { lat: item.lat, lng: item.lng }).then(data => {
-    if (data.rows["0"]) setDistance(data.rows["0"].elements["0"].distance.text)
-  })
+  // getDistance(coords, { lat: item.lat, lng: item.lng }).then(data => {
+  //   if (data.rows["0"]) setDistance(data.rows["0"].elements["0"].distance.text)
+  // })
 
   return (
     <div className="card-result">

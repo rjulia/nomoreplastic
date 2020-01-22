@@ -13,7 +13,7 @@ import PointOrganizations from '../../assets/icons/ic_poi_private.svg';
 const MapContainer = ({ data, settings }) => {
 
   const { coords } = settings
-  const center = { lat: coords.lat, lng: coords.lng };
+  const center = { lat: coords.lat, lng: coords.lng, zoom: coords.zoom };
   const apikey = process.env.REACT_APP_API_KEY_MAPS;
   //const apikey = null;
 
@@ -47,9 +47,9 @@ const MapContainer = ({ data, settings }) => {
       onLoad={onLoad}
       mapContainerStyle={{
         height: "auto",
-        width: "100%"
+        width: "70vw"
       }}
-      zoom={15}
+      zoom={center.zoom}
       center={center}>
       <MarkerClusterer
         options={undefined}

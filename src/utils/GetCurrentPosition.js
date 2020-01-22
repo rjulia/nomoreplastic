@@ -12,15 +12,24 @@ const Wrapper = styled('div')`
   align-items: center;
 `
 
-const GetCurrentPosition = (props) => {
+const NoAllowCurretPosition = (onGetLocation) => {
 
+  onGetLocation({ lat: 22.3526632, lng: 114.1386, zoom: 11 })
+}
+
+const GetCurrentPosition = (props) => {
+  console.log(props)
   const { onGetLocation } = props
   if (props.coords) {
-    onGetLocation({ lat: props.coords.latitude, lng: props.coords.longitude })
+    onGetLocation({
+      lat: props.coords.latitude,
+      lng: props.coords.longitude,
+      zoom: 13
+    })
   }
 
-  return !props.isGeolocationAvailable ? (<div>Your browser does not support Geolocation</div>) :
-    !props.isGeolocationEnabled ? (<div>Geolocation is not enabled</div>) :
+  return !props.isGeolocationAvailable ? (<Wrapper>Your browser does not support Geolocation</Wrapper>) :
+    !props.isGeolocationEnabled ? (<div>{NoAllowCurretPosition(onGetLocation)}</div>) :
       props.coords ? (<div></div>) : (
         <Wrapper><p>Getting the location data&hellip;</p></Wrapper>
       );

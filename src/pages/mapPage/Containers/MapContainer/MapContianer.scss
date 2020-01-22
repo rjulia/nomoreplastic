@@ -12,9 +12,10 @@
   height: calc(100vh - 40px);
   background-color: #ddd;
 
-  .spinner__container {
+}
 
-    width: calc(100% - 632px);
+.spinner__container.spinner__map {
 
-  }
+  width: calc(100% - 532px);
+
 }

@@ -11,8 +11,9 @@ import localization from '../../../localization';
 const InitialSettingsState = {
   language: localization.getLanguage(),
   coords: {
-    lat: 0,
-    lng: 0
+    lat: 22.3526632,
+    lng: 113.987616,
+    zoom: 13
 
   }
 };
@@ -41,7 +42,8 @@ export default function LanguageReducer(state = InitialSettingsState, action) {
         ...state,
         coords: {
           lat: action.payload.coords.lat,
-          lng: action.payload.coords.lng
+          lng: action.payload.coords.lng,
+          zoom: action.payload.coords.zoom
         }
       }
     }

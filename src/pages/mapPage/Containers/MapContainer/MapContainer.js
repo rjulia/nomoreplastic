@@ -8,7 +8,7 @@ import './MapContianer.scss';
 
 const MapContainer = ({ search, onGetLocations }) => {
   const { data, loading, error } = useQuery(LOCATIONS_QUERY, { variables: search });
-  if (loading) return <Spinner />;
+  if (loading) return <Spinner className="spinner__map" />;
   if (error) return <p>ERROR</p>;
   onGetLocations(data.getLocations)
   return (
