@@ -43,7 +43,7 @@ class DropdownSearchResults extends React.Component {
                 toggleItem(item)
                 this.toggleList()
               }}
-            >{item}</li>
+            >{item.name || item}</li>
           ))}
         </ul>}
       </div>

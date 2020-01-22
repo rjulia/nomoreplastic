@@ -4,10 +4,12 @@ import { Title } from "../../../../components";
 import { CardResult, DropdownSearchResults } from "../index";
 import { DistrictHK, TypeOfCollection } from "../../../../utils/constants";
 import { cleanAndGetLocationFiltered } from "../../../../services/redux/actions/search.actions";
+import { getPosition } from "../../../../services/redux/actions/settings.actions";
+
 import './SearchResults.scss'
 
 
-const SearchResults = ({ locations, onLoadLocationFiltered, searchs }) => {
+const SearchResults = ({ locations, onLoadLocationFiltered, searchs, onGetPosition }) => {
 
 
   const handleSearchLocationByCategory = (params) => {
@@ -19,10 +21,12 @@ const SearchResults = ({ locations, onLoadLocationFiltered, searchs }) => {
   }
 
   const handleSearchLocationByDistric = (params) => {
-    if (params === "ALL") {
+    console.log(params)
+    if (params.name === "ALL") {
       onLoadLocationFiltered()
     } else {
-      onLoadLocationFiltered({ district: params })
+      onLoadLocationFiltered({ district: params.name })
+      onGetPosition(params.coords)
     }
   }
 
@@ -61,7 +65,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  onLoadLocationFiltered: params => dispatch(cleanAndGetLocationFiltered(params))
+  onLoadLocationFiltered: params => dispatch(cleanAndGetLocationFiltered(params)),
+  onGetPosition: params => dispatch(getPosition(params))
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchResults) 
