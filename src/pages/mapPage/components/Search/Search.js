@@ -1,32 +1,31 @@
 import React from 'react'
-//import { Input, InputLabel, MenuItem, FormControl, ListItemText, Select, Checkbox } from '@material-ui/core';
-//import { TypeRecycling } from "../../../../utils/constants";
-import { FormControl } from '@material-ui/core';
+import { Input, InputLabel, MenuItem, FormControl, ListItemText, Select, Checkbox } from '@material-ui/core';
+import { TypeRecycling } from "../../../../utils/constants";
 
 import './Search.scss'
 
 
-// const ITEM_HEIGHT = 48;
-// const ITEM_PADDING_TOP = 8;
-// const MenuProps = {
-//   PaperProps: {
-//     style: {
-//       maxHeight: ITEM_HEIGHT * 12 + ITEM_PADDING_TOP,
-//       width: 460,
-//     },
-//   },
-// };
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 12 + ITEM_PADDING_TOP,
+      width: 460,
+    },
+  },
+};
 
 const Search = () => {
-  // const [personName, setPersonName] = React.useState([]);
+  const [personName, setPersonName] = React.useState([]);
 
-  // const handleChange = event => {
-  //   setPersonName(event.target.value);
-  // };
+  const handleChange = event => {
+    setPersonName(event.target.value);
+  };
 
   return (
     <FormControl className="search" >
-      {/* <InputLabel id="kindOfRecycle">What do you want to reclycle</InputLabel>
+      <InputLabel id="kindOfRecycle">What do you want to reclycle</InputLabel>
       <Select
         labelId="kindOfRecycle"
         id="demo-mutiple-checkbox"
@@ -43,7 +42,7 @@ const Search = () => {
             <ListItemText primary={type} />
           </MenuItem>
         ))}
-      </Select> */}
+      </Select>
     </FormControl>
   )
 }

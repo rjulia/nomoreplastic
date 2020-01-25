@@ -11,8 +11,11 @@ import { Menu } from "./Layout";
 import styled from 'styled-components';
 
 const Wrapper = styled('div')`
-
-  margin-left: 100px;
+  display: block;
+  position: relative;
+  @media (min-width: 768px) {
+    /* margin-left: 100px; */
+  }
 
 `
 

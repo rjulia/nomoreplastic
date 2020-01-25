@@ -16,8 +16,8 @@ const MapContainer = ({ data, settings }) => {
 
   const { coords } = settings
   const center = { lat: coords.lat, lng: coords.lng, zoom: coords.zoom };
-  // const apikey = process.env.REACT_APP_API_KEY_MAPS;
-  const apikey = null;
+  const apikey = process.env.REACT_APP_API_KEY_MAPS;
+  //const apikey = null;
 
 
   const PointImg = (category) => {
@@ -45,12 +45,20 @@ const MapContainer = ({ data, settings }) => {
 
     return <GoogleMap
       id="main-map"
-      options={null}
+      options={{
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: false,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: true
+      }}
       onLoad={onLoad}
       mapContainerStyle={{
         height: "auto",
-        width: "70vw"
+        width: "100%"
       }}
+
       zoom={center.zoom}
       center={center}>
       <Marker

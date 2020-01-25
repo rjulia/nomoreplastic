@@ -3,13 +3,20 @@
 
 .MuiFormControl-root.search {
 
-  margin: 63px 0px;
-  min-width: 460px;
-  max-width: 460px;
+  margin: 15px 0px;
+  min-width: calc(100% - 40px);
+  max-width: calc(100% - 40px);
 
   label {
     font-family: $general;
     color: $text_gray;
+  }
+
+  @include desktop {
+    margin: 63px 0px;
+    min-width: 460px;
+    max-width: 460px;
+
   }
 
 

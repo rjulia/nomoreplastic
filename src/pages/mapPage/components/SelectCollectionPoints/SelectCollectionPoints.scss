@@ -2,6 +2,8 @@
 
 .collection-points {
   padding: 20px 0;
+  width: calc(100vw - 15px);
+  overflow-x: hidden;
 
   .collection-points--header {
     position: relative;
@@ -36,7 +38,7 @@
   .collection-points--body {
     display: block;
     overflow-x: hidden;
-    width: 600px;
+    width: 100%;
 
     .collection-points--card {
       display: flex;
@@ -52,6 +54,16 @@
         margin-left: -140px;
 
       }
+    }
+  }
+
+  @include desktop {
+    padding: 20px 0;
+
+    .collection-points--body {
+      display: block;
+      overflow-x: hidden;
+      width: 600px;
     }
   }
 }
