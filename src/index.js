@@ -6,6 +6,7 @@ import { HttpLink } from 'apollo-link-http';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { Provider } from 'react-redux';
 // import AppRouter from './router/AppRouter';
+import { Entry } from "./components";
 import store from './services/redux/store'
 import './index.scss';
 import App from './App';
@@ -31,6 +32,7 @@ export const client = new ApolloClient({
 ReactDOM.render(
   <ApolloProvider client={client}>
     <Provider store={store}>
+      {/* <Entry /> */}
       <App />
     </Provider>
   </ApolloProvider>

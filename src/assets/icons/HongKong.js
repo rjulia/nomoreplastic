@@ -2,7 +2,7 @@ import React from 'react';
 
 const HongKongIcon = ({ ...restProps }) => (
   <span {...restProps}>
-    <svg version="1.0" x="0px" y="0px" viewBox="0 0 335 335" width="57px" height="57px" xmlns="http://www.w3.org/2000/svg">
+    <svg version="1.0" x="0px" y="0px" viewBox="0 0 335 335" xmlns="http://www.w3.org/2000/svg">
       <g id="petal">
         <path d="m160.94 174.93c-105.26-44.486-58.602-181.58 42.07-174.69-20.366 10.467-23.318 29.998-11.687 48.09 13.024 20.256-1.199 52.849-18.806 60.767-28.935 13.024-34.728 47.75-11.577 65.833z" fill="#ffffff" />
         <path d="m155.24 75.938-5.9198 9.2938-2.1445-10.814-10.678-2.7593 9.6246-5.3895-0.67104-11 8.0854 7.4894 10.256-4.0427-4.6105 10.009 7.0014 8.5054z" fill="#de2910" />

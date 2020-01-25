@@ -16,8 +16,8 @@ const MapContainer = ({ data, settings }) => {
 
   const { coords } = settings
   const center = { lat: coords.lat, lng: coords.lng, zoom: coords.zoom };
-  const apikey = process.env.REACT_APP_API_KEY_MAPS;
-  //const apikey = null;
+  // const apikey = process.env.REACT_APP_API_KEY_MAPS;
+  const apikey = null;
 
 
   const PointImg = (category) => {

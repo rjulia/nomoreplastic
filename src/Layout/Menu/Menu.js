@@ -2,45 +2,17 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 import './Menu.scss';
 import { HongKongIcon, HomeIcon, EmailIcon, AddIcon } from "../../assets/icons";
-import { ButtonMenu, ButtonLanguage } from "../../components";
-import styled from 'styled-components';
-import styles from "../../scss/styles.scss";
+import { ButtonMenu, ButtonLanguage, ButtonBurger } from "../../components";
 import localization from "../../localization";
 
-const WrapperMenu = styled('div')`
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100px;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  background-color: ${styles.primary};
-`
-
-const WrapperLogo = styled('div')`
-  margin: 0 14px 47px;
-  padding-top: 25px;
-  width: 72px;
-  height: 92px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${styles.hongkong};
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px
-`;
 
 const Menu = () => {
   return (
-    <WrapperMenu className="menu">
-      <div>
-        <NavLink to="/">
-          <WrapperLogo>
-            <HongKongIcon />
-          </WrapperLogo>
-        </NavLink>
+    <div className="menu">
+      <NavLink to="/" className="menu__logo">
+        <HongKongIcon />
+      </NavLink>
+      <div className="menu__buttons">
         <NavLink to="/map">
           <ButtonMenu text={localization.home.home}>
             <HomeIcon width="60px" />
@@ -57,8 +29,11 @@ const Menu = () => {
           </ButtonMenu>
         </NavLink>
       </div>
-      <ButtonLanguage />
-    </WrapperMenu>
+      {/* <ButtonLanguage /> */}
+      <div className="menu__burger">
+        <ButtonBurger />
+      </div>
+    </div>
   )
 }
 
