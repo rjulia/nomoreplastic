@@ -5,10 +5,12 @@ import {
   SETTINGS_GET_LANGUAGE,
   SETTINGS_SET_LANGUAGE,
   SETTINGS_GET_POSITION,
+  SETTINGS_TOGGLE_MENU
 } from "../actions/types";
 import localization from '../../../localization';
 
 const InitialSettingsState = {
+  isOpenMenu: false,
   language: localization.getLanguage(),
   coords: {
     lat: 22.3526632,
@@ -20,6 +22,14 @@ const InitialSettingsState = {
 
 export default function LanguageReducer(state = InitialSettingsState, action) {
   switch (action.type) {
+
+    case SETTINGS_TOGGLE_MENU: {
+      return {
+        ...state,
+        isOpenMenu: !state.isOpenMenu
+      };
+    }
+
     case SETTINGS_GET_LANGUAGE: {
       const lang = localization.getLanguage();
       return {

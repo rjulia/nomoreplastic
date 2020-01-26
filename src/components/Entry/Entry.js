@@ -1,5 +1,4 @@
 import React from 'react'
-import Background from "../../assets/images/screen-strokes.svg";
 import './Entry.scss'
 const Entry = () => {
   return (

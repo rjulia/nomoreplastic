@@ -1,7 +1,8 @@
 import {
   SETTINGS_GET_LANGUAGE,
   SETTINGS_SET_LANGUAGE,
-  SETTINGS_GET_POSITION
+  SETTINGS_GET_POSITION,
+  SETTINGS_TOGGLE_MENU
 } from './types';
 
 export function getLanguage() {
@@ -25,5 +26,11 @@ export function getPosition(coords) {
       coords
     },
     type: SETTINGS_GET_POSITION
+  }
+}
+
+export function toggleMenu() {
+  return {
+    type: SETTINGS_TOGGLE_MENU
   }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 import './Menu.scss';
 import { HongKongIcon, HomeIcon, EmailIcon, AddIcon } from "../../assets/icons";
-import { ButtonMenu, ButtonLanguage, ButtonBurger } from "../../components";
+import { ButtonMenu, ButtonBurger } from "../../components";
 import localization from "../../localization";
 
 

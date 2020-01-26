@@ -1,6 +1,6 @@
-export function truncate(input) {
-  if (input.length > 150)
-    return input.substring(0, 150) + '...';
+export function truncate(input, characters) {
+  if (input.length > characters)
+    return input.substring(0, characters) + '...';
   else
     return input;
 };

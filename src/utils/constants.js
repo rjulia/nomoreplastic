@@ -10,7 +10,7 @@ export const TypeRecycling = [
   'GLASS',
   'FURMITURE',
   'FOOD',
-  'OTHERS',
+  'OTHERS'
 ];
 
 export const DistrictHK = [
@@ -20,7 +20,6 @@ export const DistrictHK = [
       lat: 22.272457,
       lng: 114.1350874,
       zoom: 14
-
     }
   },
   {
@@ -117,7 +116,7 @@ export const DistrictHK = [
       zoom: 11
     }
   },
-  , {
+  {
     name: 'NORTH',
     coords: {
       lat: 22.5124188,
@@ -132,7 +131,7 @@ export const DistrictHK = [
       zoom: 16
     }
   },
-  , {
+  {
     name: 'SHA_TIN',
     coords: {
       lat: 22.2773399,

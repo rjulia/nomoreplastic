@@ -3,6 +3,8 @@ import { Title, Paragraph } from '../../../../components'
 import Waste from '../../../../assets/images/beach-plastic.webp';
 import './NewsCard.scss';
 import moment from "moment";
+import isMobile from "../../../../utils/isMobile";
+
 
 const NewsCard = ({ item }) => {
   const { title, date, description, urlToImage, imageUrl, content__zh, content__en, url } = item
@@ -18,7 +20,7 @@ const NewsCard = ({ item }) => {
         <a href={url} target="_blank" rel="noopener noreferrer">
           <Title tag="h3" text={title} classN="news-card__title" />
         </a>
-        <Paragraph tag="p" isTrucate={true} text={description || content__zh ||
+        <Paragraph tag="p" isTrucate={true} characters={isMobile() ? 80 : 150} text={description || content__zh ||
           content__en} classN="news-card__text" />
       </div>
     </div>
