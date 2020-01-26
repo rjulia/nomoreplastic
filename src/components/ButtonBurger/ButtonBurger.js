@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { FiMenu } from "react-icons/fi";
+import { FiMenu, FiX } from "react-icons/fi";
 import styled from 'styled-components';
 import styles from "../../scss/styles.scss";
+import { toggleMenu } from "../../services/redux/actions/settings.actions";
 
 const WrapperButtonBurger = styled('div')`
   display: flex;
@@ -22,16 +23,27 @@ const WrapperButtonBurger = styled('div')`
 
 
 
-const ButtonBurger = ({ settings }) => {
+const ButtonBurger = ({ isOpen, onToggleMenu }) => {
+
+  const handelToggleMenu = () => {
+    onToggleMenu()
+  }
   return (
-    <WrapperButtonBurger>
-      <FiMenu size="44px" />
+    <WrapperButtonBurger onClick={handelToggleMenu}>
+      {isOpen ? <FiX size="44px" /> : <FiMenu size="44px" />}
     </WrapperButtonBurger>
   )
 }
 
 const mapStateToProps = (state) => {
-  return state
+
+  return {
+    isOpen: state.settings.isOpenMenu
+  }
 }
 
-export default connect(mapStateToProps)(ButtonBurger) 
+const mapDispatchToProps = dispatch => ({
+  onToggleMenu: () => dispatch(toggleMenu())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ButtonBurger) 
