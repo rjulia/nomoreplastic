@@ -2,16 +2,18 @@ import React from 'react';
 import { connect } from "react-redux";
 import './AsideContainer.js.scss';
 import { SelectCollectionPoints, NewsAside, Search } from '../../components';
-import ResultConatiner from "../ResultConatiner/ResultContainer";
+import ResultsConatiner from "../ResultsContainer/ResultsContainer";
+import ResultContainer from "../ResultContainer/ResultContainer";
 
 const AsideContainer = ({ isOnSearching }) => {
   return (
     <div className="aside">
       <div className="aside__container">
         <Search />
-        {!isOnSearching && <SelectCollectionPoints />}
+        {/* {!isOnSearching && <SelectCollectionPoints />}
         {!isOnSearching && <NewsAside />}
-        {isOnSearching && <ResultConatiner />}
+        {isOnSearching && <ResultsConatiner />} */}
+        <ResultContainer />
       </div>
       <div className="aside__mask"></div>
     </div>

@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { cleanFilter } from "../../../../services/redux/actions/search.actions";
-import { SearchResults } from "../../components";
+
 import { ButtonBack } from "../../../../components";
+import { LocationResult } from '../../components';
 
 const ResultContainer = ({ onCleanLocationFiltered, locations }) => {
 
@@ -12,7 +13,7 @@ const ResultContainer = ({ onCleanLocationFiltered, locations }) => {
   return (
     <div>
       <ButtonBack text="Go Back" onClick={handelCloseFiltered} />
-      <SearchResults locations={locations} />
+      <LocationResult />
     </div>
   )
 }

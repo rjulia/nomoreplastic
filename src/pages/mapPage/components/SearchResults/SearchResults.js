@@ -21,7 +21,6 @@ const SearchResults = ({ locations, onLoadLocationFiltered, searchs, onGetPositi
   }
 
   const handleSearchLocationByDistric = (params) => {
-    console.log(params)
     if (params.name === "ALL") {
       onLoadLocationFiltered()
     } else {
