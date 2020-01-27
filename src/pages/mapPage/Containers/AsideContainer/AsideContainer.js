@@ -5,15 +5,15 @@ import { SelectCollectionPoints, NewsAside, Search } from '../../components';
 import ResultsConatiner from "../ResultsContainer/ResultsContainer";
 import ResultContainer from "../ResultContainer/ResultContainer";
 
-const AsideContainer = ({ isOnSearching }) => {
+const AsideContainer = ({ isOnSearching, id }) => {
   return (
     <div className="aside">
       <div className="aside__container">
         <Search />
-        {/* {!isOnSearching && <SelectCollectionPoints />}
-        {!isOnSearching && <NewsAside />}
-        {isOnSearching && <ResultsConatiner />} */}
-        <ResultContainer />
+        {id && <ResultContainer />}
+        {(!isOnSearching && !id) && <SelectCollectionPoints />}
+        {(!isOnSearching && !id) && <NewsAside />}
+        {isOnSearching && <ResultsConatiner />}
       </div>
       <div className="aside__mask"></div>
     </div>
@@ -22,7 +22,8 @@ const AsideContainer = ({ isOnSearching }) => {
 
 
 const mapStateToProps = state => ({
-  isOnSearching: state.searchs.isOnSearching
+  isOnSearching: state.searchs.isOnSearching,
+  id: state.searchs.id
 })
 
 export default connect(mapStateToProps)(AsideContainer)
