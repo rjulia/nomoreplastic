@@ -3,7 +3,8 @@ import {
   SEARCH_LOCATIONS,
   SEARCH_GET_LOCATIONS,
   SEARCH_CLEAN_FILTER,
-  SEARCH_CLEAN_LOCATIONS
+  SEARCH_CLEAN_LOCATIONS,
+  SEARCH_GET_LOCATION
 } from './types';
 
 export const getLocationFiltered = (filter) => {
@@ -12,6 +13,10 @@ export const getLocationFiltered = (filter) => {
 
 export const getLocations = (locations) => {
   return { type: SEARCH_GET_LOCATIONS, payload: { locations: locations } };
+}
+
+export const getLocation = (id) => {
+  return { type: SEARCH_GET_LOCATION, payload: { id: id } };
 }
 
 export const cleanFilter = () => {

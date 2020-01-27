@@ -8,11 +8,12 @@ import PointWaste from '../../assets/icons/ic_poi_bin.svg';
 import PointCommunity from '../../assets/icons/ic_poi_green_point.svg';
 import PointCollectors from '../../assets/icons/ic_poi_private.svg';
 import Pin from '../../assets/icons/pin.png';
+import { getLocation } from "../../services/redux/actions/search.actions";
 
 
 
 
-const MapContainer = ({ data, settings }) => {
+const MapContainer = ({ data, settings, getIdLocation }) => {
 
   const { coords } = settings
   const center = { lat: coords.lat, lng: coords.lng, zoom: coords.zoom };
@@ -113,6 +114,7 @@ const MapContainer = ({ data, settings }) => {
               icon={PointImg(location.category)}
               position={location}
               clusterer={clusterer}
+              onClick={() => getIdLocation(location.id)}
             />
           })
         }
@@ -132,6 +134,10 @@ const mapStateToProps = state => ({
   settings: state.settings
 })
 
+const mapDispatchToProps = dispatch => ({
+  getIdLocation: id => dispatch(getLocation(id))
+})
 
 
-export default connect(mapStateToProps)(MapContainer)
+
+export default connect(mapStateToProps, mapDispatchToProps)(MapContainer)

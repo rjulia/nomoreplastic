@@ -5,7 +5,7 @@ import { cleanFilter } from "../../../../services/redux/actions/search.actions";
 import { ButtonBack } from "../../../../components";
 import { LocationResult } from '../../components';
 
-const ResultContainer = ({ onCleanLocationFiltered, locations }) => {
+const ResultContainer = ({ onCleanLocationFiltered, location }) => {
 
   const handelCloseFiltered = () => {
     onCleanLocationFiltered()
@@ -19,7 +19,7 @@ const ResultContainer = ({ onCleanLocationFiltered, locations }) => {
 }
 const mapStateToProps = (state) => {
   return {
-    locations: state.searchs.locations
+    location: state.searchs.location
   }
 }
 

@@ -7,6 +7,7 @@ export const SETTINGS_TOGGLE_MENU = 'settings/toggle menu';
 export const SEARCH_LOCATIONS = 'search/filter locations';
 export const SEARCH_CLEAN_FILTER = 'search/clean filter';
 export const SEARCH_GET_LOCATIONS = 'search/get locations';
+export const SEARCH_GET_LOCATION = 'search/get location';
 export const SEARCH_CLEAN_LOCATIONS = 'search/clean locations';
 
 
