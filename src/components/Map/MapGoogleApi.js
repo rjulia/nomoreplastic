@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from "react-redux";
 import { GoogleMap, useLoadScript, MarkerClusterer, Marker } from '@react-google-maps/api'
 import { Spinner } from "../index";
-import PointCollectors from '../../assets/icons/ic_poi_association.svg';
+import PointOrganizations from '../../assets/icons/ic_poi_association.svg';
 import PointClothes from '../../assets/icons/ic_poi_clothes.svg';
 import PointWaste from '../../assets/icons/ic_poi_bin.svg';
 import PointCommunity from '../../assets/icons/ic_poi_green_point.svg';
-import PointOrganizations from '../../assets/icons/ic_poi_private.svg';
+import PointCollectors from '../../assets/icons/ic_poi_private.svg';
 import Pin from '../../assets/icons/pin.png';
 
 
