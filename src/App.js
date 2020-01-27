@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import { MapRecycle, Contact, Add } from "./pages";
 import './App.scss';
-import { Menu } from "./Layout";
+import { Menu, MenuMobile } from "./Layout";
 import styled from 'styled-components';
 
 const Wrapper = styled('div')`
@@ -36,6 +36,7 @@ function App() {
           <Route exact path="/add" component={Add} />
         </Switch>
       </Wrapper>
+      <MenuMobile />
     </Router>
   );
 }
