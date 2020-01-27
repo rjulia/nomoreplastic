@@ -34,7 +34,7 @@ const SelectCollectionPoints = ({ onLoadLocationFiltered }) => {
           <Card onClick={() => handleSearchLocation('COMMUNITY')} text="Community Green Stations">
             <Community width="85" />
           </Card>
-          <Card onClick={() => handleSearchLocation('COLLECTOR')} text="Organisations and Collection Points">
+          <Card onClick={() => handleSearchLocation('ORGANIZATIONS')} text="Recycling Organisations and Collection Points">
             <Collection width="85" />
           </Card>
           <Card onClick={() => handleSearchLocation('CLOTHES')} text="Clothes Recycling Bank">
@@ -43,7 +43,7 @@ const SelectCollectionPoints = ({ onLoadLocationFiltered }) => {
           <Card onClick={() => handleSearchLocation('WASTE_SEPARATION')} text="Waste Separation Bin">
             <Waste width="85" />
           </Card>
-          <Card onClick={() => handleSearchLocation('ORGANIZATIONS')} text="Private Collector and Recycler">
+          <Card onClick={() => handleSearchLocation('COLLECTOR')} text="Private Collector and Recycler">
             <Private width="85" />
           </Card>
         </div>
