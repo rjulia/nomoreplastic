@@ -1,19 +1,27 @@
 import React from 'react'
 import { truncate } from "../../utils/functions";
-const Paragraph = ({ text, tag, classN, isTrucate, characters }) => {
+const Paragraph = ({ text, tag, classN, isTrucate, characters, href }) => {
 
 
-  let insiertText;
+  let insertedText;
   const TagName = tag || 'p';
 
   if (isTrucate) {
-    insiertText = truncate(text, characters)
+    insertedText = truncate(text, characters)
   } else {
-    insiertText = text
+    insertedText = text
+  }
+
+  if (href) {
+    return (
+      <TagName className={classN} href={href} target="_blank" rel="noopener noreferrer">
+        {insertedText}
+      </TagName>
+    )
   }
   return (
     <TagName className={classN}>
-      {insiertText}
+      {insertedText}
     </TagName>
   )
 }

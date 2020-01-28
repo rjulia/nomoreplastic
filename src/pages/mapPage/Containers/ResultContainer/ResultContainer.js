@@ -1,9 +1,13 @@
 import React from 'react';
 import { connect } from "react-redux";
+import styled from 'styled-components';
 import { cleanFilter } from "../../../../services/redux/actions/search.actions";
-
 import { ButtonBack } from "../../../../components";
 import { LocationResult } from '../../components';
+
+const Wrapper = styled('div')`
+  margin-top: 40px
+`
 
 const ResultContainer = ({ onCleanLocationFiltered, location }) => {
 
@@ -11,10 +15,10 @@ const ResultContainer = ({ onCleanLocationFiltered, location }) => {
     onCleanLocationFiltered()
   }
   return (
-    <div>
+    <Wrapper>
       <ButtonBack text="Go Back" onClick={handelCloseFiltered} />
       <LocationResult />
-    </div>
+    </Wrapper>
   )
 }
 const mapStateToProps = (state) => {

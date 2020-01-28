@@ -9,7 +9,7 @@ const AsideContainer = ({ isOnSearching, id }) => {
   return (
     <div className="aside">
       <div className="aside__container">
-        <Search />
+        {!id && <Search />}
         {id && <ResultContainer />}
         {(!isOnSearching && !id) && <SelectCollectionPoints />}
         {(!isOnSearching && !id) && <NewsAside />}

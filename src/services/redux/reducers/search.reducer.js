@@ -43,6 +43,7 @@ export default function SearchReducers(state = InitialSettingsState, action) {
     case SEARCH_CLEAN_FILTER:
       return {
         ...state,
+        id: '',
         isOnSearching: false,
         search: {}
       }

@@ -30,6 +30,7 @@ export const LOCATION_QUERY = gql`
       opening
       facebook
       recycleBy
+      category
     }
 }`
 
