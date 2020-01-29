@@ -9,16 +9,18 @@ import PointCommunity from '../../assets/icons/ic_poi_green_point.svg';
 import PointCollectors from '../../assets/icons/ic_poi_private.svg';
 import Pin from '../../assets/icons/pin.png';
 import { getLocation } from "../../services/redux/actions/search.actions";
+import { getPosition } from "../../services/redux/actions/settings.actions";
 
 
 
 
-const MapContainer = ({ data, settings, getIdLocation }) => {
+
+const MapContainer = ({ data, settings, getIdLocation, onGetLocation }) => {
 
   const { coords } = settings
   const center = { lat: coords.lat, lng: coords.lng, zoom: coords.zoom };
-  //const apikey = process.env.REACT_APP_API_KEY_MAPS;
-  const apikey = null;
+  const apikey = process.env.REACT_APP_API_KEY_MAPS;
+  //const apikey = null;
 
 
   const PointImg = (category) => {
@@ -114,7 +116,14 @@ const MapContainer = ({ data, settings, getIdLocation }) => {
               icon={PointImg(location.category)}
               position={location}
               clusterer={clusterer}
-              onClick={() => getIdLocation(location.id)}
+              onClick={() => {
+                getIdLocation(location.id)
+                onGetLocation({
+                  lat: location.lat,
+                  lng: location.lng,
+                  zoom: 15
+                })
+              }}
             />
           })
         }
@@ -135,7 +144,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  getIdLocation: id => dispatch(getLocation(id))
+  getIdLocation: id => dispatch(getLocation(id)),
+  onGetLocation: params => dispatch(getPosition(params))
 })
 
 

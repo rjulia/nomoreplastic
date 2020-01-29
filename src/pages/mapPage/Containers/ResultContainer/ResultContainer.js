@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import styled from 'styled-components';
-import { cleanFilter } from "../../../../services/redux/actions/search.actions";
+import { cleanPosition } from "../../../../services/redux/actions/settings.actions";
 import { ButtonBack } from "../../../../components";
 import { LocationResult } from '../../components';
 
@@ -9,10 +9,10 @@ const Wrapper = styled('div')`
   margin-top: 40px
 `
 
-const ResultContainer = ({ onCleanLocationFiltered, location }) => {
+const ResultContainer = ({ onCleanLocation, location }) => {
 
   const handelCloseFiltered = () => {
-    onCleanLocationFiltered()
+    onCleanLocation()
   }
   return (
     <Wrapper>
@@ -28,7 +28,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  onCleanLocationFiltered: params => dispatch(cleanFilter(params))
+  // onCleanLocationFiltered: params => dispatch(cleanFilter(params)),
+  onCleanLocation: () => dispatch(cleanPosition())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ResultContainer)

@@ -34,9 +34,9 @@ const LocationResult = ({ id }) => {
         <Title tag="h3" classN={`${location.category} location-result__subtitle`} text="What we recycle" />
         <ul className="location-result__list">
           {location.recycleBy.map(type => (
-            <li className={`${location.category} location-result__item`}>
+            <li key={type} className={`${location.category} location-result__item`}>
               <FaCheck size="12px" />
-              <Paragraph tag="span" key={type} text={type} />
+              <Paragraph tag="span" text={type} />
             </li>
           ))}
         </ul>

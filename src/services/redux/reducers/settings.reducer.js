@@ -5,7 +5,8 @@ import {
   SETTINGS_GET_LANGUAGE,
   SETTINGS_SET_LANGUAGE,
   SETTINGS_GET_POSITION,
-  SETTINGS_TOGGLE_MENU
+  SETTINGS_TOGGLE_MENU,
+  SETTINGS_CLEAN_POSITION
 } from "../actions/types";
 import localization from '../../../localization';
 
@@ -15,7 +16,7 @@ const InitialSettingsState = {
   coords: {
     lat: 22.3526632,
     lng: 113.987616,
-    zoom: 13
+    zoom: 11
 
   }
 };
@@ -23,6 +24,12 @@ const InitialSettingsState = {
 export default function LanguageReducer(state = InitialSettingsState, action) {
   switch (action.type) {
 
+    case SETTINGS_CLEAN_POSITION: {
+      return {
+        ...state,
+        coords: InitialSettingsState.coords
+      };
+    }
     case SETTINGS_TOGGLE_MENU: {
       return {
         ...state,

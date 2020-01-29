@@ -1,6 +1,7 @@
 export const SETTINGS_GET_LANGUAGE = 'settings/get Language';
 export const SETTINGS_SET_LANGUAGE = 'settings/set Language';
 export const SETTINGS_GET_POSITION = 'settings/get position';
+export const SETTINGS_CLEAN_POSITION = 'settings/clean position';
 export const SETTINGS_TOGGLE_MENU = 'settings/toggle menu';
 
 
