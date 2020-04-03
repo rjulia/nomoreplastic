@@ -4,6 +4,7 @@ import {
   SEARCH_GET_LOCATION,
   SEARCH_CLEAN_FILTER,
   SEARCH_CLEAN_LOCATIONS,
+  SEARCH_CLEAN_LOCATION,
 
 } from '../actions/types';
 
@@ -51,6 +52,11 @@ export default function SearchReducers(state = InitialSettingsState, action) {
       return {
         ...state,
         locations: [],
+      }
+    case SEARCH_CLEAN_LOCATION:
+      return {
+        ...state,
+        id: '',
       }
     default:
       return state;

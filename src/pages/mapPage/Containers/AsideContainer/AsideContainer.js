@@ -13,7 +13,7 @@ const AsideContainer = ({ isOnSearching, id }) => {
         {id && <ResultContainer />}
         {(!isOnSearching && !id) && <SelectCollectionPoints />}
         {(!isOnSearching && !id) && <NewsAside />}
-        {isOnSearching && <ResultsConatiner />}
+        {(isOnSearching && !id) && <ResultsConatiner />}
       </div>
       <div className="aside__mask"></div>
     </div>
