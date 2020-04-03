@@ -12,7 +12,7 @@ const CardResult = ({ item, coords }) => {
 
   if (coords && item) {
     getDistance(coords, { lat: item.lat, lng: item.lng }).then(data => {
-      if (data.rows["0"]) {
+      if (data && data.rows["0"]) {
         const distance = data.rows["0"].elements["0"].distance.text || 'no distance';
         setDistance(distance)
       }

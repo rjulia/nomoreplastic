@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { Title } from "../../../../components";
 import { CardResult, DropdownSearchResults } from "../index";
@@ -11,7 +11,7 @@ import './SearchResults.scss'
 
 const SearchResults = ({ locations, onLoadLocationFiltered, searchs, onGetPosition }) => {
 
-
+  const [idxActived, setIdxActived] = useState(null)
   const handleSearchLocationByCategory = (params) => {
     if (params === "ALL") {
       onLoadLocationFiltered({ category: null })
@@ -32,6 +32,14 @@ const SearchResults = ({ locations, onLoadLocationFiltered, searchs, onGetPositi
     }
   }
 
+  const toggleList = (idx) => {
+    if (idx === idxActived) {
+      setIdxActived(null)
+    } else {
+      setIdxActived(idx)
+    }
+  }
+
 
 
   return (
@@ -40,16 +48,22 @@ const SearchResults = ({ locations, onLoadLocationFiltered, searchs, onGetPositi
       <Title tag="h2" text="Recycling Points" />
       <div className="search-results__filter--box">
         <DropdownSearchResults
+          idx={0}
           title="TYPE"
           selectTitle={searchs.search.category}
+          idxActived={idxActived}
           list={TypeOfCollection}
           toggleItem={(item) => handleSearchLocationByCategory(item)}
+          toggleList={(idx) => toggleList(idx)}
         />
         <DropdownSearchResults
+          idx={1}
           title="District"
           selectTitle={searchs.search.district}
           list={DistrictHK}
-          toggleItem={(item) => handleSearchLocationByDistric(item)} />
+          idxActived={idxActived}
+          toggleItem={(item) => handleSearchLocationByDistric(item)}
+          toggleList={(idx) => toggleList(idx)} />
       </div>
       <div className="search-result__results">
         {locations && locations.map(item => (
