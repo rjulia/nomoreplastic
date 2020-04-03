@@ -25,7 +25,10 @@ const SearchResults = ({ locations, onLoadLocationFiltered, searchs, onGetPositi
       onLoadLocationFiltered()
     } else {
       onLoadLocationFiltered({ district: params.name })
-      onGetPosition(params.coords)
+      if (params.coords) {
+
+        onGetPosition(params.coords)
+      }
     }
   }
 
