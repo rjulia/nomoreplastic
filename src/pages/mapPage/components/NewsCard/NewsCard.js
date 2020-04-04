@@ -10,7 +10,6 @@ import { getEvent } from "../../../../services/redux/actions/search.actions";
 
 const NewsCard = ({ item, onGetEvent }) => {
   const { title, date, description, urlToImage, imageUrl, content__zh, content__en, url, id } = item
-  console.log(id)
   const TitleComponent = () => (
     item.__typename === 'Event' ?
       (

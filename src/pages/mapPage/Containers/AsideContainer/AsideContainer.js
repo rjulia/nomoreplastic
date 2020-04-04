@@ -6,7 +6,6 @@ import ResultsConatiner from "../ResultsContainer/ResultsContainer";
 import ResultContainer from "../ResultContainer/ResultContainer";
 
 const AsideContainer = ({ isOnSearching, id, id_event }) => {
-  console.log(id_event)
   const [isDetailOpen, setIsDetailOpen] = useState(false)
 
   useEffect(() => {

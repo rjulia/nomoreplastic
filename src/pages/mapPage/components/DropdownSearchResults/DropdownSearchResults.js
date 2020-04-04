@@ -15,7 +15,7 @@ const DropdownSearchResults = (props) => {
     } else {
       setIsOpen(false)
     }
-  }, [idxActived, idx, isOpen])
+  }, [idxActived])
 
 
   return (

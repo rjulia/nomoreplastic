@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { connect } from "react-redux";
 import { Input, InputLabel, MenuItem, FormControl, ListItemText, Select, Checkbox } from '@material-ui/core';
 import { TypeRecycling } from "../../../../utils/constants";
+import { cleanAndGetLocationFiltered } from "../../../../services/redux/actions/search.actions";
+
 
 import './Search.scss'
 
@@ -16,12 +19,27 @@ const MenuProps = {
   },
 };
 
-const Search = () => {
-  const [personName, setPersonName] = React.useState([]);
-
+const Search = ({ onLoadLocationFiltered, isOnSearching }) => {
+  const [material, setMaterial] = React.useState([]);
   const handleChange = event => {
-    setPersonName(event.target.value);
+    const params = event.target.value
+    setMaterial(params)
+    if (params.length > 0) {
+      console.log(params)
+
+      onLoadLocationFiltered({ recycleBy: params })
+    } else {
+      onLoadLocationFiltered({ recycleBy: null })
+    }
+
   };
+
+  useEffect(() => {
+    if (!isOnSearching) {
+      setMaterial([])
+    }
+  }, [isOnSearching])
+
 
   return (
     <FormControl className="search" >
@@ -30,7 +48,7 @@ const Search = () => {
         labelId="kindOfRecycle"
         id="demo-mutiple-checkbox"
         multiple
-        value={personName}
+        value={material}
         onChange={handleChange}
         input={<Input />}
         renderValue={selected => selected.join(', ')}
@@ -38,7 +56,7 @@ const Search = () => {
       >
         {TypeRecycling.map(type => (
           <MenuItem key={type} value={type}>
-            <Checkbox checked={personName.indexOf(type) > -1} />
+            <Checkbox checked={material.indexOf(type) > -1} />
             <ListItemText primary={type} />
           </MenuItem>
         ))}
@@ -47,4 +65,12 @@ const Search = () => {
   )
 }
 
-export default Search
+const mapStateToProps = state => ({
+  isOnSearching: state.searchs.isOnSearching
+})
+
+const mapDispatchToProps = dispatch => ({
+  onLoadLocationFiltered: params => dispatch(cleanAndGetLocationFiltered(params))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search)
