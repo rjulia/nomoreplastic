@@ -5,6 +5,7 @@ import {
   SEARCH_CLEAN_FILTER,
   SEARCH_CLEAN_LOCATIONS,
   SEARCH_CLEAN_LOCATION,
+  SEARCH_GET_EVENT
 
 } from '../actions/types';
 
@@ -13,6 +14,7 @@ const InitialSettingsState = {
   search: {},
   locations: [],
   id: '',
+  id_event: '',
   locationsLoading: false,
   isOnSearching: false,
   error: ''
@@ -39,6 +41,7 @@ export default function SearchReducers(state = InitialSettingsState, action) {
     case SEARCH_GET_LOCATION:
       return {
         ...state,
+        id_event: undefined,
         id: action.payload.id
       }
     case SEARCH_CLEAN_FILTER:
@@ -57,6 +60,13 @@ export default function SearchReducers(state = InitialSettingsState, action) {
       return {
         ...state,
         id: '',
+        id_event: '',
+      }
+    case SEARCH_GET_EVENT:
+      return {
+        ...state,
+        id: undefined,
+        id_event: action.payload.id
       }
     default:
       return state;

@@ -11,6 +11,7 @@ export const SEARCH_GET_LOCATIONS = 'search/get locations';
 export const SEARCH_GET_LOCATION = 'search/get location';
 export const SEARCH_CLEAN_LOCATIONS = 'search/clean locations';
 export const SEARCH_CLEAN_LOCATION = 'search/clean location';
+export const SEARCH_GET_EVENT = 'search/get event';
 
 
 

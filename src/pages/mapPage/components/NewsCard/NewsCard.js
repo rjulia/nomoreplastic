@@ -1,13 +1,29 @@
+
 import React from 'react';
+import { connect } from "react-redux";
 import { Title, Paragraph } from '../../../../components'
 import Waste from '../../../../assets/images/beach-plastic.webp';
 import './NewsCard.scss';
 import moment from "moment";
 import isMobile from "../../../../utils/isMobile";
+import { getEvent } from "../../../../services/redux/actions/search.actions";
 
-
-const NewsCard = ({ item }) => {
-  const { title, date, description, urlToImage, imageUrl, content__zh, content__en, url } = item
+const NewsCard = ({ item, onGetEvent }) => {
+  const { title, date, description, urlToImage, imageUrl, content__zh, content__en, url, id } = item
+  console.log(id)
+  const TitleComponent = () => (
+    item.__typename === 'Event' ?
+      (
+        <div onClick={() => onGetEvent(id)}>
+          <Title tag="h3" text={title} classN="news-card__title" />
+        </div>
+      ) :
+      (
+        <a href={url} target="_blank" rel="noopener noreferrer">
+          <Title tag="h3" text={title} classN="news-card__title" />
+        </a>
+      )
+  )
   return (
     <div className="newscard">
       <div className="news-card__image">
@@ -17,9 +33,9 @@ const NewsCard = ({ item }) => {
       </div>
       <div className="news-card__content">
         {date ? <Paragraph tag="span" text={moment(date).format('MM/DD/YY')} classN="news-card__date" /> : ''}
-        <a href={url} target="_blank" rel="noopener noreferrer">
-          <Title tag="h3" text={title} classN="news-card__title" />
-        </a>
+
+        <TitleComponent />
+
         <Paragraph tag="p" isTrucate={true} characters={isMobile() ? 80 : 150} text={description || content__zh ||
           content__en} classN="news-card__text" />
       </div>
@@ -28,4 +44,10 @@ const NewsCard = ({ item }) => {
   )
 }
 
-export default NewsCard
+const mapDispatchToProps = dispatch => ({
+  onGetEvent: (id) => dispatch(getEvent(id)),
+
+})
+
+
+export default connect(undefined, mapDispatchToProps)(NewsCard)

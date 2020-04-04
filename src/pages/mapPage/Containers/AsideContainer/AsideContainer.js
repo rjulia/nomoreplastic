@@ -1,19 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from "react-redux";
 import './AsideContainer.js.scss';
 import { SelectCollectionPoints, NewsAside, Search } from '../../components';
 import ResultsConatiner from "../ResultsContainer/ResultsContainer";
 import ResultContainer from "../ResultContainer/ResultContainer";
 
-const AsideContainer = ({ isOnSearching, id }) => {
+const AsideContainer = ({ isOnSearching, id, id_event }) => {
+  console.log(id_event)
+  const [isDetailOpen, setIsDetailOpen] = useState(false)
+
+  useEffect(() => {
+    if (id || id_event) {
+      setIsDetailOpen(true)
+    } else {
+      setIsDetailOpen(false)
+    }
+  }, [id, id_event])
   return (
     <div className="aside">
       <div className="aside__container">
-        {!id && <Search />}
-        {id && <ResultContainer />}
-        {(!isOnSearching && !id) && <SelectCollectionPoints />}
-        {(!isOnSearching && !id) && <NewsAside />}
-        {(isOnSearching && !id) && <ResultsConatiner />}
+        {!isDetailOpen && <Search />}
+        {(id || id_event) && <ResultContainer />}
+        {(!isOnSearching && !isDetailOpen) && <SelectCollectionPoints />}
+        {(!isOnSearching && !isDetailOpen) && <NewsAside />}
+        {(isOnSearching && !isDetailOpen) && <ResultsConatiner />}
       </div>
       <div className="aside__mask"></div>
     </div>
@@ -23,7 +33,8 @@ const AsideContainer = ({ isOnSearching, id }) => {
 
 const mapStateToProps = state => ({
   isOnSearching: state.searchs.isOnSearching,
-  id: state.searchs.id
+  id: state.searchs.id,
+  id_event: state.searchs.id_event
 })
 
 export default connect(mapStateToProps)(AsideContainer)

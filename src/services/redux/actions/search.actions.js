@@ -5,7 +5,8 @@ import {
   SEARCH_CLEAN_FILTER,
   SEARCH_CLEAN_LOCATIONS,
   SEARCH_CLEAN_LOCATION,
-  SEARCH_GET_LOCATION
+  SEARCH_GET_LOCATION,
+  SEARCH_GET_EVENT
 } from './types';
 
 export const getLocationFiltered = (filter) => {
@@ -25,6 +26,14 @@ export const getLocations = (locations) => {
 export const getLocation = (id) => {
   return {
     type: SEARCH_GET_LOCATION,
+    payload: { id: id }
+  };
+}
+
+export const getEvent = (id) => {
+  console.log(id)
+  return {
+    type: SEARCH_GET_EVENT,
     payload: { id: id }
   };
 }
