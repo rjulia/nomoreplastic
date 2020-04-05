@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import './Menu.scss';
-import { HongKongIcon, HomeIcon, EmailIcon, AddIcon } from "../../assets/icons";
+import { HongKongIcon, HomeIcon, EmailIcon, AddIcon, Shop } from "../../assets/icons";
 import { ButtonMenu, ButtonBurger } from "../../components";
 import localization from "../../localization";
 
@@ -16,6 +16,11 @@ const Menu = () => {
         <NavLink to="/map">
           <ButtonMenu text={localization.home.home}>
             <HomeIcon width="60px" />
+          </ButtonMenu>
+        </NavLink>
+        <NavLink to="shops">
+          <ButtonMenu text={localization.home.shops}>
+            <Shop width="60px" style={{ transform: 'scale(0.7)' }} />
           </ButtonMenu>
         </NavLink>
         <NavLink to="contact">

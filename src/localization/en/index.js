@@ -4,7 +4,8 @@ const en = {
     lang: "EN",
     home: "Home",
     contact: "Contact",
-    add: "Add"
+    add: "Add",
+    shops: "Shops"
   }
 }
 
