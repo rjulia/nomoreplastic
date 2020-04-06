@@ -1,0 +1,17 @@
+@import '../../scss/variables.scss';
+
+
+.contact__container {
+  padding: 50px;
+  padding-left: 200px;
+
+  h1 {
+    color: $primary;
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: 300;
+    color: $text_gray;
+  }
+}
