@@ -45,6 +45,10 @@
     padding: 10px 0;
   }
 
+  .event-detail__boxcategory {
+    margin: 10px 0 20px;
+  }
+
   .event-detail__new {
 
     color: $organitation;
@@ -185,11 +189,14 @@
     font-weight: 500;
     letter-spacing: 0.5px;
     line-height: 20px;
+    margin-bottom: 10px;
+
   }
 
   .event-detail__date {
     font-weight: 400;
     color: $primary;
+    margin-bottom: 10px;
   }
 
   .event-detail__facebook {

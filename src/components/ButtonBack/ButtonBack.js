@@ -15,7 +15,8 @@ const WrapperButtonBack = styled("div")`
   border-radius: 20px;
   padding: 0 4px;
   cursor: pointer;
-  p {
+  margin: 20px 0;
+  span {
     color: ${styles.primary};
     font-size: 15px;
     font-weight: 500;
@@ -28,7 +29,7 @@ const WrapperButtonBack = styled("div")`
 const ButtonBack = ({ text, onClick }) => {
   return (
     <WrapperButtonBack onClick={onClick}>
-      <FaAngleLeft color={styles.primary} /> <p>{text}</p>
+      <FaAngleLeft color={styles.primary} /> <span>{text}</span>
     </WrapperButtonBack>
   )
 }
