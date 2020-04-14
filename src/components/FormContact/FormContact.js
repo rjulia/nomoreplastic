@@ -141,9 +141,9 @@ const FormContact = () => {
         <div className="col-md-4"></div>
       </div>
 
+      <Paragraph text={'* these fields are mandatory'} />
 
       <input className="btn__submint" type="submit" />
-      <Paragraph text={'* these fields are mandatory'} />
     </form>
   )
 

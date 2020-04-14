@@ -38,7 +38,7 @@
   .collection-points--body {
     display: block;
     overflow-x: hidden;
-    width: 100%;
+    width: calc(100% - 20px);
 
     .collection-points--card {
       display: flex;
@@ -51,7 +51,7 @@
 
       &.slided {
         animation: slide 1s;
-        margin-left: -140px;
+        margin-left: -200px;
 
       }
     }
@@ -75,13 +75,13 @@
   }
 
   100% {
-    margin-left: -140px;
+    margin-left: -200px;
   }
 }
 
 @keyframes slide_reverse {
   0% {
-    margin-left: -140px;
+    margin-left: -200px;
   }
 
   100% {
