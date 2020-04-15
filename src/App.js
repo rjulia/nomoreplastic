@@ -5,7 +5,7 @@ import {
   Switch,
   Redirect
 } from 'react-router-dom';
-import { MapRecycle, Contact, Add } from "./pages";
+import { MapRecycle, Contact, Add, Shop } from "./pages";
 import './App.scss';
 import { Menu, MenuMobile } from "./Layout";
 import styled from 'styled-components';
@@ -33,6 +33,8 @@ function App() {
           />
           <Route exact path="/map" component={MapRecycle} />
           <Route exact path="/contact" component={Contact} />
+          <Route exact path="/shops" component={Shop} />
+
           <Route exact path="/add" component={Add} />
         </Switch>
       </Wrapper>

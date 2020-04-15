@@ -7,11 +7,24 @@
 
   h1 {
     color: $primary;
+    font-family: $general;
+    border-bottom: 1px solid $primary;
   }
 
   p {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 300;
     color: $text_gray;
+    font-family: $outstanding;
+  }
+
+  .contact__paragraph {
+    margin-bottom: 100px;
+
+  }
+
+  .contact_buy-title {
+    color: $organitation;
+
   }
 }

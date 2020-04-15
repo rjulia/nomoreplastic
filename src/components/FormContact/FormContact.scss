@@ -5,6 +5,7 @@
   .form__control {
     width: 100%;
     margin-top: 30px;
+    font-family: $outstanding;
 
     &.text-area {
       width: 100%;
@@ -26,6 +27,7 @@
 
 
   .btn__submint {
+    font-family: $outstanding;
     padding: 10px 20px;
     background: $primary;
     border-radius: 20px;

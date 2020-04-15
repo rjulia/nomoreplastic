@@ -85,3 +85,45 @@ export const EVENT_QUERY = gql`
       recomendations
     }
 }`
+
+
+export const SHOPS_QUERY = gql`
+  query getShops{
+    getShops{
+      id
+      name
+      address
+      webUrl
+      facebook
+      promoded
+      imageUrl
+      thumbnail
+      description
+      rate
+      plasticfree
+      category
+    }
+  }
+`;
+
+export const SHOP_QUERY = gql`
+  query getShop($id: ID) {
+    getShop(id: $id) {
+      id
+      name
+      address
+      email
+      webUrl
+      facebook
+      lng
+      lat
+      promoded
+      imageUrl
+      thumbnail
+      description
+      rate
+      plasticfree
+      category
+    }
+}`
+
