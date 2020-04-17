@@ -8,7 +8,7 @@ export { default as HomeIcon } from './HomeIcon';
 export { default as PointerMap } from './PointerMap';
 export { default as Private } from './Private';
 export { default as Shop } from './Shop';
-
+export { default as Leaf } from './Leaf';
 export { default as Waste } from './Waste';
 
 

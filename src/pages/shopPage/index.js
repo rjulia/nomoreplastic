@@ -4,6 +4,7 @@ import { useQuery } from '@apollo/react-hooks';
 import { Spinner } from "../../components";
 
 import { SHOPS_QUERY } from "../../services/apollo/queries";
+import CardShop from './components/CardShop/CardShop';
 
 const ShopPage = () => {
   const { data, loading, error } = useQuery(SHOPS_QUERY);
@@ -12,7 +13,16 @@ const ShopPage = () => {
   console.log(data)
   return (
     <div className="shop__container">
-      hello
+      <div className="row">
+        {
+          data.getShops.map(shop => (
+            <div key={shop.id} className="col-12 col-md-6">
+
+              <CardShop shop={shop} />
+            </div>
+          ))
+        }
+      </div>
     </div>
   )
 }
