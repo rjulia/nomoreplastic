@@ -1,6 +1,4 @@
 import React from 'react'
-import styled from 'styled-components';
-import Phone from "../../assets/images/phone.jpg";
 import { FormContact, Title, Paragraph } from "../../components";
 import './contact.scss';
 

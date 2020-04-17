@@ -17,8 +17,6 @@ const SelectCollectionPoints = ({ onLoadLocationFiltered }) => {
     onLoadLocationFiltered({ category: params })
   }
 
-  console.log(variables)
-
   return (
     <div className="collection-points">
       <div className="collection-points--header">

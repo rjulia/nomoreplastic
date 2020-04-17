@@ -93,8 +93,11 @@ export const SHOPS_QUERY = gql`
       id
       name
       address
+      phone
+      email
       webUrl
       facebook
+      instagram
       promoded
       imageUrl
       thumbnail
