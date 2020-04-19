@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { HomeIcon, EmailIcon, AddIcon } from "../../assets/icons";
+import { HomeIcon, EmailIcon, AddIcon, Shop } from "../../assets/icons";
 import { ButtonMenu } from "../../components";
 import localization from "../../localization";
 import { toggleMenu } from "../../services/redux/actions/settings.actions";
@@ -20,6 +20,11 @@ const MenuMobile = ({ isOpen, onToggleMenu }) => {
         <NavLink onClick={handelToggleMenu} to="/map">
           <ButtonMenu text={localization.home.home}>
             <HomeIcon width="60px" />
+          </ButtonMenu>
+        </NavLink>
+        <NavLink onClick={handelToggleMenu} to="shops">
+          <ButtonMenu text={localization.home.shops}>
+            <Shop width="60px" style={{ transform: 'scale(0.7)' }} />
           </ButtonMenu>
         </NavLink>
         <NavLink onClick={handelToggleMenu} to="contact">

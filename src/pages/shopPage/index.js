@@ -20,6 +20,12 @@ const ShopPage = () => {
     setId(id)
   }
 
+  const onClose = () => {
+    setIsOpen(false)
+    setClosed('')
+    setId('')
+  }
+
 
 
   const { data, loading, error } = useQuery(SHOPS_QUERY);
@@ -38,7 +44,7 @@ const ShopPage = () => {
         }
       </div>
       <div className={!isOpen ? `aside ${closed}` : 'aside open'}>
-        <CardDetailShop id={ID} />
+        <CardDetailShop id={ID} onClose={() => onClose()} />
       </div>
     </div>
   )

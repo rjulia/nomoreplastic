@@ -5,11 +5,11 @@ import { Spinner, BoxImage, Title, Label, Paragraph, Map } from "../../../../com
 import { SHOP_QUERY } from "../../../../services/apollo/queries";
 import variables from '../../../../scss/variables.scss';
 import { FaRegEnvelope, FaLeaf, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaMobileAlt } from "react-icons/fa";
-import { IoIosGlobe } from "react-icons/io";
+import { IoIosGlobe, IoIosClose } from "react-icons/io";
 
 
 
-const CardDetailShop = ({ id }) => {
+const CardDetailShop = ({ id, onClose }) => {
   const leafs = [0, 1, 2, 3, 4];
   const { data, loading, error } = useQuery(SHOP_QUERY, { variables: { id } });
   if (loading) return <Spinner className="spinner__map" />;
@@ -31,7 +31,10 @@ const CardDetailShop = ({ id }) => {
 
   return (
     <div className="card-detail-shop__container">
-      <BoxImage img={imageUrl} height={300} />
+      <div onClick={onClose}>
+
+        <BoxImage img={imageUrl} height={300} />
+      </div>
       <div className="card-detail-shop__label">
         {
           category.map(catg =>

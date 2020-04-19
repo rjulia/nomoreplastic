@@ -1,62 +1,108 @@
 @import '../../scss/variables.scss';
 
 .shop__container {
-  padding: 50px 50px 50px 150px;
+  padding: 90px 0px;
+  display: flex;
 
   .myrow {
     display: flex;
     width: 100%;
+    margin: 0;
 
     .column {
-      flex-basis: 50%;
+      flex-basis: 100%;
       flex-grow: 0;
       flex-shrink: 0;
       padding: 0 15px;
       transition: flex-basis 1s ease-in;
-
-    }
-
-    &.open {
-      width: 55%;
-      animation: fadeinBlockOne 1s ease-out normal;
-
-
-      .column {
-        flex-basis: 100%;
-      }
-    }
-
-    &.closed {
-      width: 100%;
-      animation: fadeoutBlockOne 1s ease-out normal;
-
-      .column {
-        flex-basis: 50%;
-
-      }
     }
   }
 
   .aside {
-    width: 0;
+    display: block;
+    position: fixed;
+    overflow-y: scroll;
+    top: 90px;
+    right: -100vw;
     opacity: 0;
     border-left: 1px solid $white-smoke;
-    padding: 50px;
+    padding: 20px;
+    height: 100vh;
 
     &.open {
-      width: 40%;
       opacity: 1;
-      animation: fadein 1s ease-in normal;
+      z-index: 100;
+      width: 100vw;
+      left: 0;
     }
 
     &.closed {
-      width: 0;
+      right: 0;
       opacity: 0;
-      animation: fadeout 1s ease-out normal;
+      right: 0;
     }
   }
 
+  @include desktop {
+    padding: 50px 50px 50px 150px;
 
+    .myrow {
+      margin-right: -15px;
+      margin-left: -15px;
+
+      .column {
+        flex-basis: 50%;
+        flex-grow: 0;
+        flex-shrink: 0;
+        padding: 0 15px;
+        transition: flex-basis 1s ease-in;
+      }
+
+      &.open {
+        width: 55%;
+        animation: fadeinBlockOne 1s ease-out normal;
+
+        .column {
+          flex-basis: 100%;
+        }
+      }
+
+      &.closed {
+        width: 100%;
+        animation: fadeoutBlockOne 1s ease-out normal;
+
+        .column {
+          flex-basis: 50%;
+
+        }
+      }
+    }
+
+    .aside {
+      position: relative;
+      overflow: initial;
+      width: 0;
+      top: initial;
+      opacity: 0;
+      border-left: 1px solid $white-smoke;
+      padding: 50px;
+      height: auto;
+
+      &.open {
+        left: initial;
+        z-index: 0;
+        width: 40%;
+        opacity: 1;
+        animation: fadein 1s ease-in normal;
+      }
+
+      &.closed {
+        width: 0;
+        opacity: 0;
+        animation: fadeout 1s ease-out normal;
+      }
+    }
+  }
 }
 
 @keyframes fadeinBlockOne {

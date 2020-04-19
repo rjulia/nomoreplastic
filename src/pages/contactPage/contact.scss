@@ -2,8 +2,8 @@
 
 
 .contact__container {
-  padding: 50px;
-  padding-left: 200px;
+
+  padding: 90px 20px 20px;
 
   h1 {
     color: $primary;
@@ -19,12 +19,22 @@
   }
 
   .contact__paragraph {
-    margin-bottom: 100px;
+    margin-bottom: 0px;
 
   }
 
   .contact_buy-title {
     color: $organitation;
 
+  }
+
+  @include desktop {
+    padding: 50px;
+    padding-left: 200px;
+
+    .contact__paragraph {
+      margin-bottom: 100px;
+
+    }
   }
 }

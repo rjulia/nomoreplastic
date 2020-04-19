@@ -1,6 +1,10 @@
 @import '../../../../scss/variables.scss';
 
 .card-detail-shop__container {
+  height: auto;
+  display: block;
+  padding-bottom: 150px;
+
   .card-detail-shop__label {
     margin: 2rem 0 1rem;
   }
@@ -31,4 +35,6 @@
     height: 270px;
     display: flex;
   }
+
+  @include desktop {}
 }
