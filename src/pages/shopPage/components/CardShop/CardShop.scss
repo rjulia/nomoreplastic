@@ -6,12 +6,15 @@
   border-bottom: 1px solid $white-smoke;
   margin-bottom: 20px;
   flex-direction: column;
+  height: 100%;
+
 
   h2 {
     font-size: $general;
     font-size: 24px;
     color: $primary;
     margin-bottom: 15px;
+    cursor: pointer;
   }
 
   .card-shop__content {
@@ -21,33 +24,7 @@
 
   .card-shop__box--image {
     flex: 1 1 294px;
-    width: 294px;
-    padding: 10px;
-    height: 204px;
-    overflow: hidden;
-    border-radius: 12px;
-    border: 2px solid $white-smoke;
-    box-sizing: border-box;
-
-    .card-shop__image {
-      position: relative;
-
-      border-radius: 10px;
-      box-sizing: border-box;
-      display: flex;
-      height: 180px;
-      width: 270px;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-
-      img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-      }
-    }
+    cursor: pointer;
 
   }
 
@@ -57,7 +34,6 @@
     flex: 1 1 calc(100% - 294px);
     flex-direction: column;
     justify-content: space-between;
-
 
 
     .card-shop__qualification {
@@ -93,8 +69,6 @@
         display: inline-block;
 
       }
-
-
     }
 
     .card-shop__box--links {

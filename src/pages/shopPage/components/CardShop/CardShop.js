@@ -1,29 +1,27 @@
 import React from 'react'
-import { Title } from '../../../../components'
+import { Title, BoxImage, Label } from '../../../../components'
 import './CardShop.scss';
 import { FaRegEnvelope, FaLeaf, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaMobileAlt } from "react-icons/fa";
 import { IoIosGlobe } from "react-icons/io";
 import variables from '../../../../scss/variables.scss';
 
-const CardShop = ({ shop }) => {
-  const leafs = Array.from({ length: shop.plasticfree }, (v, i) => i);
+const CardShop = ({ shop, open }) => {
+  const leafs = [0, 1, 2, 3, 4];
+
 
   return (
     <div className="card-shop__container">
       <Title tag={'h2'} text={shop.name || ''} />
       <div className="card-shop__content">
-        <div className="card-shop__box--image">
-          <div className="card-shop__image">
+        <div className="card-shop__box--image" onClick={() => open(shop.id)}>
+          <BoxImage img={shop.thumbnail} height={180} />
 
-            <img src={shop.thumbnail || ''} alt="" />
-          </div>
         </div>
         <div className="card-shop__box--text">
           <div>
-
             <p className="card-shop__qualification">No More Waste Plastic Qualification</p>
             <p className="card-shop__start">{leafs.map(leaf =>
-              <FaLeaf fill={variables.primary} key={leaf} size={18} />)}
+              <FaLeaf fill={shop.plasticfree >= leaf + 1 ? variables.primary : variables.smoke} key={leaf} size={18} />)}
             </p>
           </div>
           <p className="card-shop__address"><FaMapMarkerAlt size="10" /> {shop.address}</p>
@@ -37,7 +35,14 @@ const CardShop = ({ shop }) => {
           </div>
           <div>
             {
-              shop.category.map(catg => <p className="card-shop__category" key={catg}>{catg}</p>)
+              shop.category.map(catg =>
+                <Label
+                  key={catg}
+                  color={variables.white}
+                  bgc={variables.primary}
+                  text={catg}
+                />
+              )
             }
           </div>
 

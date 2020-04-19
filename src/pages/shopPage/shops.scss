@@ -1,3 +1,106 @@
+@import '../../scss/variables.scss';
+
 .shop__container {
   padding: 50px 50px 50px 150px;
+
+  .myrow {
+    display: flex;
+    width: 100%;
+
+    .column {
+      flex-basis: 50%;
+      flex-grow: 0;
+      flex-shrink: 0;
+      padding: 0 15px;
+      transition: flex-basis 1s ease-in;
+
+    }
+
+    &.open {
+      width: 55%;
+      animation: fadeinBlockOne 1s ease-out normal;
+
+
+      .column {
+        flex-basis: 100%;
+      }
+    }
+
+    &.closed {
+      width: 100%;
+      animation: fadeoutBlockOne 1s ease-out normal;
+
+      .column {
+        flex-basis: 50%;
+
+      }
+    }
+  }
+
+  .aside {
+    width: 0;
+    opacity: 0;
+    border-left: 1px solid $white-smoke;
+    padding: 50px;
+
+    &.open {
+      width: 40%;
+      opacity: 1;
+      animation: fadein 1s ease-in normal;
+    }
+
+    &.closed {
+      width: 0;
+      opacity: 0;
+      animation: fadeout 1s ease-out normal;
+    }
+  }
+
+
+}
+
+@keyframes fadeinBlockOne {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 55%;
+  }
+}
+
+@keyframes fadeoutBlockOne {
+  0% {
+
+    width: 55%;
+  }
+
+  100% {
+
+    width: 100%;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    width: 0%;
+  }
+
+  100% {
+    opacity: 1;
+    width: 40%;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+    width: 40%;
+  }
+
+  100% {
+    opacity: 0;
+    width: 0%;
+  }
 }
