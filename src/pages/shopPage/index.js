@@ -2,22 +2,21 @@ import React, { useState } from 'react';
 import './shops.scss';
 import { useQuery } from '@apollo/react-hooks';
 import { Spinner } from "../../components";
-import classNames from 'classnames';
 
 import { SHOPS_QUERY } from "../../services/apollo/queries";
 import { CardShop, CardDetailShop } from './components/';
 
 const ShopPage = () => {
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
   const [closed, setClosed] = useState('')
   const [ID, setId] = useState('')
 
 
   const onOpen = (id) => {
-    // if (id === ID) {
-    //   setClosed('closed')
-    //   setIsOpen(!isOpen)
-    // }
+    if (id === ID || ID === "") {
+      setClosed('closed')
+      setIsOpen(!isOpen)
+    }
     setId(id)
   }
 

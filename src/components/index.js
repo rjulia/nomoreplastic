@@ -5,6 +5,7 @@ export { default as ButtonBack } from './ButtonBack/ButtonBack';
 export { default as ButtonBurger } from './ButtonBurger/ButtonBurger';
 export { default as FormContact } from './FormContact/FormContact';
 export { default as Label } from './Label/Label';
+export { default as Map } from './Map/MapGoogleApi';
 
 
 export { default as MapGoogleApi } from './Map/MapGoogleApi';

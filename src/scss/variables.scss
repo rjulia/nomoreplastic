@@ -22,27 +22,6 @@ $hover: #801513;
 $text: #263E42;
 $white: #fff;
 $black: #222222;
-
-:export {
-  primary: $primary;
-  error: $error;
-  smoke: $white-smoke;
-  text_gray: $text_gray;
-  text_news_gray: $text_news_gray;
-  text_filter: $text_filter;
-  community: $community;
-  clothes: $clothes;
-  waste: $waste;
-  organitation: $organitation;
-  private: $private;
-  hongkong: $hongkong;
-  events: $events;
-  hover: $hover;
-  text: $text;
-  white: $white;
-  black: $black;
-}
-
 $right-margin: 26px;
 
 $title_font: 24px;
@@ -62,3 +41,25 @@ $general: 'Rubik',
 sans-serif;
 $outstanding: 'Raleway',
 sans-serif;
+
+:export {
+  primary: $primary;
+  error: $error;
+  smoke: $white-smoke;
+  text_gray: $text_gray;
+  text_news_gray: $text_news_gray;
+  text_filter: $text_filter;
+  community: $community;
+  clothes: $clothes;
+  waste: $waste;
+  organitation: $organitation;
+  private: $private;
+  hongkong: $hongkong;
+  events: $events;
+  hover: $hover;
+  text: $text;
+  white: $white;
+  black: $black;
+  general: $general;
+  outstanding: $outstanding;
+}

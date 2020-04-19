@@ -15,10 +15,17 @@ import { getPosition } from "../../services/redux/actions/settings.actions";
 
 
 
-const MapContainer = ({ data, settings, getIdLocation, onGetLocation }) => {
-
+const MapContainer = ({ data, settings, getIdLocation, onGetLocation, coordsShop }) => {
+  console.log(settings)
   const { coords } = settings
-  const center = { lat: coords.lat, lng: coords.lng, zoom: coords.zoom };
+  let center = undefined
+  if (coordsShop) {
+    center = { lat: coordsShop.lat, lng: coordsShop.lng, zoom: coordsShop.zoom };
+
+  } else {
+    center = { lat: coords.lat, lng: coords.lng, zoom: coords.zoom };
+
+  }
   const apikey = process.env.REACT_APP_API_KEY_MAPS;
   //const apikey = null;
 
