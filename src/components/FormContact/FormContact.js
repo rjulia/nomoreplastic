@@ -20,7 +20,6 @@ const FormContact = () => {
   const { control, handleSubmit, errors } = useForm();
   const onSubmit = data => {
     const templateId = 'template_e2PZkKnU';
-    console.log(data)
     const { name, company, email, phone, type, message } = data
     sendFeedback(templateId,
       {

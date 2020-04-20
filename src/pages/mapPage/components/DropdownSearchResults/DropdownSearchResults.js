@@ -11,11 +11,11 @@ const DropdownSearchResults = (props) => {
 
   useEffect(() => {
     if (idx === idxActived) {
-      setIsOpen(!isOpen)
+      setIsOpen(isOpen => !isOpen)
     } else {
       setIsOpen(false)
     }
-  }, [idxActived])
+  }, [idxActived, idx])
 
 
   return (

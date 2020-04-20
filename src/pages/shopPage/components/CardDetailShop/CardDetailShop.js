@@ -5,7 +5,7 @@ import { Spinner, BoxImage, Title, Label, Paragraph, Map } from "../../../../com
 import { SHOP_QUERY } from "../../../../services/apollo/queries";
 import variables from '../../../../scss/variables.scss';
 import { FaRegEnvelope, FaLeaf, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaMobileAlt } from "react-icons/fa";
-import { IoIosGlobe, IoIosClose } from "react-icons/io";
+import { IoIosGlobe } from "react-icons/io";
 
 
 

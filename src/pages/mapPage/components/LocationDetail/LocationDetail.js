@@ -4,7 +4,6 @@ import { useQuery } from '@apollo/react-hooks';
 import { Spinner, Title, Paragraph } from "../../../../components";
 import { LOCATION_QUERY } from "../../../../services/apollo/queries";
 import './locationDetail.scss';
-import envoiramnet from "../../../../assets/images/envoiramnet.jpg";
 import { getImage } from '../../../../utils/getImageWhenNoImage'
 import { FaCheck } from "react-icons/fa";
 
@@ -13,10 +12,8 @@ const LocationDetail = ({ id }) => {
   const { data, loading, error } = useQuery(LOCATION_QUERY, { variables: { id } });
   if (loading) return <Spinner className="spinner__map" />;
   if (error) return <p>ERROR</p>;
-  console.log(data)
   const location = data.getLocation;
   const img = location.imageUrl || getImage(location.category);
-  console.log(img)
   return (
     <div className="location-detail">
 

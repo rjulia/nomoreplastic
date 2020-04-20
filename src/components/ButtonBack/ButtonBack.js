@@ -5,7 +5,6 @@ import { FaAngleLeft } from "react-icons/fa";
 import PropTypes from 'prop-types';
 
 const handleColorType = category => {
-  console.log(category)
   switch (category) {
     case "private":
       return styles.private;

@@ -25,7 +25,6 @@ const Search = ({ onLoadLocationFiltered, isOnSearching }) => {
     const params = event.target.value
     setMaterial(params)
     if (params.length > 0) {
-      console.log(params)
 
       onLoadLocationFiltered({ recycleBy: params })
     } else {

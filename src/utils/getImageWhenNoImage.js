@@ -1,5 +1,4 @@
 export function getImage(category) {
-  console.log('hello')
   switch (true) {
     case category === "COMMUNITY":
       return {

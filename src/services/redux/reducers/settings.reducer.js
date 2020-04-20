@@ -1,19 +1,14 @@
 /* eslint-disable no-case-declarations */
-/* global localStorage */
 /* eslint no-undef: "error" */
 import {
-  SETTINGS_GET_LANGUAGE,
-  SETTINGS_SET_LANGUAGE,
   SETTINGS_GET_POSITION,
   SETTINGS_TOGGLE_MENU,
   SETTINGS_CLEAN_POSITION
 } from "../actions/types";
 
-//import localization from '../../../localization';
 
 const InitialSettingsState = {
   isOpenMenu: false,
-  //language: localization.getLanguage(),
   coords: {
     lat: 22.3526632,
     lng: 113.987616,

@@ -9,12 +9,10 @@ import envoiramnet from "../../../../assets/images/envoiramnet.jpg";
 import { FaMapMarkerAlt, FaFacebookSquare } from "react-icons/fa";
 
 const EventDetail = ({ id }) => {
-  console.log(id)
 
   const { data, loading, error } = useQuery(EVENT_QUERY, { variables: { id } });
   if (loading) return <Spinner className="spinner__map" />;
   if (error) return <p>ERROR</p>;
-  console.log(data)
   const event = data.getEvent;
   const img = event.imageUrl || envoiramnet;
   return (

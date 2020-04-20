@@ -31,7 +31,6 @@ const CardShop = ({ shop, open }) => {
             {shop.instagram && <a href={shop.instagram} target="_blank" rel="noopener noreferrer"><FaInstagram size={20} /></a>}
             {shop.webUrl && <a href={shop.webUrl} target="_blank" rel="noopener noreferrer"><IoIosGlobe size={20} /></a>}
             {shop.email && <a href={`mailto:${shop.email}`}><FaRegEnvelope size={20} /></a>}
-            <a href="http://" target="_blank" rel="noopener noreferrer"></a>
           </div>
           <div>
             {

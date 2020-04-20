@@ -6,8 +6,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import "./CardResult.scss"
 
 const CardResult = ({ item, coords }) => {
-  console.log(item)
-  const { address, name, category } = item;
+  const { address, name } = item;
   const [distance, setDistance] = useState('');
 
   if (coords && item) {

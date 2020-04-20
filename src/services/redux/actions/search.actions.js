@@ -31,7 +31,6 @@ export const getLocation = (id) => {
 }
 
 export const getEvent = (id) => {
-  console.log(id)
   return {
     type: SEARCH_GET_EVENT,
     payload: { id: id }
