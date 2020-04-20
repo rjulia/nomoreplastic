@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import styles from "../../scss/styles.scss";
-import { useTranslation, withTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 
 const WrapperButtonLanguage = styled('div')`
   display: flex;
@@ -16,11 +17,10 @@ const WrapperButtonLanguage = styled('div')`
     text-transform: uppercase;
     font-weight: 300;
   }
-
 `
 
 const ButtonLanguage = ({ i18n }) => {
-  //const { i18n } = useTranslation();
+
   const [language, setLanguage] = useState('en')
   const changeLanguage = () => {
     if (language === "en") {
@@ -40,6 +40,10 @@ const ButtonLanguage = ({ i18n }) => {
     </WrapperButtonLanguage>
   )
 }
+
+ButtonLanguage.propTypes = {
+  i18n: PropTypes.object
+};
 
 
 export default withTranslation()(ButtonLanguage);

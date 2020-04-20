@@ -16,7 +16,7 @@ const Content = styled.div`
 
 `;
 
-const Container = styled.div`
+const WrapperImage = styled.div`
     border-radius: 22px;
     border: 2px solid #e2e2e2;
     box-sizing: border-box;
@@ -27,9 +27,9 @@ const Container = styled.div`
 
 const BoxImage = ({ img, height }) => {
   return (
-    <Container>
+    <WrapperImage>
       <Content img={img} height={height} />
-    </Container>
+    </WrapperImage>
   )
 }
 

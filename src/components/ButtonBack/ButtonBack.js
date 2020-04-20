@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import styles from "../../scss/styles.scss";
 import { FaAngleLeft } from "react-icons/fa";
+import PropTypes from 'prop-types';
 
 
 const WrapperButtonBack = styled("div")`
@@ -33,5 +34,10 @@ const ButtonBack = ({ text, onClick }) => {
     </WrapperButtonBack>
   )
 }
+
+ButtonBack.propTypes = {
+  text: PropTypes.string,
+  onClick: PropTypes.func
+};
 
 export default ButtonBack

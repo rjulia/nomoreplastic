@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { FiMenu, FiX } from "react-icons/fi";
 import styled from 'styled-components';
 import styles from "../../scss/styles.scss";
@@ -18,10 +19,7 @@ const WrapperButtonBurger = styled('div')`
     text-transform: uppercase;
     font-weight: 300;
   }
-
 `
-
-
 
 const ButtonBurger = ({ isOpen, onToggleMenu }) => {
 
@@ -36,7 +34,6 @@ const ButtonBurger = ({ isOpen, onToggleMenu }) => {
 }
 
 const mapStateToProps = (state) => {
-
   return {
     isOpen: state.settings.isOpenMenu
   }
@@ -45,5 +42,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => ({
   onToggleMenu: () => dispatch(toggleMenu())
 })
+
+ButtonBurger.propTypes = {
+  isOpen: PropTypes.bool,
+  onToggleMenu: PropTypes.func
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ButtonBurger) 

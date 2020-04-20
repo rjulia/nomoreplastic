@@ -62,10 +62,7 @@ const Entry = () => {
             <path className="path" d="M1651,486 C1581,480 1431,522 1431,546 C1431,570 1485,575 1506,599 C1527,623 1555,585 1622,599 C1689,613 1721,492 1651,486 Z" id="Stroke-47" stroke="#FFFFFF" strokeWidth="4" opacity="0.199999988" stroke-linecap="round"></path>
           </g>
         </svg>
-
       </div>
-
-
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import { GoogleMap, useLoadScript, MarkerClusterer, Marker } from '@react-google-maps/api'
 import { Spinner } from "../index";
@@ -11,24 +12,19 @@ import Pin from '../../assets/icons/pin.png';
 import { getLocation } from "../../services/redux/actions/search.actions";
 import { getPosition } from "../../services/redux/actions/settings.actions";
 
-
-
-
-
 const MapContainer = ({ data, settings, getIdLocation, onGetLocation, coordsShop }) => {
-  console.log(settings)
+
   const { coords } = settings
   let center = undefined
   if (coordsShop) {
     center = { lat: coordsShop.lat, lng: coordsShop.lng, zoom: coordsShop.zoom };
-
   } else {
     center = { lat: coords.lat, lng: coords.lng, zoom: coords.zoom };
-
   }
-  const apikey = process.env.REACT_APP_API_KEY_MAPS;
-  //const apikey = null;
 
+  const apikey = process.env.REACT_APP_API_KEY_MAPS;
+  // use in dev for don't cosume data
+  //const apikey = null;
 
   const PointImg = (category) => {
     switch (category) {
@@ -154,6 +150,14 @@ const mapDispatchToProps = dispatch => ({
   getIdLocation: id => dispatch(getLocation(id)),
   onGetLocation: params => dispatch(getPosition(params))
 })
+
+MapContainer.propTypes = {
+  data: PropTypes.array,
+  settings: PropTypes.object,
+  getIdLocation: PropTypes.func,
+  onGetLocation: PropTypes.func,
+  coordsShop: PropTypes.object
+};
 
 
 

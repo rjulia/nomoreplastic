@@ -35,7 +35,7 @@ const NewsCard = ({ item, onGetEvent }) => {
 
         <TitleComponent />
 
-        <Paragraph tag="p" isTrucate={true} characters={isMobile() ? 80 : 150} text={description || content__zh ||
+        <Paragraph tag="p" isTrucate={true} characters={isMobile() ? 80 : 100} text={description || content__zh ||
           content__en} classN="news-card__text" />
       </div>
     </div>

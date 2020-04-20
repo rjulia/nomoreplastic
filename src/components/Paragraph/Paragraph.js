@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 import { truncate } from "../../utils/functions";
 import variables from '../../scss/variables.scss';
 import styled from 'styled-components';
@@ -8,7 +9,7 @@ const Paragraph = ({ text, tag, classN, isTrucate, characters, href, size = 16, 
   let insertedText;
   const TagName = tag || 'p';
 
-  const Content = styled(TagName)`
+  const WrapperParagraph = styled(TagName)`
     color: ${variables.text_gray};
     font-size: ${size}px;
     margin: 1rem 0;
@@ -34,15 +35,26 @@ const Paragraph = ({ text, tag, classN, isTrucate, characters, href, size = 16, 
   }
   if (children) {
     return (
-      <Content className={classN} >
+      <WrapperParagraph className={classN} >
         {children} {text}
-      </Content>
+      </WrapperParagraph>
     )
   }
   return (
-    <Content className={classN} dangerouslySetInnerHTML={createMarkup()} />
+    <WrapperParagraph className={classN} dangerouslySetInnerHTML={createMarkup()} />
   )
 }
+
+Paragraph.propTypes = {
+  text: PropTypes.string,
+  tag: PropTypes.string,
+  classN: PropTypes.string,
+  isTrucate: PropTypes.bool,
+  characters: PropTypes.string,
+  href: PropTypes.string,
+  size: PropTypes.string,
+  children: PropTypes.element
+};
 
 export default Paragraph
 

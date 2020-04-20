@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 
-const Container = styled.div`
+const WrapperLabel = styled.div`
     padding: 6px 8px;
     font-size: 10px;
     margin-right: 10px;
@@ -17,9 +17,9 @@ const Container = styled.div`
 
 const Label = ({ color, text, bgc }) => {
   return (
-    <Container bgc={bgc} color={color}>
+    <WrapperLabel bgc={bgc} color={color}>
       {text}
-    </Container>
+    </WrapperLabel>
   )
 }
 
