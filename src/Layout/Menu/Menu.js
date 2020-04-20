@@ -4,7 +4,7 @@ import './Menu.scss';
 import { HongKongIcon, HomeIcon, EmailIcon, AddIcon, Shop } from "../../assets/icons";
 import { ButtonMenu, ButtonBurger, ButtonLanguage } from "../../components"
 import { useTranslation } from 'react-i18next';
-
+import ImgLogo from "../../assets/images/logo.png"
 
 const Menu = () => {
 
@@ -17,6 +17,9 @@ const Menu = () => {
         <HongKongIcon />
       </NavLink>
       <div className="menu__buttons">
+        <div className="button__logo">
+          <img src={ImgLogo} alt="no more waste logo" />
+        </div>
         <NavLink to="/map">
           <ButtonMenu text={t('menu.home')}>
             <HomeIcon width="60px" />
