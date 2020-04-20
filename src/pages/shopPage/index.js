@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './shops.scss';
 import { useQuery } from '@apollo/react-hooks';
-import { Spinner } from "../../components";
+import { Spinner, Title, Paragraph } from "../../components";
 
 import { SHOPS_QUERY } from "../../services/apollo/queries";
 import { CardShop, CardDetailShop } from './components/';
@@ -34,17 +34,28 @@ const ShopPage = () => {
 
   return (
     <div className="shop__container">
-      <div className={!isOpen ? `row myrow ${closed}` : 'row myrow open'}>
-        {
-          data.getShops.map(shop => (
-            <div key={shop.id} className="column">
-              <CardShop shop={shop} open={(id) => onOpen(id)} />
-            </div>
-          ))
-        }
+      <div className="shop__title">
+        <Title text={'Shop'} />
+        <Paragraph
+          tag='p'
+          classN="contact__paragraph"
+          text={'find'}
+        />
       </div>
-      <div className={!isOpen ? `aside ${closed}` : 'aside open'}>
-        <CardDetailShop id={ID} onClose={() => onClose()} />
+      <div className="row">
+
+        <div className={!isOpen ? `row myrow ${closed}` : 'row myrow open'}>
+          {
+            data.getShops.map(shop => (
+              <div key={shop.id} className="column">
+                <CardShop shop={shop} open={(id) => onOpen(id)} />
+              </div>
+            ))
+          }
+        </div>
+        <div className={!isOpen ? `aside ${closed}` : 'aside open'}>
+          {ID && <CardDetailShop id={ID} onClose={() => onClose()} />}
+        </div>
       </div>
     </div>
   )

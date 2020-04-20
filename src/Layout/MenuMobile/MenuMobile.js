@@ -3,13 +3,14 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { HomeIcon, EmailIcon, AddIcon, Shop } from "../../assets/icons";
 import { ButtonMenu } from "../../components";
-import localization from "../../localization";
 import { toggleMenu } from "../../services/redux/actions/settings.actions";
+import { useTranslation } from 'react-i18next';
 
 
 import './MenuMobile.scss';
 
 const MenuMobile = ({ isOpen, onToggleMenu }) => {
+  const { t } = useTranslation();
   const IsMenuOpen = (isOpen) ? 'isOpen' : '';
   const handelToggleMenu = () => {
     onToggleMenu()
@@ -18,22 +19,22 @@ const MenuMobile = ({ isOpen, onToggleMenu }) => {
     <div className={`${IsMenuOpen} menu-mobile`}>
       <div className="menu__buttons">
         <NavLink onClick={handelToggleMenu} to="/map">
-          <ButtonMenu text={localization.home.home}>
+          <ButtonMenu text={t('menu.home')}>
             <HomeIcon width="60px" />
           </ButtonMenu>
         </NavLink>
         <NavLink onClick={handelToggleMenu} to="shops">
-          <ButtonMenu text={localization.home.shops}>
+          <ButtonMenu text={t('menu.shops')}>
             <Shop width="60px" style={{ transform: 'scale(0.7)' }} />
           </ButtonMenu>
         </NavLink>
         <NavLink onClick={handelToggleMenu} to="contact">
-          <ButtonMenu text={localization.home.contact}>
+          <ButtonMenu text={t('menu.contact')}>
             <EmailIcon width="60px" />
           </ButtonMenu>
         </NavLink>
         <NavLink onClick={handelToggleMenu} to="add">
-          <ButtonMenu text={localization.home.add}>
+          <ButtonMenu text={t('menu.add')}>
             <AddIcon width="60px" />
           </ButtonMenu>
         </NavLink>

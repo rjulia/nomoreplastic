@@ -5,6 +5,8 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 import { HttpLink } from 'apollo-link-http';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { Provider } from 'react-redux';
+import { I18nextProvider } from "react-i18next";
+import i18n from "./i18n/i18n";
 // import AppRouter from './router/AppRouter';
 // import { Entry } from "./components";
 import store from './services/redux/store'
@@ -32,8 +34,10 @@ export const client = new ApolloClient({
 ReactDOM.render(
   <ApolloProvider client={client}>
     <Provider store={store}>
-      {/* <Entry /> */}
-      <App />
+      <I18nextProvider i18n={i18n}>
+        {/* <Entry /> */}
+        <App />
+      </I18nextProvider>
     </Provider>
   </ApolloProvider>
   , document.getElementById('root'));

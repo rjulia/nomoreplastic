@@ -3,6 +3,7 @@
 .shop__container {
   padding: 90px 0px;
   display: flex;
+  flex-direction: column;
 
   .myrow {
     display: flex;
@@ -79,6 +80,7 @@
     }
 
     .aside {
+      display: none;
       position: relative;
       overflow: initial;
       width: 0;
@@ -86,17 +88,23 @@
       opacity: 0;
       border-left: 1px solid $white-smoke;
       padding: 50px;
-      height: auto;
 
       &.open {
+        display: block;
+        height: 100vh;
+        overflow-y: auto;
+        right: 0;
         left: initial;
-        z-index: 0;
+        top: 0;
+        position: fixed;
+        z-index: 10;
         width: 40%;
         opacity: 1;
         animation: fadein 1s ease-in normal;
       }
 
       &.closed {
+        display: none;
         width: 0;
         opacity: 0;
         animation: fadeout 1s ease-out normal;
