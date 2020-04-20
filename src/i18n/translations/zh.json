@@ -1,8 +1,8 @@
 {
   "menu": {
-    "add": "add",
-    "home": "Home",
-    "shops": "Shops",
-    "contact": "contact"
+    "add": "加",
+    "home": "家",
+    "shops": "商店",
+    "contact": "联系"
   }
 }

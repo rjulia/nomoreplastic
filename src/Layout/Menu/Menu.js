@@ -2,13 +2,15 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 import './Menu.scss';
 import { HongKongIcon, HomeIcon, EmailIcon, AddIcon, Shop } from "../../assets/icons";
-import { ButtonMenu, ButtonBurger } from "../../components"
+import { ButtonMenu, ButtonBurger, ButtonLanguage } from "../../components"
 import { useTranslation } from 'react-i18next';
 
 
 const Menu = () => {
 
   const { t } = useTranslation();
+
+
   return (
     <div className="menu">
       <NavLink to="/" className="menu__logo">
@@ -36,7 +38,7 @@ const Menu = () => {
           </ButtonMenu>
         </NavLink>
       </div>
-      {/* <ButtonLanguage /> */}
+      <ButtonLanguage />
       <div className="menu__burger">
         <ButtonBurger />
       </div>

@@ -8,6 +8,7 @@ import {
   SETTINGS_TOGGLE_MENU,
   SETTINGS_CLEAN_POSITION
 } from "../actions/types";
+
 //import localization from '../../../localization';
 
 const InitialSettingsState = {
@@ -37,22 +38,6 @@ export default function LanguageReducer(state = InitialSettingsState, action) {
       };
     }
 
-    // case SETTINGS_GET_LANGUAGE: {
-    //   const lang = localization.getLanguage();
-    //   return {
-    //     ...state,
-    //     language: lang
-    //   };
-    // }
-
-    // case SETTINGS_SET_LANGUAGE: {
-    //   localization.setLanguage(action.payload.language);
-    //   localStorage.setItem('language', action.payload.language);
-    //   return {
-    //     ...state,
-    //     language: action.payload.language
-    //   };
-    // }
 
     case SETTINGS_GET_POSITION: {
       return {
@@ -66,17 +51,6 @@ export default function LanguageReducer(state = InitialSettingsState, action) {
     }
 
     default:
-      // const language = localStorage.getItem('language') || localization.getLanguage();
-      // const supportedLanguage = () => {
-      //   if ((language === 'en') || (language === 'zh')) {
-      //     return language;
-      //   }
-      //   return 'en';
-      // };
-      // localization.setLanguage(supportedLanguage());
-      return {
-        ...state
-        //language
-      };
+      return state
   }
 }

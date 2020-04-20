@@ -1,9 +1,7 @@
-import React from 'react'
-import { connect } from 'react-redux';
+import React, { useState } from 'react'
 import styled from 'styled-components';
 import styles from "../../scss/styles.scss";
-
-import { setLanguage } from '../../services/redux/actions/settings.actions';
+import { useTranslation, withTranslation } from 'react-i18next';
 
 const WrapperButtonLanguage = styled('div')`
   display: flex;
@@ -21,31 +19,28 @@ const WrapperButtonLanguage = styled('div')`
 
 `
 
-const ButtonLanguage = ({ settings, dispatch }) => {
+const ButtonLanguage = ({ i18n }) => {
+  //const { i18n } = useTranslation();
+  const [language, setLanguage] = useState('en')
+  const changeLanguage = () => {
+    if (language === "en") {
+      i18n.changeLanguage('zh');
+      setLanguage('zh')
+    } else {
+      i18n.changeLanguage('en');
+      setLanguage('en')
 
-  const language = settings.language;
-  const onLanguageButtonPress = () => {
-    const a = language === "en" ? "zht" : "en"
-    dispatch(setLanguage(a))
+    }
+  };
 
-  }
 
   return (
-    <WrapperButtonLanguage onClick={() => onLanguageButtonPress()}>
+    <WrapperButtonLanguage onClick={() => changeLanguage()}>
       <span >{language === "en" ? "繁" : "en"}</span>
     </WrapperButtonLanguage>
   )
 }
 
-const mapStateToProps = (state) => {
-  return state
-}
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    dispatch,
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ButtonLanguage);
+export default withTranslation()(ButtonLanguage);
 
