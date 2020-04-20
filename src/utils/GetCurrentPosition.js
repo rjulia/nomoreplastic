@@ -24,7 +24,7 @@ const GetCurrentPosition = (props) => {
     onGetLocation({
       lat: props.coords.latitude,
       lng: props.coords.longitude,
-      zoom: 13
+      zoom: 11
     })
   }
 

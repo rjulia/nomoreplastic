@@ -13,7 +13,7 @@ import { getLocation } from "../../services/redux/actions/search.actions";
 import { getPosition } from "../../services/redux/actions/settings.actions";
 
 const MapContainer = ({ data, settings, getIdLocation, onGetLocation, coordsShop }) => {
-
+  console.log(settings)
   const { coords } = settings
   let center = undefined
   if (coordsShop) {

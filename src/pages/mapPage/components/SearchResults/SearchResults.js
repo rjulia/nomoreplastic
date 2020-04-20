@@ -9,12 +9,15 @@ import { getPosition } from "../../../../services/redux/actions/settings.actions
 import './SearchResults.scss'
 
 
-const SearchResults = ({ locations, onLoadLocationFiltered, searchs, onGetPosition }) => {
+const SearchResults = ({ locations, onLoadLocationFiltered, searchs, onGetPosition, classCategory }) => {
 
   const [idxActived, setIdxActived] = useState(null)
+
+
   const handleSearchLocationByCategory = (params) => {
     if (params === "ALL") {
       onLoadLocationFiltered({ category: null })
+
     } else {
       onLoadLocationFiltered({ category: params })
     }
@@ -40,10 +43,8 @@ const SearchResults = ({ locations, onLoadLocationFiltered, searchs, onGetPositi
     }
   }
 
-
-
   return (
-    <div className="search-results">
+    <div className={`search-results ${classCategory}`}>
 
       <Title tag="h2" text="Recycling Points" />
       <div className="search-results__filter--box">

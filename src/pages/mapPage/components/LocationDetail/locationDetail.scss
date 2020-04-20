@@ -31,6 +31,18 @@
     }
   }
 
+  .location-detail__author {
+    font-family: $outstanding;
+    font-size: 10px;
+    font-weight: 300;
+    color: $text_gray;
+    padding-left: 20px;
+
+    &:hover {
+      color: $text;
+    }
+  }
+
   h2 {
 
     color: $black;

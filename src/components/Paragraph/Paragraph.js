@@ -50,7 +50,7 @@ Paragraph.propTypes = {
   tag: PropTypes.string,
   classN: PropTypes.string,
   isTrucate: PropTypes.bool,
-  characters: PropTypes.string,
+  characters: PropTypes.number,
   href: PropTypes.string,
   size: PropTypes.string,
   children: PropTypes.element

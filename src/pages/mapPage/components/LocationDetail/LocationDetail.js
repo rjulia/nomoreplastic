@@ -5,6 +5,7 @@ import { Spinner, Title, Paragraph } from "../../../../components";
 import { LOCATION_QUERY } from "../../../../services/apollo/queries";
 import './locationDetail.scss';
 import envoiramnet from "../../../../assets/images/envoiramnet.jpg";
+import { getImage } from '../../../../utils/getImageWhenNoImage'
 import { FaCheck } from "react-icons/fa";
 
 
@@ -14,17 +15,17 @@ const LocationDetail = ({ id }) => {
   if (error) return <p>ERROR</p>;
   console.log(data)
   const location = data.getLocation;
-  const img = location.imageUrl || envoiramnet;
-
+  const img = location.imageUrl || getImage(location.category);
+  console.log(img)
   return (
     <div className="location-detail">
 
       <div className="location-detail__image">
         <div className="location-detail__boximage">
-
-          <img src={img} alt={location.name} />
+          <img src={img.img || img} alt={location.name} />
         </div>
       </div>
+      {img.author && <a className="location-detail__author" href={img.link} target="_blank" rel="noopener noreferrer">{img.author}</a>}
       <div className="location-detail__boxtext">
 
         <Paragraph classN={`${location.category} location-detail__location`} text={location.category} />

@@ -1,24 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from "react-redux";
 import { cleanFilter } from "../../../../services/redux/actions/search.actions";
 import { SearchResults } from "../../components";
 import { ButtonBack } from "../../../../components";
 
-const ResultsContainer = ({ onCleanLocationFiltered, locations }) => {
+const ResultsContainer = ({ onCleanLocationFiltered, locations, category }) => {
 
+  const [classCategory, setClassCategory] = useState('')
   const handelCloseFiltered = () => {
     onCleanLocationFiltered()
   }
+  function getCLassBycateory(category) {
+    switch (true) {
+      case category === "COMMUNITY":
+        return 'community'
+      case category === "WASTE_SEPARATION":
+        return 'waste'
+      case category === "ORGANIZATIONS":
+        return 'organization'
+      case category === "CLOTHES":
+        return 'clothes'
+      case category === "COLLECTOR":
+        return 'private';
+    }
+  }
+  useEffect(() => {
+    setClassCategory(getCLassBycateory(category))
+  }, [category])
+
   return (
     <div>
-      <ButtonBack text="Go Back" onClick={handelCloseFiltered} />
-      <SearchResults locations={locations} />
+      <ButtonBack category={classCategory} text="Go Back" onClick={handelCloseFiltered} />
+      <SearchResults locations={locations} classCategory={classCategory} />
     </div>
   )
 }
 const mapStateToProps = (state) => {
   return {
-    locations: state.searchs.locations
+    locations: state.searchs.locations,
+    category: state.searchs.search.category
   }
 }
 
