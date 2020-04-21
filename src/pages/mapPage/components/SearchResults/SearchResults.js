@@ -4,12 +4,12 @@ import { Title } from "../../../../components";
 import { CardResult, DropdownSearchResults } from "../index";
 import { DistrictHK, TypeOfCollection } from "../../../../utils/constants";
 import { cleanAndGetLocationFiltered } from "../../../../services/redux/actions/search.actions";
-import { getPosition } from "../../../../services/redux/actions/settings.actions";
+import { getPosition, cleanPosition } from "../../../../services/redux/actions/settings.actions";
 
 import './SearchResults.scss'
 
 
-const SearchResults = ({ locations, onLoadLocationFiltered, searchs, onGetPosition, classCategory }) => {
+const SearchResults = ({ locations, onCleanPosition, onLoadLocationFiltered, searchs, onGetPosition, classCategory }) => {
 
   const [idxActived, setIdxActived] = useState(null)
 
@@ -24,8 +24,10 @@ const SearchResults = ({ locations, onLoadLocationFiltered, searchs, onGetPositi
   }
 
   const handleSearchLocationByDistric = (params) => {
-    if (params.name === "ALL") {
-      onLoadLocationFiltered()
+    console.log(params)
+    if (params === "ALL") {
+      onLoadLocationFiltered({ district: null })
+      onCleanPosition()
     } else {
       onLoadLocationFiltered({ district: params.name })
       if (params.coords) {
@@ -83,7 +85,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   onLoadLocationFiltered: params => dispatch(cleanAndGetLocationFiltered(params)),
-  onGetPosition: params => dispatch(getPosition(params))
+  onGetPosition: params => dispatch(getPosition(params)),
+  onCleanPosition: params => dispatch(cleanPosition())
+
 
 })
 
