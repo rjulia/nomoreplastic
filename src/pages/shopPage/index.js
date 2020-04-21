@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import './shops.scss';
 import { useQuery } from '@apollo/react-hooks';
 import { Spinner, Title, Paragraph } from "../../components";
-
 import { SHOPS_QUERY } from "../../services/apollo/queries";
 import { CardShop, CardDetailShop } from './components/';
+import { useTranslation } from 'react-i18next';
+import variables from '../../scss/variables.scss';
 
 const ShopPage = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -25,9 +26,7 @@ const ShopPage = () => {
     setClosed('')
     setId('')
   }
-
-
-
+  const { t } = useTranslation();
   const { data, loading, error } = useQuery(SHOPS_QUERY);
   if (loading) return <Spinner className="spinner__map" />;
   if (error) return <p>ERROR</p>;
@@ -35,16 +34,21 @@ const ShopPage = () => {
   return (
     <div className="shop__container">
       <div className="shop__title">
-        <Title text={'Shop'} />
+        <Title
+          tag={'h1'}
+          text={t('shops.title')}
+          size={48}
+          color={variables.primary}
+        />
         <Paragraph
           tag='p'
           classN="contact__paragraph"
-          text={'find'}
+          text={t('shops.paraf')}
         />
       </div>
       <div className="row">
 
-        <div className={!isOpen ? `row myrow ${closed}` : 'row myrow open'}>
+        <div className={!isOpen ? `row shop__row ${closed}` : 'row shop__row open'}>
           {
             data.getShops.map(shop => (
               <div key={shop.id} className="column">

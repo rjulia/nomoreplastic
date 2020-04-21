@@ -21,9 +21,9 @@ const MapContainer = ({ data, settings, getIdLocation, onGetLocation, coordsShop
     center = { lat: coords.lat, lng: coords.lng, zoom: coords.zoom };
   }
 
-  const apikey = process.env.REACT_APP_API_KEY_MAPS;
+  //const apikey = process.env.REACT_APP_API_KEY_MAPS;
   // use in dev for don't cosume data
-  //const apikey = null;
+  const apikey = null;
 
   const PointImg = (category) => {
     switch (category) {

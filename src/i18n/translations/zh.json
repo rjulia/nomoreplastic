@@ -4,5 +4,9 @@
     "home": "家",
     "shops": "商店",
     "contact": "联系"
+  },
+  "shops": {
+    "title": "商店",
+    "paraf": "Here you can find the Hong Kong stores where their philosophy and products are environmentally friendly."
   }
 }
