@@ -3,10 +3,17 @@
     "add": "加",
     "home": "家",
     "shops": "商店",
-    "contact": "联系"
+    "contact": "联系",
+    "advice": "Advices"
   },
   "shops": {
     "title": "商店",
     "paraf": "Here you can find the Hong Kong stores where their philosophy and products are environmentally friendly."
+  },
+  "contact": {
+    "title_contact": "Contact",
+    "phrase": "If you want to contact us you fill out the form below:",
+    "title_coffee": "Buy Me A Coffee",
+    "buyacoffee": " Hello, we are a couple of friends trying to help the people of Hong Kong to be more responsible when it comes to recycling. We do everything without any help, if you can help for the maintenance and expenses of the web, the planet will be deeply grateful to you. And we too, of course! :)"
   }
 }

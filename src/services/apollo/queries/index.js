@@ -130,3 +130,21 @@ export const SHOP_QUERY = gql`
     }
 }`
 
+
+export const ADVICES_QUERY = gql`
+  query getAdvices {
+    getAdvices {
+      id
+      title__en
+      title__zh
+      content__en
+      content__zh
+      imageUrl__yes
+      author__yes
+      imageUrl__no
+      author__no
+      statement__en
+      statement__zh
+    }
+}`
+

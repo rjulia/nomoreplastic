@@ -1,4 +1,6 @@
+export { default as AdviceIcon } from './AdviceIcon';
 export { default as AddIcon } from './AddIcon';
+
 export { default as Clothes } from './Clothes';
 export { default as Collection } from './Collection';
 export { default as Community } from './Community';

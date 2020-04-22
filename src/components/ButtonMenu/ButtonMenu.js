@@ -1,14 +1,19 @@
 import React from 'react';
 import './ButtonMenu.scss'
 import { FaAngleRight } from "react-icons/fa";
+import classNames from 'classnames'
 
 
+const Button = ({ children, onClick, text, classN }) => {
+  var btnClass = classNames({
+    ButtonMenu: true,
+    [classN]: classN
 
-const Button = ({ children, onClick, text }) => {
+  });
 
   return (
     <div
-      className="ButtonMenu"
+      className={btnClass}
       onClick={onClick}>
       <div className="icon__contianer">
         {children} <FaAngleRight />

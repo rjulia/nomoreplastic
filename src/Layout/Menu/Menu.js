@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import './Menu.scss';
-import { HongKongIcon, HomeIcon, EmailIcon, AddIcon, Shop } from "../../assets/icons";
+import { HongKongIcon, HomeIcon, EmailIcon, AddIcon, Shop, AdviceIcon } from "../../assets/icons";
 import { ButtonMenu, ButtonBurger, ButtonLanguage } from "../../components"
 import { useTranslation } from 'react-i18next';
 import ImgLogo from "../../assets/images/logo.png"
@@ -35,9 +35,9 @@ const Menu = () => {
             <EmailIcon width="60px" />
           </ButtonMenu>
         </NavLink>
-        <NavLink to="add">
-          <ButtonMenu text={t('menu.add')}>
-            <AddIcon width="60px" />
+        <NavLink to="advices">
+          <ButtonMenu text={t('menu.advice')} classN={'bulb'}>
+            <AdviceIcon width="60px" style={{ transform: 'scale(0.7)' }} />
           </ButtonMenu>
         </NavLink>
       </div>
