@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import './CardDetailShop.scss';
-import { Spinner, BoxImage, Title, Label, Paragraph, Map } from "../../../../components";
+import { Spinner, BoxImage, Title, Label, Paragraph, Map, ButtonBack } from "../../../../components";
 import { SHOP_QUERY } from "../../../../services/apollo/queries";
 import variables from '../../../../scss/variables.scss';
 import { FaRegEnvelope, FaLeaf, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaMobileAlt } from "react-icons/fa";
@@ -31,6 +31,7 @@ const CardDetailShop = ({ id, onClose }) => {
 
   return (
     <div className="card-detail-shop__container">
+      <ButtonBack onClick={onClose} text={"Go Back"} />
       <div onClick={onClose}>
 
         <BoxImage img={imageUrl} height={300} />

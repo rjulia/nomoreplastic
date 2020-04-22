@@ -1,21 +1,23 @@
 import React from 'react'
-import { Title, BoxImage, Label } from '../../../../components'
+import { Title, BoxImage, Label, Button } from '../../../../components'
 import './CardShop.scss';
 import { FaRegEnvelope, FaLeaf, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaMobileAlt } from "react-icons/fa";
 import { IoIosGlobe } from "react-icons/io";
 import variables from '../../../../scss/variables.scss';
 
-const CardShop = ({ shop, open }) => {
+const CardShop = ({ shop, open, isOpen }) => {
   const leafs = [0, 1, 2, 3, 4];
 
 
   return (
     <div className="card-shop__container">
-      <Title tag={'h2'} text={shop.name || ''} />
+      <div className="card-shop__header">
+        <Title tag={'h2'} text={shop.name || ''} />
+        <span>{!isOpen && <Button onClick={() => open(shop.id)} text={"View More"} />}</span>
+      </div>
       <div className="card-shop__content">
         <div className="card-shop__box--image" onClick={() => open(shop.id)}>
           <BoxImage img={shop.thumbnail} height={180} />
-
         </div>
         <div className="card-shop__box--text">
           <div>
@@ -44,7 +46,6 @@ const CardShop = ({ shop, open }) => {
               )
             }
           </div>
-
         </div>
       </div>
     </div>

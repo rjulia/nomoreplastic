@@ -29,6 +29,12 @@
 
   }
 
+  .card-shop__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .card-shop__box--text {
     padding: 10px 10px 20px 20px;
     display: flex;

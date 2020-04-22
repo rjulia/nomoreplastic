@@ -52,7 +52,7 @@ const ShopPage = () => {
           {
             data.getShops.map(shop => (
               <div key={shop.id} className="column">
-                <CardShop shop={shop} open={(id) => onOpen(id)} />
+                <CardShop shop={shop} isOpen={isOpen} open={(id) => onOpen(id)} />
               </div>
             ))
           }
