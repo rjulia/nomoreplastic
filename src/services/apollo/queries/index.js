@@ -137,14 +137,37 @@ export const ADVICES_QUERY = gql`
       id
       title__en
       title__zh
-      content__en
-      content__zh
       imageUrl__yes
       author__yes
+      link__yes
+      date
+    }
+}`
+
+export const ADVICE_QUERY = gql`
+  query getAdvice ($id: ID) {
+    getAdvice(id: $id)  {
+      id
+      title__en
+      title__zh
+      content__en {
+        html
+        text
+      }
+      content__zh {
+        html
+        text
+      }
+      imageUrl__yes
+      author__yes
+      link__yes
       imageUrl__no
       author__no
+      link__no
       statement__en
       statement__zh
+      date
+      author
     }
 }`
 

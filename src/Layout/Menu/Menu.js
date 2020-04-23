@@ -25,19 +25,19 @@ const Menu = () => {
             <HomeIcon width="60px" />
           </ButtonMenu>
         </NavLink>
-        <NavLink to="shops">
+        <NavLink to="/shops">
           <ButtonMenu text={t('menu.shops')}>
             <Shop width="60px" style={{ transform: 'scale(0.7)' }} />
           </ButtonMenu>
         </NavLink>
-        <NavLink to="contact">
-          <ButtonMenu text={t('menu.contact')}>
-            <EmailIcon width="60px" />
-          </ButtonMenu>
-        </NavLink>
-        <NavLink to="advices">
+        <NavLink to="/advices">
           <ButtonMenu text={t('menu.advice')} classN={'bulb'}>
             <AdviceIcon width="60px" style={{ transform: 'scale(0.7)' }} />
+          </ButtonMenu>
+        </NavLink>
+        <NavLink to="/contact">
+          <ButtonMenu text={t('menu.contact')}>
+            <EmailIcon width="60px" />
           </ButtonMenu>
         </NavLink>
       </div>
