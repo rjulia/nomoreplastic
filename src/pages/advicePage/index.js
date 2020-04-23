@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './advice.scss';
 import { useQuery } from '@apollo/react-hooks';
 import { Spinner, Title, Paragraph } from "../../components";
+import CardAdvice from "./components/CardAdvice/CardAdvice";
 import { ADVICES_QUERY } from "../../services/apollo/queries";
 import { useTranslation } from 'react-i18next';
 import variables from '../../scss/variables.scss';
@@ -14,8 +15,8 @@ const Advice = () => {
   if (error) return <p>ERROR</p>;
   console.log(data)
   return (
-    <div className="shop__container">
-      <div className="shop__title">
+    <div className="advice__container">
+      <div className="advice__title">
         <Title
           tag={'h1'}
           text={t('advice.title')}
@@ -30,14 +31,14 @@ const Advice = () => {
       </div>
       <div className="row">
 
-        <div className="row shop__row">
-          {/* {
-            data.getShops.map(shop => (
-              <div key={shop.id} className="column">
-                <CardShop shop={shop} open={(id) => onOpen(id)} />
+        <div className="row">
+          {
+            data.getAdvices.map(advice => (
+              <div key={advice.id} className="column">
+                <CardAdvice advice={advice} />
               </div>
             ))
-          } */}
+          }
         </div>
       </div>
     </div>
