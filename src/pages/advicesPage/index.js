@@ -30,16 +30,13 @@ const Advices = () => {
         />
       </div>
       <div className="row">
-
-        <div className="row">
-          {
-            data.getAdvices.map(advice => (
-              <div key={advice.id} className="column">
-                <CardAdvice advice={advice} />
-              </div>
-            ))
-          }
-        </div>
+        {
+          data.getAdvices.map(advice => (
+            <div key={advice.id} className="column col-12 col-md-4">
+              <CardAdvice advice={advice} />
+            </div>
+          ))
+        }
       </div>
     </div>
   )

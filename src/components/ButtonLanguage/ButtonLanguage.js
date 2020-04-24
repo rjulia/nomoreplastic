@@ -6,14 +6,18 @@ import { withTranslation } from 'react-i18next';
 
 const WrapperButtonLanguage = styled('div')`
   display: flex;
-  justify-content: center;
+  flex: 0 0 50px;
+  justify-content: flex-end;
   align-items: center;
-  width:100%;
-  height: 100px;
+  width:50%;
+  height: 100%;
   color: ${styles.white};
   cursor: pointer;
+  @media (min-width: 768px) {
+    width:100%;
+  }
   span {
-    font-size: 24px;
+    font-size: 30px;
     text-transform: uppercase;
     font-weight: 300;
   }

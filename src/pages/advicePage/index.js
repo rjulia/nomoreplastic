@@ -1,8 +1,8 @@
 import React from 'react'
 import './advice.scss'
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useQuery } from '@apollo/react-hooks';
-import { Spinner, Title, Paragraph, BoxImage } from "../../components";
+import { Spinner, Title, Paragraph, BoxImage, Button, ButtonBack } from "../../components";
 import { ADVICE_QUERY } from "../../services/apollo/queries";
 import moment from 'moment'
 import variables from '../../scss/variables.scss';
@@ -24,7 +24,7 @@ const AdvicePage = () => {
   return (
     <div className="advice__container">
       <div className="row">
-        <div className="col-2 advice__box--images">
+        <div className="col-12 col-md-2 advice__box--images">
           <div className="advice__box--date">
             <div className="advice__group--date">
 
@@ -34,8 +34,11 @@ const AdvicePage = () => {
             </div>
           </div>
         </div>
-        <div className="col-10">
-          <Title color={variables.primary} tag={"h2"} text={advice.title__en} size={40} />
+        <div className="col-12 col-md-7">
+          <Link to={"/advices"}>
+            <ButtonBack text={"Go Back"} />
+          </Link>
+          <Title color={variables.primary} tag={"h2"} text={advice.title__en} size={40} sizeM={32} />
           <Paragraph classN={'advice__statement'} text={advice.statement__en} />
           <div className="advice_pictures">
             <div className="advice__box--image">

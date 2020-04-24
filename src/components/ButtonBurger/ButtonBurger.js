@@ -11,7 +11,7 @@ const WrapperButtonBurger = styled('div')`
   justify-content: center;
   align-items: center;
   width:100%;
-  height: 88px;
+  height: 60px;
   color: ${styles.white};
   cursor: pointer;
   span {

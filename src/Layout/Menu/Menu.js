@@ -13,11 +13,14 @@ const Menu = () => {
 
   return (
     <div className="menu">
+      <div className="button__logo mobile">
+        <img src={ImgLogo} alt="no more waste logo" />
+      </div>
       <NavLink to="/" className="menu__logo">
         <HongKongIcon />
       </NavLink>
       <div className="menu__buttons">
-        <div className="button__logo">
+        <div className="button__logo desktop">
           <img src={ImgLogo} alt="no more waste logo" />
         </div>
         <NavLink to="/map">
