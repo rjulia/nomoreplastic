@@ -1,7 +1,7 @@
 @import '../../scss/variables.scss';
 
 .shop__container {
-  padding: 90px 0px;
+  padding: 90px 15px;
   display: flex;
   flex-direction: column;
 
@@ -32,6 +32,8 @@
 
     &.open {
       opacity: 1;
+      right: 0;
+
       z-index: 100;
       width: 100vw;
       left: 0;

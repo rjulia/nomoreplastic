@@ -24,6 +24,7 @@ const WrapperButtonBack = styled("div")`
   display: flex;
   position:relative;
   width: auto;
+  min-width: 110px;
   height: 36px;
   justify-content: center;
   align-items: center;

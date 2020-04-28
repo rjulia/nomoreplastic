@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import { useTranslation } from 'react-i18next';
 import { NavLink } from "react-router-dom";
-import { HomeIcon, EmailIcon, AddIcon, Shop } from "../../assets/icons";
+import { HomeIcon, EmailIcon, AddIcon, Shop, AdviceIcon } from "../../assets/icons";
 import { ButtonMenu } from "../../components";
 import { toggleMenu } from "../../services/redux/actions/settings.actions";
 
@@ -26,27 +26,28 @@ const MenuMobile = ({ isOpen, onToggleMenu }) => {
             <HomeIcon width="60px" />
           </ButtonMenu>
         </NavLink>
-        <NavLink onClick={handelToggleMenu} to="shops">
+        <NavLink onClick={handelToggleMenu} to="/shops">
           <ButtonMenu text={t('menu.shops')}>
             <Shop width="60px" style={{ transform: 'scale(0.7)' }} />
           </ButtonMenu>
         </NavLink>
-        <NavLink onClick={handelToggleMenu} to="contact">
+        <NavLink onClick={handelToggleMenu} to="/advices">
+          <ButtonMenu text={t('menu.advice')}>
+            <AdviceIcon width="60px" style={{ transform: 'scale(0.7)' }} />
+          </ButtonMenu>
+        </NavLink>
+        <NavLink onClick={handelToggleMenu} to="/contact">
           <ButtonMenu text={t('menu.contact')}>
             <EmailIcon width="60px" />
           </ButtonMenu>
         </NavLink>
-        <NavLink onClick={handelToggleMenu} to="add">
-          <ButtonMenu text={t('menu.add')}>
-            <AddIcon width="60px" />
-          </ButtonMenu>
-        </NavLink>
+
 
       </div>
-      <div className="menu__language">
+      {/* <div className="menu__language">
         <span onClick={() => changeLanguage('en')}>EN</span> |
         <span onClick={() => changeLanguage('zh')}>ZH</span>
-      </div>
+      </div> */}
     </div>
   )
 }
