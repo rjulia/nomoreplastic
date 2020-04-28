@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import './Title.scss'
 
-const Title = ({ tag, text, classN, color, size, sizeM }) => {
+const Title = ({ tag, text, classN, color, size, sizeM, onClick }) => {
 
   const TagName = tag || 'h1'
 
@@ -20,7 +20,12 @@ const Title = ({ tag, text, classN, color, size, sizeM }) => {
 `;
 
   return (
-    <WrapperTitle className={classN} color={color} size={size} sizeM={sizeM}>
+    <WrapperTitle
+      className={classN}
+      color={color}
+      size={size}
+      sizeM={sizeM}
+      onClick={onClick}>
       {text}
     </WrapperTitle>
   )
