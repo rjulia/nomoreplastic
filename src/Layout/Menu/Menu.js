@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import './Menu.scss';
-import { HongKongIcon, HomeIcon, EmailIcon, AddIcon, Shop, AdviceIcon } from "../../assets/icons";
+import { HongKongIcon, HomeIcon, EmailIcon, Shop, AdviceIcon } from "../../assets/icons";
 import { ButtonMenu, ButtonBurger, ButtonLanguage } from "../../components"
 import { useTranslation } from 'react-i18next';
 import ImgLogo from "../../assets/images/logo.png"

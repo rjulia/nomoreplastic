@@ -7,7 +7,7 @@
 
   .card-result__title {
     min-height: 24px;
-    width: 361px;
+    width: 100%;
     color: $black;
     font-family: $general;
     font-weight: 500;
@@ -18,7 +18,7 @@
 
   .card-result__parf {
     height: auto;
-    width: 400px;
+    width: 100%;
     opacity: 0.8;
     color: $text_gray;
     font-family: $general;
@@ -42,5 +42,12 @@
   }
 
   &.community {}
+
+  @include desktop {
+    .card-result__title {
+      width: 361px;
+
+    }
+  }
 
 }

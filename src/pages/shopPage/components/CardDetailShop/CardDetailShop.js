@@ -15,7 +15,7 @@ const CardDetailShop = ({ id, onClose }) => {
   if (loading) return <Spinner className="spinner__map" />;
   if (error) return <p>ERROR</p>
 
-  const { address, category, description, email, facebook, imageUrl, name, plasticfree, promoded, rate, webUrl, instagram, phone, lat, lng } = data.getShop
+  const { address, category, description, email, facebook, imageUrl, name, plasticfree, webUrl, instagram, phone, lat, lng } = data.getShop
   const location = [{
     id: id,
     lat: lat,
@@ -69,7 +69,6 @@ const CardDetailShop = ({ id, onClose }) => {
         {instagram && <a href={instagram} target="_blank" rel="noopener noreferrer"><FaInstagram size={20} /></a>}
         {webUrl && <a href={webUrl} target="_blank" rel="noopener noreferrer"><IoIosGlobe size={20} /></a>}
         {email && <a href={`mailto:${email}`}><FaRegEnvelope size={20} /></a>}
-        <a href="http://" target="_blank" rel="noopener noreferrer"></a>
       </div>
       {
         (lng && lat) ?

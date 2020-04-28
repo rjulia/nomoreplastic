@@ -2,7 +2,7 @@
 
 .newscard {
   display: flex;
-  height: 120px;
+  height: auto;
   width: 100%;
   flex-direction: row;
   margin-top: 15px;
@@ -55,5 +55,7 @@
     margin: 0;
     font-weight: 300;
   }
+
+  @include desktop {}
 
 }

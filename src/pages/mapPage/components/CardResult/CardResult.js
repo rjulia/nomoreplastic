@@ -11,7 +11,7 @@ const CardResult = ({ item, coords, getIdLocation, onGetLocation }) => {
   const { address, name } = item;
   const [distance, setDistance] = useState('');
 
-  if (coords && item) {
+  if (coords && item.lat && item.lng) {
     getDistance(coords, { lat: item.lat, lng: item.lng }).then(data => {
       if (data && data.rows["0"]) {
         const distance = data.rows["0"].elements["0"].distance.text || 'no distance';

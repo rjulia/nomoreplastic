@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { Title, BoxImage, Label, Button, Paragraph } from '../../../../components'
+import { Title, BoxImage } from '../../../../components'
 import { withTranslation } from 'react-i18next';
 import "./CardAdvice.scss";
 

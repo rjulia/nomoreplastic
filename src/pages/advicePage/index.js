@@ -2,7 +2,7 @@ import React from 'react'
 import './advice.scss'
 import { useParams, Link } from "react-router-dom";
 import { useQuery } from '@apollo/react-hooks';
-import { Spinner, Title, Paragraph, BoxImage, Button, ButtonBack } from "../../components";
+import { Spinner, Title, Paragraph, BoxImage, ButtonBack } from "../../components";
 import { ADVICE_QUERY } from "../../services/apollo/queries";
 import moment from 'moment'
 import variables from '../../scss/variables.scss';

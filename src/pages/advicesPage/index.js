@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './advices.scss';
 import { useQuery } from '@apollo/react-hooks';
 import { Spinner, Title, Paragraph } from "../../components";

@@ -20,7 +20,7 @@ const ResultsContainer = ({ onCleanLocationFiltered, locations, category }) => {
         return 'organization'
       case category === "CLOTHES":
         return 'clothes'
-      case category === "COLLECTOR":
+      default:
         return 'private';
     }
   }
