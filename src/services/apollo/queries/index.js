@@ -17,6 +17,21 @@ export const LOCATIONS_QUERY = gql`
   }
 `;
 
+export const LINKS_QUERY = gql`
+  query getLinks{
+    getLinks{
+      id
+      title__en
+      title__zh
+      url
+      content__en
+      content__zh
+      imageUrl
+      category
+    }
+  }
+`;
+
 export const LOCATION_QUERY = gql`
   query getLocation($id: ID) {
     getLocation (id: $id) {

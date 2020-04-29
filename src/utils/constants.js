@@ -1,16 +1,20 @@
 export const TypeRecycling = [
   'PAPER',
+  'COMPUTER_PRODUCTS',
+  'USED_OCOOKING_OIL',
+  'TONNER_CARTRIDEGE',
   'METAL',
   'PLASTIC',
-  'RUBER',
+  'RUBER_TYRE',
   'ELEC_APPLIANCE',
-  'BATTERIE',
+  'RECHARGABLE_BATTERIE',
   'FLOURESCENT',
   'CLOTHES',
   'GLASS',
   'FURMITURE',
   'FOOD',
-  'OTHERS'
+  'BOOKS',
+  'OTHERS',
 ];
 
 export const DistrictHK = [
