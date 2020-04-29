@@ -21,9 +21,9 @@ const MapContainer = ({ data, settings, getIdLocation, onGetLocation, coordsShop
     center = { lat: coords.lat, lng: coords.lng, zoom: coords.zoom };
   }
 
-  //const apikey = process.env.REACT_APP_API_KEY_MAPS;
+  const apikey = process.env.REACT_APP_API_KEY_MAPS;
 
-  const apikey = process.env.NODE_ENV === "production" ? process.env.REACT_APP_API_KEY_MAPS : null;
+  //const apikey = process.env.NODE_ENV === "production" ? process.env.REACT_APP_API_KEY_MAPS : null;
 
   const PointImg = (category) => {
     switch (category) {

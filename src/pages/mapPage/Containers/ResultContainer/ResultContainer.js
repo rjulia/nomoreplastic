@@ -11,10 +11,11 @@ const Wrapper = styled('div')`
   margin-top: 40px
 `
 
-const ResultContainer = ({ onCleanLocationSelect, id, id_event }) => {
+const ResultContainer = ({ onCleanLocationSelect, onCleanLocation, id, id_event }) => {
 
   const handelCloseFiltered = () => {
     onCleanLocationSelect()
+    onCleanLocation()
   }
   return (
     <Wrapper>

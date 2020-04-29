@@ -9,7 +9,10 @@ export const LOCATIONS_QUERY = gql`
       lat
       lng
       category
+      district
       address
+      opening
+      tel
     }
   }
 `;
@@ -31,6 +34,7 @@ export const LOCATION_QUERY = gql`
       facebook
       recycleBy
       category
+      district
     }
 }`
 
