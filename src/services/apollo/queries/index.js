@@ -187,6 +187,27 @@ export const ADVICE_QUERY = gql`
       statement__zh
       date
       author
+      products{
+        id
+      }
     }
 }`
+
+export const PRODUCTS_QUERY = gql`
+  query getProducts($category: TypeProduct){
+    getProducts(category: $category){
+      id
+      name__en
+      name__zh
+      price
+      link
+      newness
+      imageUrl
+      description__en
+      description__zh
+      brand
+      category
+    }
+  }
+`;
 

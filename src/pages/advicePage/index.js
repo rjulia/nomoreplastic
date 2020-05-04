@@ -6,7 +6,7 @@ import { Spinner, Title, Paragraph, BoxImage, ButtonBack } from "../../component
 import { ADVICE_QUERY } from "../../services/apollo/queries";
 import moment from 'moment'
 import variables from '../../scss/variables.scss';
-
+import ProductContainer from './containers/ProductContainer'
 const AdvicePage = () => {
   let { id } = useParams();
   console.log(id)
@@ -40,18 +40,32 @@ const AdvicePage = () => {
           </Link>
           <Title color={variables.primary} tag={"h2"} text={advice.title__en} size={40} sizeM={32} />
           <Paragraph classN={'advice__statement'} text={advice.statement__en} />
+          <Paragraph classN={'advice__author'} text={`Author: ${advice.author}`} tag={'a'} href={advice.author} />
+          <Title color={variables.primary} tag={"h2"} text={"Why do it?"} size={24} sizeM={30} />
+          <div className="advice_pictures">
+            <div className="advice__box--image">
+              <BoxImage classN={'frame-image'} img={advice.imageUrl__no} height={200} />
+              <Paragraph classN={'advice__image--author'} text={`Autho: ${advice.author__no}`} tag={'a'} href={advice.link__no} />
+            </div>
+            <div className="advice__box--image">
+
+              <Paragraph classN={'advice__long-text'} text={advice.content__en.html} />
+            </div>
+          </div>
+          <Title color={variables.primary} tag={"h2"} text={"What is the benefit?"} size={24} sizeM={30} />
           <div className="advice_pictures">
             <div className="advice__box--image">
               <BoxImage classN={'frame-image yes'} img={advice.imageUrl__yes} height={200} />
               <Paragraph classN={'advice__image--author'} text={`Autho: ${advice.author__yes}`} tag={'a'} href={advice.link__yes} />
             </div>
             <div className="advice__box--image">
-              <BoxImage classN={'frame-image'} img={advice.imageUrl__no} height={200} />
-              <Paragraph classN={'advice__image--author'} text={`Autho: ${advice.author__no}`} tag={'a'} href={advice.link__no} />
+              <Paragraph classN={'advice__long-text'} text={advice.content__en.html} />
             </div>
           </div>
-          <Paragraph classN={'advice__author'} text={`Author: ${advice.author}`} tag={'a'} href={advice.author} />
+          <Title color={variables.primary} tag={"h2"} text={"How can I do it?"} size={24} sizeM={30} />
           <Paragraph classN={'advice__long-text'} text={advice.content__en.html} />
+          <Title color={variables.primary} tag={"h4"} text={"You can find this product clik in the link"} size={18} sizeM={18} />
+          <ProductContainer ids={advice.products} />
         </div>
       </div>
 
