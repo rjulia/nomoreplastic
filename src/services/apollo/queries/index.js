@@ -156,9 +156,12 @@ export const ADVICES_QUERY = gql`
       id
       title__en
       title__zh
-      imageUrl__yes
-      author__yes
-      link__yes
+      statement__en
+      statement__zh
+      author
+      imageUrlWhat
+      authorWhat
+      linkWhat
       date
     }
 }`
@@ -169,25 +172,41 @@ export const ADVICE_QUERY = gql`
       id
       title__en
       title__zh
-      content__en {
-        html
-        text
-      }
-      content__zh {
-        html
-        text
-      }
-      imageUrl__yes
-      author__yes
-      link__yes
-      imageUrl__no
-      author__no
-      link__no
       statement__en
       statement__zh
-      date
       author
-      products{
+      contentWhy__en {
+        html
+        text
+      }
+      contentWhy__zh {
+            html
+            text
+          }
+      contentWhat__en {
+            html
+            text
+          }
+      contentWhat__zh {
+            html
+            text
+          }
+      contentHow__en {
+            html
+            text
+          }
+      contentHow__zh {
+            html
+            text
+          }
+      imageUrlWhy
+      authorWhy
+      linkWhy
+      imageUrlWhat
+      authorWhat
+      linkWhat
+      date
+      products {
         id
       }
     }

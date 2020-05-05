@@ -16,8 +16,8 @@ const CardAdvice = ({ advice, i18n }) => {
         </div>
         <div className="card-advice__content">
           <div className="card-advice__box--image">
-            <BoxImage img={advice.imageUrl__yes} height={200} />
-            <p className="card-advice__author"> Author: {advice.author__yes}</p>
+            <BoxImage img={advice.imageUrlWhat} height={200} />
+            <p className="card-advice__author"> Author: {advice.authorWhat}</p>
           </div>
         </div>
       </div>

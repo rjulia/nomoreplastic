@@ -105,6 +105,11 @@
 
   }
 
+  .advice__text {
+    width: 100%;
+    flex: 1 1 calc(100% - 400px);
+  }
+
   .advice__long-text {
     color: $text;
 
