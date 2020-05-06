@@ -1,19 +1,42 @@
 {
   "menu": {
     "add": "加",
-    "home": "家",
+    "home": "主頁",
     "shops": "商店",
-    "contact": "联系",
-    "advice": "Advices"
+    "contact": "聯絡我們",
+    "advice": "環保貼士"
+  },
+  "home": {
+    "title": "Nomorewaste.today",
+    "subtitle": "選擇以下其中一個回收點或你需要回收的物資",
+    "select": "你想回收甚麼物資"
   },
   "shops": {
     "title": "商店",
     "paraf": "Here you can find the Hong Kong stores where their philosophy and products are environmentally friendly."
   },
   "contact": {
-    "title_contact": "Contact",
-    "phrase": "If you want to contact us you fill out the form below:",
-    "title_coffee": "Buy Me A Coffee",
-    "buyacoffee": " Hello, we are a couple of friends trying to help the people of Hong Kong to be more responsible when it comes to recycling. We do everything without any help, if you can help for the maintenance and expenses of the web, the planet will be deeply grateful to you. And we too, of course! :)"
+    "title_contact": "聯絡我們",
+    "phrase": "填寫以下資料以便與你聯絡",
+    "title_coffee": "請我喝杯咖啡吧!",
+    "buyacoffee": "港人回收廢物，建立更美好的生活環境。我們沒接受任何幫助，希望你能資助此網頁的營運及開支，我們和我們的地球都會很感激你的。:)"
+  },
+  "typeRecycling": {
+    "paper": "紙張",
+    "computer_products": "電腦",
+    "used_ocooking_oil": "食用油",
+    "tonner_cartridege": "碳粉盒",
+    "metal": "金屬",
+    "plastic": "塑膠",
+    "ruber_tyre": "車胎",
+    "elec_appliance": "電器",
+    "rechargable_batterie": "充電電池",
+    "flourescent": "光管",
+    "clothes": "衣服",
+    "glass": "玻璃",
+    "furmiture": "傢俬",
+    "food": "食物",
+    "books": "書本",
+    "others": "其他"
   }
 }

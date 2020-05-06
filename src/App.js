@@ -5,6 +5,7 @@ import {
   Switch,
   Redirect
 } from 'react-router-dom';
+
 import { MapRecycle, Contact, Advices, Shop, Advice } from "./pages";
 import './App.scss';
 import { Menu, MenuMobile } from "./Layout";

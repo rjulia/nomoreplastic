@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 import { Input, InputLabel, MenuItem, FormControl, ListItemText, Select, Checkbox } from '@material-ui/core';
 import { TypeRecycling } from "../../../../utils/constants";
 import { cleanAndGetLocationFiltered } from "../../../../services/redux/actions/search.actions";
-
-
+import { useTranslation } from 'react-i18next';
 import './Search.scss'
 
 
@@ -20,6 +19,7 @@ const MenuProps = {
 };
 
 const Search = ({ onLoadLocationFiltered, isOnSearching }) => {
+  const { t } = useTranslation();
   const [material, setMaterial] = React.useState([]);
   const handleChange = event => {
     const params = event.target.value
@@ -42,7 +42,7 @@ const Search = ({ onLoadLocationFiltered, isOnSearching }) => {
 
   return (
     <FormControl className="search" >
-      <InputLabel id="kindOfRecycle">What do you want to reclycle</InputLabel>
+      <InputLabel id="kindOfRecycle">{t('home.select')}</InputLabel>
       <Select
         labelId="kindOfRecycle"
         id="demo-mutiple-checkbox"
@@ -54,9 +54,9 @@ const Search = ({ onLoadLocationFiltered, isOnSearching }) => {
         MenuProps={MenuProps}
       >
         {TypeRecycling.map(type => (
-          <MenuItem key={type} value={type}>
-            <Checkbox checked={material.indexOf(type) > -1} />
-            <ListItemText primary={type} />
+          <MenuItem key={type.value} value={type.value}>
+            <Checkbox checked={material.indexOf(type.value) > -1} />
+            <ListItemText primary={t(type.key)} />
           </MenuItem>
         ))}
       </Select>

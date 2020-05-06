@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from "react-redux";
+import { useTranslation } from 'react-i18next';
 import './AsideContainer.js.scss';
 import { SelectCollectionPoints, NewsAside, Search } from '../../components';
 import ResultsConatiner from "../ResultsContainer/ResultsContainer";
@@ -9,7 +10,7 @@ import variables from '../../../../scss/variables.scss';
 
 const AsideContainer = ({ isOnSearching, id, id_event }) => {
   const [isDetailOpen, setIsDetailOpen] = useState(false)
-
+  const { t } = useTranslation();
   useEffect(() => {
     if (id || id_event) {
       setIsDetailOpen(true)
@@ -19,8 +20,8 @@ const AsideContainer = ({ isOnSearching, id, id_event }) => {
   }, [id, id_event])
   return (
     <div className="aside">
-      <Title color={variables.primary} size={28} tag={"h2"} text={"Nomorewaste.today"} />
-      <Paragraph tag="p" size={"12"} text={"Select one of the Recycling Points above, or us the search to find want you need to reclycle"} />
+      <Title color={variables.primary} size={28} tag={"h2"} text={t("home.title")} />
+      <Paragraph tag="p" size={"12"} text={t("home.subtitle")} />
       <div className="aside__container">
         {!isDetailOpen && <Search />}
         {(id || id_event) && <ResultContainer />}

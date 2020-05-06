@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import { useTranslation } from 'react-i18next';
 import { NavLink } from "react-router-dom";
-import { HomeIcon, EmailIcon, AddIcon, Shop, AdviceIcon } from "../../assets/icons";
+import { HomeIcon, EmailIcon, Shop, AdviceIcon } from "../../assets/icons";
 import { ButtonMenu } from "../../components";
 import { toggleMenu } from "../../services/redux/actions/settings.actions";
 
@@ -10,14 +10,11 @@ import { toggleMenu } from "../../services/redux/actions/settings.actions";
 import './MenuMobile.scss';
 
 const MenuMobile = ({ isOpen, onToggleMenu }) => {
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
   const IsMenuOpen = (isOpen) ? 'isOpen' : '';
   const handelToggleMenu = () => {
     onToggleMenu()
   }
-  const changeLanguage = lng => {
-    i18n.changeLanguage(lng);
-  };
   return (
     <div className={`${IsMenuOpen} menu-mobile`}>
       <div className="menu__buttons">
@@ -41,13 +38,7 @@ const MenuMobile = ({ isOpen, onToggleMenu }) => {
             <EmailIcon width="60px" />
           </ButtonMenu>
         </NavLink>
-
-
       </div>
-      {/* <div className="menu__language">
-        <span onClick={() => changeLanguage('en')}>EN</span> |
-        <span onClick={() => changeLanguage('zh')}>ZH</span>
-      </div> */}
     </div>
   )
 }

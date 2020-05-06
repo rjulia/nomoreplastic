@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useQuery } from '@apollo/react-hooks';
 import { Spinner } from "../../../components";
 import { PRODUCTS_QUERY } from "../../../services/apollo/queries";

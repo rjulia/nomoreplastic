@@ -1,20 +1,69 @@
 export const TypeRecycling = [
-  'PAPER',
-  'COMPUTER_PRODUCTS',
-  'USED_OCOOKING_OIL',
-  'TONNER_CARTRIDEGE',
-  'METAL',
-  'PLASTIC',
-  'RUBER_TYRE',
-  'ELEC_APPLIANCE',
-  'RECHARGABLE_BATTERIE',
-  'FLOURESCENT',
-  'CLOTHES',
-  'GLASS',
-  'FURMITURE',
-  'FOOD',
-  'BOOKS',
-  'OTHERS',
+
+  {
+    value: 'PAPER',
+    key: 'typeRecycling.paper'
+  },
+  {
+    value: 'COMPUTER_PRODUCTS',
+    key: 'typeRecycling.computer_products'
+  },
+  {
+    value: 'USED_OCOOKING_OIL',
+    key: 'typeRecycling.used_ocooking_oil'
+  },
+  {
+    value: 'TONNER_CARTRIDEGE',
+    key: 'typeRecycling.tonner_cartridege'
+  },
+  {
+    value: 'METAL',
+    key: 'typeRecycling.metal'
+  },
+  {
+    value: 'PLASTIC',
+    key: 'typeRecycling.plastic'
+  },
+  {
+    value: 'RUBER_TYRE',
+    key: 'typeRecycling.ruber_tyre'
+  },
+  {
+    value: 'ELEC_APPLIANCE',
+    key: 'typeRecycling.elec_appliance'
+  },
+  {
+    value: 'RECHARGABLE_BATTERIE',
+    key: 'typeRecycling.rechargable_batterie'
+  },
+  {
+    value: 'FLOURESCENT',
+    key: 'typeRecycling.flourescent'
+  },
+  {
+    value: 'CLOTHES',
+    key: 'typeRecycling.clothes'
+  },
+  {
+    value: 'GLASS',
+    key: 'typeRecycling.glass'
+  },
+  {
+    value: 'FURMITURE',
+    key: 'typeRecycling.furmiture'
+  },
+  {
+    value: 'FOOD',
+    key: 'typeRecycling.food'
+  },
+  {
+    value: 'BOOKS',
+    key: 'typeRecycling.books'
+  },
+  {
+    value: 'OTHERS',
+    key: 'typeRecycling.others'
+  }
 ];
 
 export const DistrictHK = [

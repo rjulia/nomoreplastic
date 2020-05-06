@@ -1,12 +1,10 @@
 import React from 'react';
 import { connect } from "react-redux";
 import { MapContainer, AsideContainer } from './Containers';
-import GetCurrentPosition from "../../utils/GetCurrentPosition";
 
 const MapRecycle = ({ coords }) => {
   return (
     <>
-      <GetCurrentPosition />
       {coords.lng !== 0 ? <MapContainer /> : ''}
       <AsideContainer />
     </>
