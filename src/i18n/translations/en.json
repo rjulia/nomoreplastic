@@ -19,7 +19,20 @@
     "title_contact": "Contact",
     "phrase": "If you want to contact us you fill out the form below:",
     "title_coffee": "Buy Me A Coffee",
-    "buyacoffee": "Hello, we are a couple of friends trying to help the people of Hong Kong to be more responsible when it comes to recycling. We do everything without any help, if you can help with the maintenance and expenses of the web, the planet will be deeply grateful for you. And we too, of course! :)"
+    "buyacoffee": "Hello, we are a couple of friends trying to help the people of Hong Kong to be more responsible when it comes to recycling. We do everything without any help, if you can help with the maintenance and expenses of the web, the planet will be deeply grateful for you. And we too, of course! :)",
+    "form": {
+      "name": "name",
+      "company": "Company",
+      "tel": "tel",
+      "email": "Email",
+      "type": "Type",
+      "message": "Message",
+      "required": "* These fields are required",
+      "submit": "SUBMIT",
+      "individual": "individual",
+      "ngo": "NGO",
+      "shop": "Shop"
+    }
   },
   "advice": {
     "title": "Advices",

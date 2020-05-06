@@ -5,9 +5,18 @@ import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 
 const WraperImage = styled('a')`
+  width: 100px;
+  background: #018383;
+  padding: 13px;
+  border-radius: 5px;
+  span {
+    color: #fff !important;
+    margin-left: 10px;
+  }
   img {
     height: '51px !important'; 
-    width: '217px !important'
+    width: '217px !important';
+
 }`
 
 const Contact = () => {
@@ -36,8 +45,8 @@ const Contact = () => {
             text={t('contact.buyacoffee')}
           />
           <WraperImage href="https://www.buymeacoffee.com/nomorewaste" target="_blank">
-            <img src="https://cdn.buymeacoffee.com/buttons/lato-white_img.png" alt="Buy Me A Coffee" />
-
+            <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy Me A Coffee" />
+            <span>Buy my a Coffee</span>
           </WraperImage>
 
         </div>

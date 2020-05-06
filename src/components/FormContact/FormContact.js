@@ -3,9 +3,10 @@ import { useForm, Controller } from "react-hook-form";
 import { Input, Select, InputLabel, FormControl, MenuItem, TextField, FormHelperText } from "@material-ui/core";
 import { Paragraph } from "../index";
 import './FormContact.scss'
+import { useTranslation } from 'react-i18next';
 
 const FormContact = () => {
-
+  const { t } = useTranslation();
   function sendFeedback(templateId, variables) {
     window.emailjs.send(
       'gmail', templateId,
@@ -39,13 +40,13 @@ const FormContact = () => {
       <div className="row">
         <div className="col-md-4">
           <FormControl className={'form__control'} error={Boolean(errors.name)}>
-            <InputLabel htmlFor="name">Name *</InputLabel>
+            <InputLabel htmlFor="name">{t('contact.form.name')} *</InputLabel>
             <Controller
               as={Input}
               name="name"
               control={control}
               defaultValue=""
-              rules={{ required: "this is required" }} />
+              rules={{ required: t('contact.form.required') }} />
             <FormHelperText>
               {errors.name && errors.name.message}
             </FormHelperText>
@@ -53,7 +54,7 @@ const FormContact = () => {
         </div>
         <div className="col-md-4">
           <FormControl className={'form__control'}>
-            <InputLabel htmlFor="company">Company</InputLabel>
+            <InputLabel htmlFor="company">{t('contact.form.company')}</InputLabel>
             <Controller
               as={Input}
               name="company"
@@ -63,13 +64,13 @@ const FormContact = () => {
         </div>
         <div className="col-md-4">
           <FormControl className={'form__control'} error={Boolean(errors.email)}>
-            <InputLabel htmlFor="email">Email *</InputLabel>
+            <InputLabel htmlFor="email">{t('contact.form.email')} *</InputLabel>
             <Controller
               as={Input}
               name="email"
               control={control}
               defaultValue=""
-              rules={{ required: "this is required" }} />
+              rules={{ required: t('contact.form.required') }} />
             <FormHelperText>
               {errors.email && errors.email.message}
             </FormHelperText>
@@ -80,7 +81,7 @@ const FormContact = () => {
       <div className="row">
         <div className="col-md-4">
           <FormControl className={'form__control'}>
-            <InputLabel htmlFor="age-native-simple">Tel</InputLabel>
+            <InputLabel htmlFor="age-native-simple">T{t('contact.form.tel')}</InputLabel>
             <Controller
               as={Input}
               name="phone"
@@ -90,21 +91,21 @@ const FormContact = () => {
         </div>
         <div className="col-md-4">
           <FormControl className={'form__control'}>
-            <InputLabel htmlFor="age-native-simple">Type of: </InputLabel>
+            <InputLabel htmlFor="age-native-simple">{t('contact.form.type')} </InputLabel>
             <Controller
               as={
                 <Select>
                   <MenuItem value="particular">
-                    PARTICULAR
+                    {t('contact.form.individual')}
                   </MenuItem>
                   <MenuItem value="company">
-                    COMPANY
+                    {t('contact.form.company')}
                   </MenuItem>
                   <MenuItem value="ong">
-                    ONG
+                    {t('contact.form.ngo')}
                   </MenuItem>
                   <MenuItem value="shop">
-                    SHOP
+                    {t('contact.form.shop')}
                   </MenuItem>
                 </Select>
               }
@@ -121,16 +122,16 @@ const FormContact = () => {
           <FormControl className={'form__control text-area'} error={Boolean(errors.message)}>
             <Controller
               as={<TextField
-                label="Message *"
+                label={t('contact.form.message')}
                 id="multiline"
                 multiline
                 rowsMax="4"
-                placeholder="Message "
+                placeholder={t('contact.form.message')}
               />}
               name="message"
               control={control}
               defaultValue=""
-              rules={{ required: "this is required" }}
+              rules={{ required: t('contact.form.required') }}
             />
             <FormHelperText>
               {errors.message && errors.message.message}
@@ -140,7 +141,7 @@ const FormContact = () => {
         <div className="col-md-4"></div>
       </div>
 
-      <Paragraph text={'* these fields are mandatory'} />
+      <Paragraph text={t('contact.form.required')} />
 
       <input className="btn__submint" type="submit" />
     </form>
