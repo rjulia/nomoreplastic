@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import styled from 'styled-components';
 import { cleanPosition } from "../../../../services/redux/actions/settings.actions";
 import { cleanLocation } from "../../../../services/redux/actions/search.actions";
-
+import { useTranslation } from 'react-i18next';
 import { ButtonBack } from "../../../../components";
 import { LocationDetail, EventDetail } from '../../components';
 
@@ -12,14 +12,14 @@ const Wrapper = styled('div')`
 `
 
 const ResultContainer = ({ onCleanLocationSelect, onCleanLocation, id, id_event }) => {
-
+  const { t } = useTranslation()
   const handelCloseFiltered = () => {
     onCleanLocationSelect()
     onCleanLocation()
   }
   return (
     <Wrapper>
-      <ButtonBack text="Go Back" onClick={handelCloseFiltered} />
+      <ButtonBack text={t('btns.goback')} onClick={handelCloseFiltered} />
       {id && <LocationDetail />}
       {id_event && <EventDetail />}
     </Wrapper>

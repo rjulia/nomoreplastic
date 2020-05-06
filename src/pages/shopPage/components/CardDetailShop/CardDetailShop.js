@@ -4,13 +4,13 @@ import './CardDetailShop.scss';
 import { Spinner, BoxImage, Title, Label, Paragraph, Map, ButtonBack } from "../../../../components";
 import { SHOP_QUERY } from "../../../../services/apollo/queries";
 import variables from '../../../../scss/variables.scss';
+import { useTranslation } from 'react-i18next';
 import { FaRegEnvelope, FaLeaf, FaFacebookF, FaInstagram, FaMapMarkerAlt, FaMobileAlt } from "react-icons/fa";
 import { IoIosGlobe } from "react-icons/io";
 
-
-
 const CardDetailShop = ({ id, onClose }) => {
   const leafs = [0, 1, 2, 3, 4];
+  const { t } = useTranslation()
   const { data, loading, error } = useQuery(SHOP_QUERY, { variables: { id } });
   if (loading) return <Spinner className="spinner__map" />;
   if (error) return <p>ERROR</p>
@@ -31,7 +31,7 @@ const CardDetailShop = ({ id, onClose }) => {
 
   return (
     <div className="card-detail-shop__container">
-      <ButtonBack onClick={onClose} text={"Go Back"} />
+      <ButtonBack onClick={onClose} text={t('btns.goback')} />
       <div onClick={onClose}>
 
         <BoxImage img={imageUrl} height={300} />

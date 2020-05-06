@@ -37,7 +37,7 @@ const AdvicePage = ({ i18n }) => {
         </div>
         <div className="col-12 col-md-9">
           <Link to={"/advices"}>
-            <ButtonBack text={"Go Back"} />
+            <ButtonBack text={i18n.t('btns.goback')} />
           </Link>
           <Title color={variables.primary} tag={"h2"}
             text={language === "en" ? advice.title__en : advice.title__zh} size={40} sizeM={32} />

@@ -3,9 +3,11 @@ import { connect } from "react-redux";
 import { cleanFilter } from "../../../../services/redux/actions/search.actions";
 import { SearchResults } from "../../components";
 import { ButtonBack } from "../../../../components";
+import { useTranslation } from 'react-i18next';
 
 const ResultsContainer = ({ onCleanLocationFiltered, locations, category }) => {
 
+  const { t } = useTranslation()
   const [classCategory, setClassCategory] = useState('')
   const handelCloseFiltered = () => {
     onCleanLocationFiltered()
@@ -30,7 +32,7 @@ const ResultsContainer = ({ onCleanLocationFiltered, locations, category }) => {
 
   return (
     <div>
-      <ButtonBack category={classCategory} text="Go Back" onClick={handelCloseFiltered} />
+      <ButtonBack category={classCategory} text={t('btns.goback')} onClick={handelCloseFiltered} />
       <SearchResults locations={locations} classCategory={classCategory} />
     </div>
   )

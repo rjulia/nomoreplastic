@@ -1,4 +1,8 @@
 {
+  "btns": {
+    "goback": "返回",
+    "viewmore": "更多"
+  },
   "menu": {
     "add": "加",
     "home": "主頁",
@@ -13,7 +17,8 @@
   },
   "shops": {
     "title": "商店",
-    "paraf": "Here you can find the Hong Kong stores where their philosophy and products are environmentally friendly."
+    "paraf": "在此發現香港重視環保哲學及出售環保商品的商店",
+    "qualification": "No More Waste Today 認證"
   },
   "contact": {
     "title_contact": "聯絡我們",

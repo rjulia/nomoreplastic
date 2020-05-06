@@ -142,8 +142,7 @@ const FormContact = () => {
       </div>
 
       <Paragraph text={t('contact.form.required')} />
-
-      <input className="btn__submint" type="submit" />
+      <button className="btn__submint" type="submit">{t('contact.form.submit')}</button>
     </form>
   )
 

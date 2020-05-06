@@ -1,4 +1,8 @@
 {
+  "btns": {
+    "goback": "Go Back",
+    "viewmore": "View More"
+  },
   "menu": {
     "add": "add",
     "home": "Home",
@@ -13,7 +17,9 @@
   },
   "shops": {
     "title": "Shops",
-    "paraf": "Here you can find the Hong Kong stores where their philosophy and products are environmentally friendly."
+    "paraf": "Here you can find the Hong Kong stores where their philosophy and products are environmentally friendly.",
+    "qualification": "No More Waste Today Qualification"
+
   },
   "contact": {
     "title_contact": "Contact",
