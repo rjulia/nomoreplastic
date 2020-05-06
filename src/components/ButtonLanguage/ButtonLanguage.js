@@ -15,6 +15,10 @@ const WrapperButtonLanguage = styled('div')`
   cursor: pointer;
   @media (min-width: 768px) {
     width:100%;
+    justify-content: center;
+    height: 150px;
+    padding-bottom: 20px;
+
   }
   span {
     font-size: 30px;
