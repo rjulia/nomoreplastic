@@ -12,7 +12,7 @@ const WrapperNews = ({ news }) => {
 }
 
 
-const NewsAside = ({ getEvents, getNewsInfo }) => {
+const NewsAside = ({ getEvents, getNewsInfo, t }) => {
 
   let results = []
   let filterResults = []
@@ -47,11 +47,11 @@ const NewsAside = ({ getEvents, getNewsInfo }) => {
   return (
     <div className="news">
       <div className="news__header">
-        <Title tag="h2" text="News & Eventes" />
+        <Title tag="h2" text={t('home.events.title')} />
         <div className="news__filter">
-          <span className={asFilter === "" ? "active" : ''} onClick={() => handleFilterNews()}>ALL</span>
-          <span className={asFilter === "NEWS" ? "active" : ''} onClick={() => handleFilterNews("NEWS")}>NEWS</span>
-          <span className={asFilter === "EVENTS" ? "active" : ''} onClick={() => handleFilterNews("EVENTS")}>EVENTS</span>
+          <span className={asFilter === "" ? "active" : ''} onClick={() => handleFilterNews()}>{t('home.events.all')}</span>
+          <span className={asFilter === "NEWS" ? "active" : ''} onClick={() => handleFilterNews("NEWS")}>{t('home.events.news')}</span>
+          <span className={asFilter === "EVENTS" ? "active" : ''} onClick={() => handleFilterNews("EVENTS")}>{t('home.events.events')}</span>
         </div>
       </div>
       <div className="news__body">

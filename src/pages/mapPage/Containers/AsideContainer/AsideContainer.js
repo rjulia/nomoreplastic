@@ -26,7 +26,7 @@ const AsideContainer = ({ isOnSearching, id, id_event }) => {
         {!isDetailOpen && <Search />}
         {(id || id_event) && <ResultContainer />}
         {(!isOnSearching && !isDetailOpen) && <SelectCollectionPoints />}
-        {(!isOnSearching && !isDetailOpen) && <NewsAside />}
+        {(!isOnSearching && !isDetailOpen) && <NewsAside t={t} />}
         {(isOnSearching && !isDetailOpen) && <ResultsConatiner />}
       </div>
       <div className="aside__mask"></div>

@@ -13,7 +13,19 @@
   "home": {
     "title": "Nomorewaste.today",
     "subtitle": "選擇以下其中一個回收點或你需要回收的物資",
-    "select": "你想回收甚麼物資"
+    "select": "你想回收甚麼物資",
+    "recyclingPoints": "回收點",
+    "community": "社區回收站",
+    "organisations": "回收機構及垃圾收集點",
+    "clothes": "衣物回收站",
+    "bin": "垃圾分類回收箱",
+    "private": "私人回收及垃圾收集商",
+    "events": {
+      "title": "最新消息及活動",
+      "all": "全部",
+      "news": "最新消息",
+      "events": "活動"
+    }
   },
   "shops": {
     "title": "商店",
@@ -47,6 +59,10 @@
       "ngo": "非政府組織",
       "shop": "商店"
     }
+  },
+  "advice": {
+    "title": "環保貼士",
+    "paraf": "在此發現你可如何保護環境，建立一個更美好的居住地方。"
   },
   "typeRecycling": {
     "paper": "紙張",

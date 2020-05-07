@@ -13,7 +13,19 @@
   "home": {
     "title": "Nomorewaste.today",
     "subtitle": "Select one of the Recycling Points below or find what you need to recycle",
-    "select": "What do you want to recycle"
+    "select": "What do you want to recycle",
+    "recyclingPoints": "Recycling Points",
+    "community": "Community Green Stations",
+    "organisations": "Recycling Organisations and Collection Points",
+    "clothes": "Clothes Recycling Bank",
+    "bin": "Waste Separation Bin",
+    "private": "Private Collector and Recycler",
+    "events": {
+      "title": "News & Events",
+      "all": "All",
+      "news": "News",
+      "events": "Events"
+    }
   },
   "shops": {
     "title": "Shops",

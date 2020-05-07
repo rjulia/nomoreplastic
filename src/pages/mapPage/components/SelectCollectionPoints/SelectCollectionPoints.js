@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { Title } from '../../../../components';
+import { useTranslation } from 'react-i18next';
 import Card from "../Card/Card";
 import { Collection, Waste, Private, Clothes, Community } from "../../../../assets/icons";
 import { cleanAndGetLocationFiltered } from "../../../../services/redux/actions/search.actions";
 import "./SelectCollectionPoints.scss"
 import variables from '../../../../scss/variables.scss';
-const SelectCollectionPoints = ({ onLoadLocationFiltered }) => {
 
+const SelectCollectionPoints = ({ onLoadLocationFiltered }) => {
+  const { t } = useTranslation();
   const [slided, setSlided] = useState(false)
   const handleSlide = (state) => {
     setSlided(state)
@@ -20,7 +22,7 @@ const SelectCollectionPoints = ({ onLoadLocationFiltered }) => {
   return (
     <div className="collection-points">
       <div className="collection-points--header">
-        <Title tag="h2" text="Recycling Points" />
+        <Title tag="h2" text={t('home.recyclingPoints')} />
         <div className="collection-points--points">
           <span className={slided ? '' : 'active'}
             onClick={() => handleSlide(false)}></span>
@@ -30,19 +32,19 @@ const SelectCollectionPoints = ({ onLoadLocationFiltered }) => {
       </div>
       <div className="collection-points--body">
         <div className={slided ? 'collection-points--card slided' : 'collection-points--card '} >
-          <Card onClick={() => handleSearchLocation('COMMUNITY')} text="Community Green Stations">
+          <Card onClick={() => handleSearchLocation('COMMUNITY')} text={t('home.community')}>
             <Community width="85" fill={variables.community} />
           </Card>
-          <Card onClick={() => handleSearchLocation('ORGANIZATIONS')} text="Recycling Organisations and Collection Points">
+          <Card onClick={() => handleSearchLocation('ORGANIZATIONS')} text={t('home.organisations')}>
             <Collection width="85" fill={variables.organitation} />
           </Card>
-          <Card onClick={() => handleSearchLocation('CLOTHES')} text="Clothes Recycling Bank">
+          <Card onClick={() => handleSearchLocation('CLOTHES')} text={t('home.clothes')}>
             <Clothes width="85" fill={variables.clothes} />
           </Card>
-          <Card onClick={() => handleSearchLocation('WASTE_SEPARATION')} text="Waste Separation Bin">
+          <Card onClick={() => handleSearchLocation('WASTE_SEPARATION')} text={t('home.bin')}>
             <Waste width="85" fill={variables.waste} />
           </Card>
-          <Card onClick={() => handleSearchLocation('COLLECTOR')} text="Private Collector and Recycler">
+          <Card onClick={() => handleSearchLocation('COLLECTOR')} text={t('home.private')}>
             <Private width="85" fill={variables.private} />
           </Card>
         </div>

@@ -29,7 +29,7 @@ const WrapperButtonLanguage = styled('div')`
 
 const ButtonLanguage = ({ i18n }) => {
 
-  const [language, setLanguage] = useState('en')
+  const [language, setLanguage] = useState(i18n.language)
   const changeLanguage = () => {
     if (language === "en") {
       i18n.changeLanguage('zh');
