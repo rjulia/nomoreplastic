@@ -14,7 +14,26 @@ const CardDetailShop = ({ id, onClose }) => {
   const { data, loading, error } = useQuery(SHOP_QUERY, { variables: { id } });
   if (loading) return <Spinner className="spinner__map" />;
   if (error) return <p>ERROR</p>
-
+  function translationCatagoery(value) {
+    switch (true) {
+      case value === "HOME":
+        return t('shops.category.home')
+      case value === "HEALTHCARE":
+        return t('shops.category.healthcare')
+      case value === "FOOD":
+        return t('shops.category.food')
+      case value === "CATERING":
+        return t('shops.category.catering')
+      case value === "CLOTHES":
+        return t('shops.category.clothes')
+      case value === "SPORTS":
+        return t('shops.category.sports')
+      case value === "OTHERS":
+        return t('shops.category.others')
+      default:
+        break;
+    }
+  }
   const { address, category, description, email, facebook, imageUrl, name, plasticfree, webUrl, instagram, phone, lat, lng } = data.getShop
   const location = [{
     id: id,
@@ -43,7 +62,7 @@ const CardDetailShop = ({ id, onClose }) => {
               key={catg}
               color={variables.white}
               bgc={variables.primary}
-              text={catg}
+              text={translationCatagoery(catg)}
             />
           )
         }
@@ -55,7 +74,7 @@ const CardDetailShop = ({ id, onClose }) => {
         size={30}
       />
       <div>
-        <Paragraph text={'No More Waste Plastic Qualification'} classN={"card-shop__qualification"} />
+        <Paragraph text={t('shops.qualification')} classN={"card-shop__qualification"} />
         <p className="card-shop__start">{leafs.map(leaf =>
           <FaLeaf fill={plasticfree >= leaf + 1 ? variables.primary : variables.smoke} key={leaf} size={18} />)}
         </p>

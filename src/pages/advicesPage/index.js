@@ -13,7 +13,6 @@ const Advices = () => {
   const { data, loading, error } = useQuery(ADVICES_QUERY);
   if (loading) return <Spinner className="spinner__map" />;
   if (error) return <p>ERROR</p>;
-  console.log(data)
   return (
     <div className="advice__container">
       <div className="advice__title">

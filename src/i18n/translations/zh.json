@@ -18,7 +18,16 @@
   "shops": {
     "title": "商店",
     "paraf": "在此發現香港重視環保哲學及出售環保商品的商店",
-    "qualification": "No More Waste Today 認證"
+    "qualification": "No More Waste Today 認證",
+    "category": {
+      "home": "家品",
+      "healthcare": "健康用品",
+      "food": "食物",
+      "catering": "餐飲",
+      "clothes": "衣服",
+      "sports": "運動用品",
+      "others": "其他"
+    }
   },
   "contact": {
     "title_contact": "聯絡我們",
