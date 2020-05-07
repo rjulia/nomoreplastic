@@ -39,7 +39,7 @@ const CardShop = ({ shop, open, isOpen }) => {
       </div>
       <div className="card-shop__content">
         <div className="card-shop__box--image" onClick={() => open(shop.id)}>
-          <BoxImage img={shop.thumbnail} height={180} />
+          <BoxImage img={shop.imageUrl} height={180} />
         </div>
         <div className="card-shop__box--text">
           <div>
