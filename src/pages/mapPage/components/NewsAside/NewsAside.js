@@ -27,7 +27,6 @@ const NewsAside = ({ getEvents, getNewsInfo, t }) => {
   }, [getEvents.getEvents, getNewsInfo.getNewsInfo])
 
   const handleFilterNews = (filter) => {
-
     if (filter === 'EVENTS') {
       filterResults = results.filter(item => item.__typename === "Event")
       setState(filterResults);
@@ -43,6 +42,7 @@ const NewsAside = ({ getEvents, getNewsInfo, t }) => {
   }
 
 
+  console.log(results, filterResults)
 
   return (
     <div className="news">

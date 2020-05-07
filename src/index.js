@@ -21,7 +21,7 @@ const link = new HttpLink(
 export const client = new ApolloClient({
   link: link,
   cache: new InMemoryCache({
-    addTypename: false
+    addTypename: true
   }),
 
   onError: ({ networkError, graphQLErrors }) => {
