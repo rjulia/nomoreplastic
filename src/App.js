@@ -10,6 +10,7 @@ import { MapRecycle, Contact, Advices, Shop, Advice } from "./pages";
 import './App.scss';
 import { Menu, MenuMobile } from "./Layout";
 import styled from 'styled-components';
+import { Modal } from './components';
 
 const Wrapper = styled('div')`
   display: block;
@@ -40,6 +41,7 @@ function App() {
         </Switch>
       </Wrapper>
       <MenuMobile />
+      <Modal />
     </Router>
   );
 }

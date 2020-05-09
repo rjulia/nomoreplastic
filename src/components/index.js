@@ -8,9 +8,9 @@ export { default as ButtonBurger } from './ButtonBurger/ButtonBurger';
 export { default as FormContact } from './FormContact/FormContact';
 export { default as Label } from './Label/Label';
 export { default as Map } from './Map/MapGoogleApi';
-
-
 export { default as MapGoogleApi } from './Map/MapGoogleApi';
+export { default as Modal } from './Modal/Modal';
+
 export { default as Spinner } from './Spinner/Spinner';
 export { default as Title } from './Title/Title';
 export { default as Paragraph } from './Paragraph/Paragraph';
